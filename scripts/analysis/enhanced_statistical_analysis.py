@@ -32,7 +32,7 @@ class EnhancedStatisticalAnalyzer:
             "anthropic_claude-opus-4": 1000,  # Estimated 1T+ parameters
             "anthropic_claude-3.7-sonnet": 100,  # Estimated 100B+ parameters  
             "meta-llama_llama-3.3-70b": 70,  # 70B parameters
-            "deepseek_deepseek-r1-0528_free": 236,  # DeepSeek R1 full model estimated 236B parameters
+            "deepseek_deepseek-r1-0528_free": 671,  # DeepSeek R1 full model: 671B total params, 37B active (MoE)
             "deepseek_r1_7b": 7  # 7B parameters
         }
         
