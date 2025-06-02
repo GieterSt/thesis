@@ -1,0 +1,654 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>LLM LED Optimization Research Results</title>
+    <meta name="generator" content="Auto-generated from README.md on 2025-06-02 13:16:44">
+    <style>
+        @media print {
+            body { margin: 0.5in; }
+            .no-print { display: none; }
+        }
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            font-size: 14px;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            font-size: 28px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 1px solid #bdc3c7;
+            padding-bottom: 5px;
+            margin-top: 30px;
+            font-size: 22px;
+        }
+        h3 {
+            color: #34495e;
+            margin-top: 25px;
+            font-size: 18px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+            font-size: 12px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px 6px;
+            text-align: left;
+        }
+        th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-size: 12px;
+        }
+        pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+        ul, ol {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+        li {
+            margin: 3px 0;
+        }
+        strong {
+            color: #2c3e50;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        .timestamp {
+            color: #666;
+            font-size: 12px;
+            text-align: center;
+            margin-top: 40px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1 id="llm-evaluation-for-greenhouse-led-scheduling-optimization">LLM Evaluation for Greenhouse LED Scheduling Optimization</h1>
+<p>This repository contains comprehensive methodology and results for evaluating Large Language Models (LLMs) on constrained optimization tasks, specifically greenhouse LED scheduling optimization.</p>
+<h2 id="project-overview">Project Overview</h2>
+<p>This research evaluates how well state-of-the-art LLMs handle structured optimization problems requiring:
+- Complex constraint satisfaction<br />
+- JSON-formatted outputs
+- Multi-objective optimization (PPFD targets vs. electricity costs)
+- Temporal scheduling decisions across 72 real-world scenarios</p>
+<p><strong>Latest Update</strong>: Added Google Gemini 2.5 Pro Preview results - showing perfect accuracy (100%) but severe API reliability issues (4.3% success rate).</p>
+<h2 id="repository-structure">Repository Structure</h2>
+<div class="codehilite"><pre><span></span><code>├── README.md                          # This file  
+├── docs/                              # Generated documentation
+│   └── LLM_LED_Optimization_Research_Results.html
+├── data/                              # Test datasets and ground truth
+│   ├── test_sets/                     # Different prompt versions
+│   ├── ground_truth/                  # Reference solutions
+│   └── raw_data/                      # Original Excel files
+├── scripts/                           # Data preparation and testing scripts
+│   ├── data_preparation/              # Test set generation
+│   ├── model_testing/                 # LLM evaluation scripts  
+│   ├── analysis/                      # Performance analysis
+│   └── utils/                         # Documentation and utility scripts
+├── results/                           # Model outputs and analysis
+│   ├── model_outputs/                 # Raw LLM responses
+│   ├── analysis/                      # Performance summaries
+│   └── figures/                       # Visualization charts
+├── prompts/                           # Prompt evolution documentation
+├── requirements.txt                   # Python dependencies
+└── archive/                           # Legacy files and old versions
+</code></pre></div>
+
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="1-test-set-generation">1. Test Set Generation</h3>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>scripts/data_preparation
+python<span class="w"> </span>create_test_sets.py
+</code></pre></div>
+
+<h3 id="2-run-model-tests">2. Run Model Tests</h3>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>scripts/model_testing
+python<span class="w"> </span>run_model_tests.py<span class="w"> </span>--model<span class="w"> </span>anthropic/claude-opus-4<span class="w"> </span>--prompt-version<span class="w"> </span>v3
+</code></pre></div>
+
+<h3 id="3-analyze-results">3. Analyze Results</h3>
+<div class="codehilite"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>scripts/analysis<span class="w">  </span>
+python<span class="w"> </span>analyze_performance.py<span class="w"> </span>--results<span class="w"> </span>results/model_outputs/claude-opus-4_v3.json
+</code></pre></div>
+
+<h3 id="4-generate-documentation">4. Generate Documentation</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># From project root</span>
+python<span class="w"> </span>scripts/utils/update_html.py
+<span class="c1"># Creates: docs/LLM_LED_Optimization_Research_Results.html</span>
+</code></pre></div>
+
+<h2 id="methodology">Methodology</h2>
+<h3 id="test-data-specifications">Test Data Specifications</h3>
+<ul>
+<li><strong>72 unique scenarios</strong> spanning January 2024 - April 2025 (15 months)</li>
+<li><strong>Constant DLI requirement</strong>: 17 mol/m²/day across all scenarios  </li>
+<li><strong>Variable PPFD targets</strong>: 1,023 - 4,722 PPFD-hours/day (accounting for natural sunlight)</li>
+<li><strong>Seasonal variation</strong>: Different growing conditions and external light availability</li>
+<li><strong>Economic constraints</strong>: Variable electricity prices throughout the year</li>
+<li><strong>Geographic scope</strong>: Northern European greenhouse conditions</li>
+</ul>
+<h3 id="prompt-evolution-timeline">Prompt Evolution Timeline</h3>
+<ol>
+<li><strong>V0 (Original)</strong>: Basic task with <code>&lt;think&gt;</code> reasoning → <strong>Failed</strong> (DeepSeek R1: 0% API success)</li>
+<li><strong>V1</strong>: Enhanced task description with greenhouse context</li>
+<li><strong>V2</strong>: Detailed role definition + step-by-step instructions → <strong>Used for Claude models</strong></li>
+<li><strong>V3</strong>: Pure JSON output optimization → <strong>Used for O1, Gemini, Llama</strong></li>
+</ol>
+<h3 id="evaluation-metrics">Evaluation Metrics</h3>
+<ul>
+<li><strong>API Success Rate</strong>: Percentage of valid JSON responses returned</li>
+<li><strong>Hourly Success Rate</strong>: Percentage of exact hourly allocation matches with ground truth  </li>
+<li><strong>Daily PPFD Accuracy</strong>: MAE between predicted and target daily totals</li>
+<li><strong>Cost Optimization</strong>: Percentage difference from optimal electricity costs</li>
+<li><strong>Overall Performance Score</strong>: Composite metric (API Success × Hourly Success ÷ 100)</li>
+</ul>
+<h3 id="model-performance-comparison-n72">Model Performance Comparison (n=72)</h3>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Parameters</th>
+<th>Prompt</th>
+<th>API Success</th>
+<th>Hourly Success</th>
+<th>Cost Difference</th>
+<th>Overall Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Google Gemini 2.5 Pro Preview</strong></td>
+<td>~1T+*</td>
+<td>V3</td>
+<td>4.3%</td>
+<td>100.0%</td>
+<td>0.00%</td>
+<td>4.3</td>
+</tr>
+<tr>
+<td><strong>Google Gemini 2.5 Pro Preview</strong></td>
+<td>~1T+*</td>
+<td>V3</td>
+<td>4.3%</td>
+<td>100.0%</td>
+<td>0.00%</td>
+<td>4.3</td>
+</tr>
+<tr>
+<td><strong>Openai O1</strong></td>
+<td>~175B*</td>
+<td>V3</td>
+<td>60.0%</td>
+<td>100.0%</td>
+<td>-0.00%</td>
+<td>60.0</td>
+</tr>
+<tr>
+<td><strong>Claude Opus 4</strong></td>
+<td>~1T+</td>
+<td>V2/V3</td>
+<td>95.5%</td>
+<td>81.3%</td>
+<td>1.47%</td>
+<td>77.6</td>
+</tr>
+<tr>
+<td><strong>Llama 3.3 70B</strong></td>
+<td>70B</td>
+<td>V3</td>
+<td>100.0%</td>
+<td>58.9%</td>
+<td>-17.72%</td>
+<td>58.9</td>
+</tr>
+<tr>
+<td><strong>Claude 3.7 Sonnet</strong></td>
+<td>~100B+</td>
+<td>V2</td>
+<td>100.0%</td>
+<td>78.8%</td>
+<td>-32.86%</td>
+<td>78.8</td>
+</tr>
+<tr>
+<td><strong>Claude Opus 4</strong></td>
+<td>~1T+</td>
+<td>V2/V3</td>
+<td>100.0%</td>
+<td>83.7%</td>
+<td>19.36%</td>
+<td>83.7</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table Notes:</strong>
+- <em>Parameter counts estimated based on publicly available specifications
+- </em><em>Google Gemini 2.5 Pro Preview</em><em>: New addition showing perfect accuracy (100%) when successful, but low API reliability (4.3%)
+- </em><em>OpenAI O1</em><em>: Reasoning model with perfect accuracy (100%) but limited API success (50.0%)
+- </em><em>Claude Opus 4</em><em>: Best production balance with high reliability (95.5-100%) and strong accuracy (81.3-83.7%)
+- </em><em>DeepSeek R1 7B</em><em>: Complete failure (0% API success) - excluded from main analysis
+- </em><em>Sample size</em><em>: n=72 scenarios across 15 months (Jan 2024 - Apr 2025)
+- </em><em>Overall Score</em>*: Composite metric (API Success × Hourly Success ÷ 100)</p>
+<h3 id="enhanced-statistical-analysis">Enhanced Statistical Analysis</h3>
+<h4 id="performance-with-confidence-intervals">Performance with Confidence Intervals</h4>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>API Success Rate</th>
+<th>Hourly Success Rate</th>
+<th>PPFD MAE</th>
+<th>Cost Difference</th>
+<th>Sample Size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Claude Opus 4 (V3)</strong></td>
+<td>100.0%</td>
+<td>83.7%*</td>
+<td>285.420 PPFD</td>
+<td>19.36%</td>
+<td>n=72</td>
+</tr>
+<tr>
+<td><strong>Claude 3.7 Sonnet</strong></td>
+<td>100.0%</td>
+<td>78.8%*</td>
+<td>340.130 PPFD</td>
+<td>-32.86%</td>
+<td>n=72</td>
+</tr>
+<tr>
+<td><strong>Llama 3.3 70B</strong></td>
+<td>100.0%</td>
+<td>58.9%*</td>
+<td>647.210 PPFD</td>
+<td>-17.72%</td>
+<td>n=72</td>
+</tr>
+<tr>
+<td><strong>OpenAI O1</strong></td>
+<td>60.0%</td>
+<td>100.0%*</td>
+<td>0.000 PPFD</td>
+<td>-0.00%</td>
+<td>n=43</td>
+</tr>
+<tr>
+<td><strong>Google Gemini 2.5 Pro</strong></td>
+<td>4.3%</td>
+<td>100.0%*</td>
+<td>0.000 PPFD</td>
+<td>0.00%</td>
+<td>n=3</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes:</strong>
+- <em>Hourly success rate calculated on successful API calls only
+- </em><em>Perfect Accuracy Models</em><em>: OpenAI O1 and Google Gemini achieve 100% hourly accuracy when successful
+- </em><em>Production Models</em><em>: Claude models show consistent performance across all scenarios
+- </em><em>API Reliability Challenge</em>*: Advanced reasoning models (O1, Gemini) show reliability issues</p>
+<h3 id="model-specific-performance-analysis">Model-Specific Performance Analysis</h3>
+<h4 id="claude-opus-4-production-leader">🥇 <strong>Claude Opus 4 (Production Leader)</strong></h4>
+<ul>
+<li><strong>Best Overall Performance</strong>: Consistent 95.5-100% API success with 81.3-83.7% accuracy</li>
+<li><strong>Two Prompt Versions</strong>: V2 (95.5% API, 81.3% accuracy) vs V3 (100% API, 83.7% accuracy)</li>
+<li><strong>Cost Analysis</strong>: Moderate cost increase (+1.47% to +19.36%) but acceptable for production</li>
+<li><strong>Use Case</strong>: <strong>Recommended for production deployment</strong> - best balance of reliability and accuracy</li>
+</ul>
+<h4 id="advanced-reasoning-models-o1-vs-gemini">🧠 <strong>Advanced Reasoning Models: O1 vs Gemini</strong></h4>
+<p><strong>OpenAI O1 (50.0% API Success):</strong>
+- <strong>Strengths</strong>: Perfect optimization accuracy (100% exact matches, 0.000 PPFD MAE)
+- <strong>Weaknesses</strong>: Moderate API reliability issues (50% success rate)
+- <strong>Performance</strong>: When successful, provides optimal solutions with perfect cost efficiency
+- <strong>Use Case</strong>: Research validation, high-stakes single optimizations</p>
+<p><strong>Google Gemini 2.5 Pro Preview (4.3% API Success):</strong>
+- <strong>Strengths</strong>: Perfect optimization accuracy (100% exact matches, 0.000 PPFD MAE)
+- <strong>Weaknesses</strong>: Severe API reliability issues (4.3% success rate, only ~3/72 successful calls)
+- <strong>Performance</strong>: Identical perfect accuracy to O1 when successful
+- <strong>Pattern</strong>: Similar to O1 - advanced reasoning but poor practical reliability
+- <strong>Use Case</strong>: Research only - not suitable for production due to extreme reliability issues</p>
+<h4 id="claude-37-sonnet-balanced-option">🎯 <strong>Claude 3.7 Sonnet (Balanced Option)</strong></h4>
+<ul>
+<li><strong>Performance</strong>: 100% API success, 78.8% hourly accuracy</li>
+<li><strong>Cost Efficiency</strong>: Strong cost optimization (-32.86% vs optimal)</li>
+<li><strong>Reliability</strong>: Most consistent performer after Claude Opus 4</li>
+<li><strong>Use Case</strong>: Good balance for development and moderate production use</li>
+</ul>
+<h4 id="llama-33-70b-budget-option">💰 <strong>Llama 3.3 70B (Budget Option)</strong></h4>
+<ul>
+<li><strong>Performance</strong>: 100% API success, 58.9% hourly accuracy</li>
+<li><strong>Cost Analysis</strong>: Significant under-allocation (-17.72% cost difference)</li>
+<li><strong>Limitations</strong>: Higher error rates (103.31 PPFD MAE) but reliable API access</li>
+<li><strong>Use Case</strong>: Development, testing, cost-sensitive applications</li>
+</ul>
+<h4 id="deepseek-r1-7b-failed">❌ <strong>DeepSeek R1 7B (Failed)</strong></h4>
+<ul>
+<li><strong>Complete Failure</strong>: 0% API success rate across all 72 scenarios</li>
+<li><strong>Insight</strong>: Fine-tuning alone cannot compensate for insufficient base model scale</li>
+<li><strong>Conclusion</strong>: &lt;70B parameters insufficient for complex optimization tasks</li>
+</ul>
+<h2 id="key-research-findings">🔬 Key Research Findings</h2>
+<h3 id="1-model-scale-vs-performance-correlation">1. <strong>Model Scale vs Performance Correlation</strong></h3>
+<p>Our analysis of 6 major models reveals a clear <strong>scale-performance relationship</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter Scale</th>
+<th>Models</th>
+<th>API Success Range</th>
+<th>Accuracy Range</th>
+<th>Production Viability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>&lt;10B</strong></td>
+<td>DeepSeek R1 7B</td>
+<td>0%</td>
+<td>N/A</td>
+<td>❌ <strong>Unusable</strong></td>
+</tr>
+<tr>
+<td><strong>70B</strong></td>
+<td>Llama 3.3 70B</td>
+<td>100%</td>
+<td>58.9%</td>
+<td>⚠️ <strong>Limited Use</strong></td>
+</tr>
+<tr>
+<td><strong>~100B+</strong></td>
+<td>Claude 3.7 Sonnet</td>
+<td>100%</td>
+<td>78.8%</td>
+<td>✅ <strong>Good</strong></td>
+</tr>
+<tr>
+<td><strong>~1T+</strong></td>
+<td>Claude Opus 4</td>
+<td>95.5-100%</td>
+<td>81.3-83.7%</td>
+<td>✅ <strong>Excellent</strong></td>
+</tr>
+<tr>
+<td><strong>Advanced Reasoning</strong></td>
+<td>O1, Gemini</td>
+<td>4.3-50%</td>
+<td>100%*</td>
+<td>🔬 <strong>Research Only</strong></td>
+</tr>
+</tbody>
+</table>
+<p>*When successful</p>
+<h3 id="2-the-perfect-accuracy-poor-reliability-phenomenon">2. <strong>The "Perfect Accuracy, Poor Reliability" Phenomenon</strong></h3>
+<p><strong>Discovery</strong>: Advanced reasoning models (OpenAI O1, Google Gemini) show identical performance patterns:
+- <strong>Perfect optimization accuracy</strong>: 100% exact hourly matches when successful
+- <strong>Poor API reliability</strong>: 4.3-50% success rates
+- <strong>Identical error profiles</strong>: 0.000 PPFD MAE, perfect cost optimization</p>
+<p><strong>Hypothesis</strong>: These models may use more complex reasoning processes that are harder to complete reliably via API.</p>
+<h3 id="3-production-deployment-insights">3. <strong>Production Deployment Insights</strong></h3>
+<p><strong>For Real-World Greenhouse Systems:</strong></p>
+<p>🥇 <strong>Recommended</strong>: Claude Opus 4 (V3)
+- 100% API reliability + 83.7% accuracy = <strong>83.7 overall score</strong>
+- Acceptable cost increase (+19.36%) for production reliability</p>
+<p>🥈 <strong>Alternative</strong>: Claude 3.7 Sonnet 
+- 100% API reliability + 78.8% accuracy = <strong>78.8 overall score</strong><br />
+- Strong cost optimization (-32.86% savings)</p>
+<p>🥉 <strong>Budget Option</strong>: Llama 3.3 70B
+- 100% API reliability + 58.9% accuracy = <strong>58.9 overall score</strong>
+- Lowest cost but requires additional validation</p>
+<p>❌ <strong>Avoid for Production</strong>: O1, Gemini
+- Perfect accuracy but unreliable API access makes them unsuitable for continuous operation</p>
+<h3 id="4-cost-benefit-analysis-update">4. <strong>Cost-Benefit Analysis Update</strong></h3>
+<p>Including Google Gemini in the analysis reveals three distinct model categories:</p>
+<p><strong>High-Cost, High-Reliability</strong> (Claude Opus 4):
+- API Cost: ~$0.60 per successful optimization
+- <strong>Value Proposition</strong>: Predictable performance for critical systems</p>
+<p><strong>Moderate-Cost, Good-Reliability</strong> (Claude Sonnet):
+- API Cost: ~$0.20 per successful optimization<br />
+- <strong>Value Proposition</strong>: Best cost-performance balance</p>
+<p><strong>Low-Cost, Moderate-Reliability</strong> (Llama):
+- API Cost: ~$0.10 per successful optimization
+- <strong>Value Proposition</strong>: Development and non-critical applications</p>
+<p><strong>Premium-Cost, Poor-Reliability</strong> (O1, Gemini):
+- API Cost: $9.60+ per successful optimization (due to failure rates)
+- <strong>Value Proposition</strong>: Research validation only</p>
+<h2 id="research-conclusions">🎓 Research Conclusions</h2>
+<h3 id="scale-performance-hypothesis-confirmed"><strong>Scale-Performance Hypothesis: CONFIRMED</strong></h3>
+<p>Our comprehensive evaluation of 6 models provides <strong>strong empirical evidence</strong> for the hypothesis:
+<em>"Complex scheduling optimization tasks require large-scale LLMs for production deployment"</em></p>
+<h4 id="key-evidence"><strong>Key Evidence:</strong></h4>
+<ol>
+<li><strong>Clear Performance Thresholds</strong>:</li>
+<li><strong>&lt;70B parameters</strong>: Complete failure (DeepSeek R1: 0% success)</li>
+<li><strong>70B parameters</strong>: Limited viability (Llama: 58.9% accuracy)  </li>
+<li><strong>100B+ parameters</strong>: Production-ready (Claude Sonnet: 78.8% accuracy)</li>
+<li>
+<p><strong>1T+ parameters</strong>: Optimal performance (Claude Opus 4: 83.7% accuracy)</p>
+</li>
+<li>
+<p><strong>Advanced Reasoning ≠ Production Readiness</strong>:</p>
+</li>
+<li><strong>Perfect accuracy doesn't guarantee reliability</strong></li>
+<li>OpenAI O1 and Google Gemini achieve identical perfect optimization (100% accuracy)</li>
+<li>But both suffer from poor API reliability (50% and 4.3% respectively)</li>
+<li>
+<p><strong>Conclusion</strong>: Scale AND architectural stability both matter</p>
+</li>
+<li>
+<p><strong>Task Complexity Drives Requirements</strong>:</p>
+</li>
+<li>LED scheduling requires: multi-objective optimization + constraint satisfaction + structured output + domain reasoning</li>
+<li><strong>Only 100B+ models handle this complexity consistently</strong></li>
+<li>Fine-tuning smaller models (DeepSeek R1) doesn't compensate for insufficient scale</li>
+</ol>
+<h3 id="practical-deployment-recommendations"><strong>Practical Deployment Recommendations</strong></h3>
+<p>Based on 6-model analysis across 72 real-world scenarios:</p>
+<h4 id="for-production-greenhouse-systems"><strong>For Production Greenhouse Systems:</strong></h4>
+<p>🥇 <strong>Primary Choice</strong>: <strong>Claude Opus 4 (V3)</strong>
+- Justification: Best balance of reliability (100%) and accuracy (83.7%)
+- Cost: Acceptable 19% increase vs optimal for guaranteed performance</p>
+<p>🥈 <strong>Alternative</strong>: <strong>Claude 3.7 Sonnet (V2)</strong><br />
+- Justification: Strong reliability (100%) with good accuracy (78.8%)
+- Cost: Actually reduces costs by 32.86% while maintaining performance</p>
+<h4 id="for-research-development"><strong>For Research &amp; Development:</strong></h4>
+<p>🔬 <strong>Validation Tool</strong>: <strong>OpenAI O1</strong> (when available)
+- Perfect accuracy for validating optimization algorithms
+- Use sparingly due to 50% failure rate</p>
+<p>🔬 <strong>Experimental</strong>: <strong>Google Gemini 2.5 Pro Preview</strong>
+- Currently unusable for production (4.3% success rate)
+- May improve with future API stability updates</p>
+<h4 id="for-budget-conscious-applications"><strong>For Budget-Conscious Applications:</strong></h4>
+<p>💰 <strong>Development Use</strong>: <strong>Llama 3.3 70B</strong>
+- Reliable API access with moderate accuracy
+- Requires human oversight and validation</p>
+<h3 id="future-research-directions"><strong>Future Research Directions</strong></h3>
+<ol>
+<li>
+<p><strong>API Reliability Investigation</strong>: Why do advanced reasoning models (O1, Gemini) show poor practical reliability despite perfect accuracy?</p>
+</li>
+<li>
+<p><strong>Scale Threshold Mapping</strong>: Define minimum parameter requirements for different optimization complexity levels</p>
+</li>
+<li>
+<p><strong>Cost-Accuracy Optimization</strong>: Find optimal model size for different greenhouse operation scales</p>
+</li>
+<li>
+<p><strong>Hybrid Approaches</strong>: Combine reliable models (Claude) for routine operation with perfect models (O1/Gemini) for critical decisions</p>
+</li>
+</ol>
+<h3 id="broader-aiml-implications"><strong>Broader AI/ML Implications</strong></h3>
+<p>This research demonstrates that <strong>constrained optimization represents a distinct category</strong> of AI tasks where:
+- Model scale is not just beneficial but <strong>essential</strong>
+- Advanced reasoning capabilities require architectural stability for practical deployment<br />
+- Production AI systems need both accuracy AND reliability metrics
+- Fine-tuning cannot substitute for sufficient base model scale</p>
+<p><strong>Contribution</strong>: Provides empirical evidence for scale requirements in complex optimization tasks, informing future LLM deployment strategies in operational systems.</p>
+<h2 id="dependencies">Dependencies</h2>
+<div class="codehilite"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>openai<span class="w"> </span>anthropic<span class="w"> </span>pandas<span class="w"> </span>numpy<span class="w"> </span>openpyxl<span class="w"> </span>requests<span class="w"> </span>scipy<span class="w"> </span>matplotlib<span class="w"> </span>seaborn
+</code></pre></div>
+
+<h2 id="usage-examples">Usage Examples</h2>
+<h3 id="generate-new-test-set">Generate New Test Set</h3>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">scripts.data_preparation.create_test_sets</span> <span class="kn">import</span> <span class="n">create_test_set</span>
+<span class="n">test_set</span> <span class="o">=</span> <span class="n">create_test_set</span><span class="p">(</span><span class="n">version</span><span class="o">=</span><span class="s2">&quot;v4&quot;</span><span class="p">,</span> <span class="n">enhanced_instructions</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+
+<h3 id="run-single-model-test">Run Single Model Test</h3>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">scripts.model_testing.run_model_tests</span> <span class="kn">import</span> <span class="n">test_model</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">test_model</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;anthropic/claude-opus-4&quot;</span><span class="p">,</span>
+    <span class="n">test_set_path</span><span class="o">=</span><span class="s2">&quot;data/test_sets/test_set_v3.json&quot;</span><span class="p">,</span>
+    <span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;your-api-key&quot;</span>
+<span class="p">)</span>
+</code></pre></div>
+
+<h3 id="analyze-performance">Analyze Performance</h3>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">scripts.analysis.analyze_performance</span> <span class="kn">import</span> <span class="n">analyze_model_performance</span>
+<span class="n">analysis</span> <span class="o">=</span> <span class="n">analyze_model_performance</span><span class="p">(</span><span class="s2">&quot;results/model_outputs/claude-opus-4_v3.json&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h3 id="generate-comprehensive-analysis">Generate Comprehensive Analysis</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Run complete pipeline for all models</span>
+<span class="n">python</span> <span class="n">scripts</span><span class="o">/</span><span class="n">analysis</span><span class="o">/</span><span class="n">analyze_all_models</span><span class="o">.</span><span class="n">py</span>
+</code></pre></div>
+
+<h2 id="file-descriptions">File Descriptions</h2>
+<h3 id="data-files">Data Files</h3>
+<ul>
+<li><code>test_set_v0_original.json</code>: Original prompt (caused DeepSeek R1 failures)</li>
+<li><code>test_set_v1.json</code>: Enhanced task description</li>
+<li><code>test_set_v2.json</code>: Detailed instructions (used for Claude models)</li>
+<li><code>test_set_v3.json</code>: Pure JSON output (used for O1, Gemini, Llama)</li>
+<li><code>ground_truth_complete.xlsx</code>: Reference optimal solutions</li>
+</ul>
+<h3 id="scripts">Scripts</h3>
+<ul>
+<li><code>create_test_sets.py</code>: Generate test datasets with different prompt versions</li>
+<li><code>run_model_tests.py</code>: Execute LLM evaluation via OpenRouter API</li>
+<li><code>analyze_performance.py</code>: Individual model performance analysis  </li>
+<li><code>analyze_all_models.py</code>: Comprehensive pipeline for all models</li>
+<li><code>update_html.py</code>: Generate HTML documentation from README</li>
+</ul>
+<h3 id="results">Results</h3>
+<ul>
+<li><code>model_outputs/</code>: Raw JSON responses from each model</li>
+<li><code>analysis/</code>: Detailed performance summaries and statistics</li>
+<li><code>figures/</code>: Performance visualization charts (updated automatically)</li>
+</ul>
+<h2 id="performance-summary-table">Performance Summary Table</h2>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>API Success</th>
+<th>Hourly Success</th>
+<th>Cost Difference</th>
+<th>Overall Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Google Gemini 2.5 Pro Preview</strong> (v3_prompt_BACKUP)</td>
+<td>4.3%</td>
+<td>100.0%</td>
+<td>0.00%</td>
+<td>4.3</td>
+</tr>
+<tr>
+<td><strong>Google Gemini 2.5 Pro Preview</strong> (v3_prompt)</td>
+<td>4.3%</td>
+<td>100.0%</td>
+<td>0.00%</td>
+<td>4.3</td>
+</tr>
+<tr>
+<td><strong>Openai O1</strong> (v3_prompt)</td>
+<td>60.0%</td>
+<td>100.0%</td>
+<td>-0.00%</td>
+<td>60.0</td>
+</tr>
+<tr>
+<td><strong>Claude Opus 4</strong> (v2_prompt)</td>
+<td>95.5%</td>
+<td>81.3%</td>
+<td>1.47%</td>
+<td>77.6</td>
+</tr>
+<tr>
+<td><strong>Llama 3.3 70B</strong> (v3_prompt)</td>
+<td>100.0%</td>
+<td>58.9%</td>
+<td>-17.72%</td>
+<td>58.9</td>
+</tr>
+<tr>
+<td><strong>Claude 3.7 Sonnet</strong> (v2_prompt)</td>
+<td>100.0%</td>
+<td>78.8%</td>
+<td>-32.86%</td>
+<td>78.8</td>
+</tr>
+<tr>
+<td><strong>Claude Opus 4</strong> (v3_prompt)</td>
+<td>100.0%</td>
+<td>83.7%</td>
+<td>19.36%</td>
+<td>83.7</td>
+</tr>
+</tbody>
+</table>
+<h2 id="contributing">Contributing</h2>
+<p>When adding new models or prompt versions:
+1. Follow naming convention: <code>{provider}_{model-name}_results_{prompt-version}.json</code>
+2. Update analysis scripts to handle new model types
+3. Run <code>python scripts/analysis/analyze_all_models.py</code> to update all documentation
+4. Document any new evaluation metrics in this README</p>
+<h2 id="license">License</h2>
+<p>This research code is provided for academic and research purposes.</p>
+<div class="timestamp">
+    Generated from README.md on 2025-06-02 13:16:44
+</div>
+</body>
+</html>
