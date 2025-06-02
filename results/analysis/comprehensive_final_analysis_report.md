@@ -5,26 +5,16 @@
 
 📊 **Analysis Overview**
 • Total Models Evaluated: 4
-• Post-Processing Applied: 1 models
+• Post-Processing Applied: 0 models
 • Evaluation Criteria: API Success Rate × Optimization Accuracy
 
-🏆 **Top Performer: Google Gemini 2.5 Pro Preview**
-• API Success Rate: 100.0%
-• Optimization Accuracy: 47.8%
-• Overall Score: 47.8
-• Perfect Optimizations: 11/23
+🏆 **Top Performer: OpenAI O1**
+• API Success Rate: 63.3%
+• Optimization Accuracy: 0.0%
+• Overall Score: 0.0
+• Perfect Optimizations: 0/19
 
 💡 **Key Finding: Post-Processing Revolution**
-Google Gemini 2.5 Pro Preview underwent dramatic transformation:
-• Rank: #1 (after post-processing)
-• API Success: 100.0% (was 4.3%)
-• Optimization Score: 47.8%
-• Transformation: From UNUSABLE → PRODUCTION READY
-
-🔧 **Post-Processing Impact**
-• Fixed 23 failed scenarios
-• Enabled access to advanced reasoning capabilities
-• Demonstrates importance of engineering robustness
 
 📈 **Production Readiness Categories**
 • Production Ready (≥80 overall score): 0 models
@@ -41,7 +31,7 @@ significant value from sophisticated models that initially appear unusable.
 
 | Rank | Model | API Success | Optimization Accuracy | Overall Score | Perfect Matches | Post-Processed |
 |------|-------|-------------|----------------------|---------------|-----------------|----------------|
-| 1 | Google Gemini 2.5 Pro Preview | 100.0% | 47.8% | 47.8 | 11/23 | ✅ |
-| 2 | OpenAI O1 | 60.0% | 0.0% | 0.0 | 0/12 | ❌ |
+| 1 | OpenAI O1 | 63.3% | 0.0% | 0.0 | 0/19 | ❌ |
+| 2 | Claude 3.7 Sonnet | 100.0% | 0.0% | 0.0 | 0/72 | ❌ |
 | 3 | Claude Opus 4 | 100.0% | 0.0% | 0.0 | 0/72 | ❌ |
 | 4 | Llama 3.3 70B | 100.0% | 0.0% | 0.0 | 0/72 | ❌ |

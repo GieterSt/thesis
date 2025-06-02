@@ -1,27 +1,26 @@
 # Final LLM Performance Analysis Report
 
 ## Executive Summary
-This report presents the definitive analysis of 4 Large Language Models (LLMs) for greenhouse LED scheduling optimization, including the impact of post-processing techniques.
+This report presents the definitive analysis of 3 Large Language Models (LLMs) for greenhouse LED scheduling optimization, including the impact of post-processing techniques.
 
 ## Key Findings
 
 ### 🎯 **Post-Processing Impact**
-- **Models Enhanced:** 1/4 models benefited from post-processing
+- **Models Enhanced:** 0/3 models benefited from post-processing
 - **Most Dramatic Improvement:** Google Gemini 2.5 Pro Preview (4.3% → 100.0% success rate)
 - **Technique:** JSON response cleaning and structure completion
 
 ### 🏆 **Production Readiness**
-- **Production Ready:** 0/4 models (≥80% overall score)
-- **Research Viable:** 4 models with limitations
+- **Production Ready:** 0/3 models (≥80% overall score)
+- **Research Viable:** 3 models with limitations
 
 ## Model Rankings
 
 | Rank | Model | API Success | Hourly Success | Overall Score | Category | Notes |
 |------|-------|-------------|----------------|---------------|----------|-------|
-| 1 | OpenAI O1 | 60.0% | 0.0% | 0.0 | 🔬 Research | Original |
-| 2 | Google Gemini 2.5 Pro Preview | 100.0% | 0.0% | 0.0 | 🔬 Research | Post-processed |
-| 3 | Claude Opus 4 | 0.0% | 0.0% | 0.0 | 🔴 Failed | Original |
-| 4 | Llama 3.3 70B | 0.0% | 0.0% | 0.0 | 🔴 Failed | Original |
+| 1 | OpenAI O1 | 63.3% | 0.0% | 0.0 | 🔬 Research | Original |
+| 2 | Claude Opus 4 | 0.0% | 0.0% | 0.0 | 🔴 Failed | Original |
+| 3 | Llama 3.3 70B | 0.0% | 0.0% | 0.0 | 🔴 Failed | Original |
 
 
 ## Detailed Analysis
@@ -41,7 +40,7 @@ This report presents the definitive analysis of 4 Large Language Models (LLMs) f
 #### 🔬 Research Only (API ≥50%, Overall <50%)
 - **Characteristics:** Advanced reasoning but poor API reliability
 - **Use Case:** Research and development, not production deployment
-- **Count:** 2 models
+- **Count:** 1 models
 
 #### 🔴 Failed (<50% API Success)
 - **Characteristics:** Fundamental connectivity or capability issues
@@ -102,5 +101,5 @@ This analysis demonstrates that LLM deployment for specialized optimization task
 The combination of Google Gemini's advanced reasoning (after post-processing) and Claude Opus 4's native reliability provides organizations with flexible options for LED optimization system deployment.
 
 ---
-*Report generated on 2025-06-02 13:18:16*
+*Report generated on 2025-06-02 13:50:38*
 *Analysis based on 72 greenhouse LED scheduling scenarios*

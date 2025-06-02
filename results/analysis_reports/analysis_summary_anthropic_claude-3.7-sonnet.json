@@ -1,0 +1,100 @@
+{
+    "model_info": {
+        "model_name": "anthropic_claude-3.7-sonnet",
+        "number_of_test_items": 72
+    },
+    "json_output_quality": {
+        "valid_json_rate_percentage": 100.0,
+        "valid_json_count": 72,
+        "total_items": 72
+    },
+    "ppfd_allocation_accuracy": {
+        "hourly_level": {
+            "exact_match_rate_percentage": 76.85,
+            "exact_match_count": 1328,
+            "total_hourly_comparisons": 1728,
+            "mae_hourly": 52.0327,
+            "rmse_hourly": 117.011
+        },
+        "daily_level": {
+            "exact_match_rate_percentage": 0.0,
+            "exact_match_count": 0,
+            "total_days_in_comparison": 72,
+            "daily_total_ppfd_mae": 521.7755,
+            "average_daily_ground_truth_ppfd_total": 2556.65,
+            "daily_total_ppfd_mae_percentage": 20.41
+        }
+    },
+    "daily_ppfd_allocation_bias": {
+        "tolerance_for_approx_match_ppfd_units": 1.0,
+        "days_model_under_allocated": 35,
+        "days_model_over_allocated": 7,
+        "days_model_approx_match": 30,
+        "average_daily_difference_ppfd_units": -463.5,
+        "std_dev_daily_ppfd_difference_ppfd_units": 847.74,
+        "cumulative_ppfd_under_allocated": -35469.77,
+        "cumulative_ppfd_over_allocated": 2097.52,
+        "net_cumulative_ppfd_difference": -33372.14
+    },
+    "cost_analysis": {
+        "total_ground_truth_cost_eur": 4189.1799,
+        "total_model_allocation_cost_eur": 3567.8312,
+        "cost_difference_absolute_eur": -621.3486,
+        "cost_difference_percentage": -14.83,
+        "std_dev_daily_cost_difference_eur": 23.782,
+        "paired_t_test_daily_costs": {
+            "t_statistic": -3.0791,
+            "p_value": 0.003
+        }
+    },
+    "seasonal_performance_analysis": {
+        "Summer": {
+            "date_range": "2024-06-04 to 2024-08-29",
+            "daily_total_ppfd_mae": 73.9438,
+            "daily_total_ppfd_mae_percentage": 5.84,
+            "days_model_under_allocated": 4,
+            "days_model_over_allocated": 1,
+            "days_model_approx_match": 12,
+            "average_daily_ppfd_difference_ppfd_units": -38.63,
+            "total_ground_truth_cost_eur": 437.43,
+            "total_model_allocation_cost_eur": 502.73,
+            "cost_difference_percentage": 14.93
+        },
+        "Spring": {
+            "date_range": "2024-03-03 to 2025-04-06",
+            "daily_total_ppfd_mae": 295.1837,
+            "daily_total_ppfd_mae_percentage": 13.14,
+            "days_model_under_allocated": 11,
+            "days_model_over_allocated": 2,
+            "days_model_approx_match": 9,
+            "average_daily_ppfd_difference_ppfd_units": -227.98,
+            "total_ground_truth_cost_eur": 799.03,
+            "total_model_allocation_cost_eur": 746.91,
+            "cost_difference_percentage": -6.52
+        },
+        "Winter": {
+            "date_range": "2024-01-03 to 2025-02-19",
+            "daily_total_ppfd_mae": 1181.5431,
+            "daily_total_ppfd_mae_percentage": 30.79,
+            "days_model_under_allocated": 11,
+            "days_model_over_allocated": 4,
+            "days_model_approx_match": 2,
+            "average_daily_ppfd_difference_ppfd_units": -1057.04,
+            "total_ground_truth_cost_eur": 1639.51,
+            "total_model_allocation_cost_eur": 1262.34,
+            "cost_difference_percentage": -23.01
+        },
+        "Autumn": {
+            "date_range": "2024-09-07 to 2024-11-26",
+            "daily_total_ppfd_mae": 608.1573,
+            "daily_total_ppfd_mae_percentage": 20.32,
+            "days_model_under_allocated": 9,
+            "days_model_over_allocated": 0,
+            "days_model_approx_match": 7,
+            "average_daily_ppfd_difference_ppfd_units": -608.14,
+            "total_ground_truth_cost_eur": 1313.21,
+            "total_model_allocation_cost_eur": 1055.85,
+            "cost_difference_percentage": -19.6
+        }
+    }
+}
