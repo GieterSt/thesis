@@ -1,5 +1,13 @@
 [
   {
+    "messages": [
+      {
+        "role": "user",
+        "content": "I need you to create an optimal LED lighting schedule for a greenhouse.\n\nGoal:\nCreate the most cost-efficient LED lighting schedule that allocates exactly 3143.111 PPFD-hours across a 24-hour period.\n\nReturn Format:\nCRITICAL: Your ENTIRE response must be ONLY this exact JSON structure:\n\n{\n  \"allocation_PPFD_per_hour\": {\n    \"hour_0\": 0.0,\n    \"hour_1\": 0.0,\n    \"hour_2\": 0.0,\n    \"hour_3\": 0.0,\n    \"hour_4\": 0.0,\n    \"hour_5\": 0.0,\n    \"hour_6\": 0.0,\n    \"hour_7\": 0.0,\n    \"hour_8\": 0.0,\n    \"hour_9\": 0.0,\n    \"hour_10\": 0.0,\n    \"hour_11\": 0.0,\n    \"hour_12\": 0.0,\n    \"hour_13\": 0.0,\n    \"hour_14\": 0.0,\n    \"hour_15\": 0.0,\n    \"hour_16\": 0.0,\n    \"hour_17\": 0.0,\n    \"hour_18\": 0.0,\n    \"hour_19\": 0.0,\n    \"hour_20\": 0.0,\n    \"hour_21\": 0.0,\n    \"hour_22\": 0.0,\n    \"hour_23\": 0.0\n  }\n}\n\nDo NOT include any text before or after the JSON. No explanations, no thinking, no comments.\nYour response must be directly parseable by JSON.parse().\n\nWarnings:\n- Your entire response must be ONLY valid JSON\n- Replace the 0.0 values with your calculated allocations\n- Never allocate more than the maximum capacity for any hour\n- Do not allocate any PPFD to hours with 0 capacity\n- Ensure your total allocation equals exactly 3143.111 PPFD-hours\n- Use a greedy algorithm prioritizing hours with the lowest EUR/PPFD ranking first\n\nContext Dump:\nDate: 2024-10-12\nDaily total PPFD requirement: 3143.111\nEUR/PPFD rankings by hour (1=cheapest): {\"hour_0\": 15, \"hour_1\": 16, \"hour_2\": 13, \"hour_3\": 12, \"hour_4\": 11, \"hour_5\": 21, \"hour_6\": 23, \"hour_7\": 22, \"hour_8\": 24, \"hour_9\": 20, \"hour_10\": 9, \"hour_11\": 5, \"hour_12\": 2, \"hour_13\": 7, \"hour_14\": 10, \"hour_15\": 19, \"hour_16\": 17, \"hour_17\": 14, \"hour_18\": 8, \"hour_19\": 6, \"hour_20\": 4, \"hour_21\": 3, \"hour_22\": 18, \"hour_23\": 1}\nMax PPFD capacity by hour: {\"hour_0\": 300.0, \"hour_1\": 300.0, \"hour_2\": 300.0, \"hour_3\": 300.0, \"hour_4\": 300.0, \"hour_5\": 300.0, \"hour_6\": 300.0, \"hour_7\": 300.0, \"hour_8\": 299.9896, \"hour_9\": 271.5146, \"hour_10\": 205.6115, \"hour_11\": 132.3235, \"hour_12\": 84.3981, \"hour_13\": 48.1807, \"hour_14\": 50.7854, \"hour_15\": 75.6059, \"hour_16\": 148.3101, \"hour_17\": 186.2162, \"hour_18\": 231.741, \"hour_19\": 286.21, \"hour_20\": 300.0, \"hour_21\": 300.0, \"hour_22\": 300.0, \"hour_23\": 300.0}\n\nONLY RETURN THE JSON. NO OTHER TEXT."
+      }
+    ]
+  },
+  {
     "messages v0": [
       {
         "role": "user",
