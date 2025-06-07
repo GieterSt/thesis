@@ -1,0 +1,104 @@
+{
+  "model_name": "mistralai_mistral-7b-instruct_free_v0_improved",
+  "timestamp": "20250607_134151",
+  "basic_performance": {
+    "total_test_cases": 73,
+    "successful_api_calls": 73,
+    "api_success_rate": 100.0,
+    "valid_json_responses": 27,
+    "json_success_rate": 36.986301369863014,
+    "allocation_responses": 1,
+    "allocation_success_rate": 1.36986301369863,
+    "total_api_time_seconds": 726.0428867340088,
+    "average_response_time": 9.945792968959024
+  },
+  "ground_truth_analysis": {
+    "total_comparisons": 1,
+    "exact_24h_matches": 0,
+    "exact_match_rate": 0.0,
+    "mean_hourly_match_rate": 20.833333333333336,
+    "mean_absolute_error": 175.71780371000636,
+    "daily_mae": 746.538845359848,
+    "seasonal_performance": {
+      "Winter": {
+        "count": 1,
+        "mean_success_rate": 20.833333333333336,
+        "std_dev": 0.0
+      }
+    },
+    "optimization_effectiveness": 20.833333333333336
+  },
+  "cost_category": "PAID",
+  "estimated_parameters": 7000000000.0,
+  "detailed_data": {
+    "allocation_data": [
+      {
+        "test_case": 0,
+        "allocations": {
+          "hour_0": 300.0,
+          "hour_1": 300.0,
+          "hour_2": 300.0,
+          "hour_3": 300.0,
+          "hour_4": 300.0,
+          "hour_5": 0.0,
+          "hour_6": 0.0,
+          "hour_7": 0.0,
+          "hour_8": 299.9896,
+          "hour_9": 271.5146,
+          "hour_10": 205.6115,
+          "hour_11": 132.3235,
+          "hour_12": 84.3981,
+          "hour_13": 48.1807,
+          "hour_14": 50.7854,
+          "hour_15": 75.6059,
+          "hour_16": 148.3101,
+          "hour_17": 186.2162,
+          "hour_18": 231.741,
+          "hour_19": 286.21,
+          "hour_20": 0.0,
+          "hour_21": 0.0,
+          "hour_22": 0.0,
+          "hour_23": 0.0
+        },
+        "total_ppfd": 3520.8866,
+        "api_time": 5.375427007675171,
+        "ground_truth_metrics": {
+          "exact_24h_match": false,
+          "hourly_matches": 5,
+          "hourly_match_rate": 20.833333333333336,
+          "mean_absolute_error": 175.71780371000636,
+          "daily_absolute_error": 746.538845359848,
+          "daily_relative_error": 17.49389309593191,
+          "total_model_ppfd": 3520.8866,
+          "total_optimal_ppfd": 4267.425445359848,
+          "scenario_complexity": {
+            "season": "Winter",
+            "ppfd_requirement": 4267.425445359848,
+            "complexity_score": 5.133712722679924,
+            "complexity_category": "High"
+          }
+        }
+      }
+    ],
+    "api_failures": [],
+    "ground_truth_comparisons": [
+      {
+        "exact_24h_match": false,
+        "hourly_matches": 5,
+        "hourly_match_rate": 20.833333333333336,
+        "mean_absolute_error": 175.71780371000636,
+        "daily_absolute_error": 746.538845359848,
+        "daily_relative_error": 17.49389309593191,
+        "total_model_ppfd": 3520.8866,
+        "total_optimal_ppfd": 4267.425445359848,
+        "scenario_complexity": {
+          "season": "Winter",
+          "ppfd_requirement": 4267.425445359848,
+          "complexity_score": 5.133712722679924,
+          "complexity_category": "High"
+        }
+      }
+    ]
+  },
+  "performance_grade": "\u274c **F (Failed)**"
+}

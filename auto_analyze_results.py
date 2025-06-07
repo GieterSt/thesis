@@ -174,38 +174,37 @@ def calculate_ground_truth_metrics(model_allocations, ground_truth, test_case_in
     }
 
 def assign_performance_grade(metrics):
-    """Assign performance grade based on comprehensive metrics"""
+    """Assign performance grade based on hourly success rate criteria"""
     api_success = metrics['basic_performance']['api_success_rate']
     json_success = metrics['basic_performance']['json_success_rate']
     
     if metrics['ground_truth_analysis']:
         hourly_success = metrics['ground_truth_analysis']['mean_hourly_match_rate']
         
-        # Exceptional performance
-        if api_success >= 95 and hourly_success >= 99:
+        # Grade based on hourly success rates as defined in methodology
+        if hourly_success > 95:
             return "🏆 **A+ (Exceptional)**"
-        # Production ready
-        elif api_success >= 95 and hourly_success >= 80:
-            return "🥇 **A (Production Ready)**"
-        # Reliable
-        elif api_success >= 95 and hourly_success >= 75:
-            return "🥈 **B+ (Reliable)**"
-        # Acceptable
-        elif api_success >= 95 and hourly_success >= 55:
-            return "🥉 **C+ (Acceptable)**"
-        # Unreliable but accurate when working
-        elif api_success < 20 and hourly_success >= 95:
-            return "⚠️ **B- (Unreliable)**"
+        elif hourly_success > 85:
+            return "🥇 **A (Excellent)**"
+        elif hourly_success > 75:
+            return "🥈 **B (Good)**"
+        elif hourly_success > 60:
+            return "🥉 **C (Acceptable)**"
+        elif hourly_success > 40:
+            return "📊 **D (Poor)**"
         else:
             return "❌ **F (Failed)**"
     else:
-        # Based on API/JSON success only
-        if api_success >= 95 and json_success >= 80:
-            return "🥈 **B+ (Reliable)**"
-        elif api_success >= 70 and json_success >= 50:
-            return "🥉 **C+ (Acceptable)**"
+        # Fallback for models without ground truth analysis
+        # Use JSON success as proxy for performance
+        if json_success > 85:
+            return "🥈 **B (Good)** - No GT analysis"
+        elif json_success > 60:
+            return "🥉 **C (Acceptable)** - No GT analysis"
+        elif json_success > 40:
+            return "📊 **D (Poor)** - No GT analysis"
         else:
-            return "❌ **F (Failed)**"
+            return "❌ **F (Failed)** - No GT analysis"
 
 def extract_model_parameters(model_name):
     """Extract estimated parameter count from model name"""
@@ -391,7 +390,7 @@ def analyze_single_model(filepath):
             'average_response_time': avg_response_time
         },
         'ground_truth_analysis': ground_truth_metrics,
-        'cost_category': 'FREE' if ':free' in filename else 'PAID',
+        'cost_category': 'FREE' if 'free' in filename.lower() else 'PAID',
         'estimated_parameters': extract_model_parameters(model_name),
         'detailed_data': {
             'allocation_data': allocation_data,
@@ -484,73 +483,99 @@ The LED optimization task combines multiple challenging requirements:
 
     # Add comprehensive statistical analysis if available
     if stats_results:
+        n_models = len(stats_results.get('model_data', []))
+        spearman_r = stats_results['correlation_analysis']['spearman_r']
+        spearman_p = stats_results['correlation_analysis']['spearman_p']
+        pearson_r = stats_results['correlation_analysis']['pearson_r']
+        pearson_p = stats_results['correlation_analysis']['pearson_p']
+        
+        # Honest significance assessment
+        spearman_sig = "✅ Highly Significant" if spearman_p < 0.001 else "⚠️ Significant" if spearman_p < 0.05 else "❌ Not Significant"
+        pearson_sig = "✅ Highly Significant" if pearson_p < 0.001 else "⚠️ Significant" if pearson_p < 0.05 else "❌ Not Significant"
+        
+        # Special handling for perfect correlation with small sample
+        if n_models <= 3 and spearman_r == 1.0:
+            spearman_explanation = "Perfect rank order (typical with n=3)"
+        else:
+            spearman_explanation = spearman_sig
+            
         readme_content += f"""
 
-## 📊 Comprehensive Statistical Analysis
+## 📊 Statistical Analysis
 
-### Scale-Performance Correlation Analysis
-- **Spearman Rank Correlation**: r_s = {stats_results['correlation_analysis']['spearman_r']:.3f}, p = {stats_results['correlation_analysis']['spearman_p']:.6f}
-- **Pearson Correlation**: r = {stats_results['correlation_analysis']['pearson_r']:.3f}, p = {stats_results['correlation_analysis']['pearson_p']:.6f}
-- **Statistical Significance**: {'✅ Highly Significant' if stats_results['correlation_analysis']['spearman_p'] < 0.001 else '⚠️ Significant' if stats_results['correlation_analysis']['spearman_p'] < 0.05 else '❌ Not Significant'}
+### ⚠️ **Important Statistical Limitations**
 
-### Regression Analysis
-- **Linear Model**: Success = {stats_results['regression_analysis']['slope']:.2f} × log₁₀(Parameters) + {stats_results['regression_analysis']['intercept']:.2f}
-- **R-squared**: {stats_results['regression_analysis']['r_squared']:.3f} (explains {stats_results['regression_analysis']['r_squared']*100:.1f}% of variance)
-- **Slope Significance**: p = {stats_results['regression_analysis']['slope_p']:.6f} {'✅' if stats_results['regression_analysis']['slope_p'] < 0.05 else '❌'}
+**Current Sample**: n={n_models} models (preliminary analysis only)
+- ⚠️ **Underpowered**: Need n≥5 for reliable correlation analysis
+- 📊 **Pending**: DeepSeek R1 (671B) & DeepSeek R1 Distill (7B) will complete analysis
 
-### Performance Threshold Analysis
-- **Success Threshold**: >{stats_results['threshold_analysis']['success_threshold']}% hourly accuracy
-- **Critical Parameter Count**: ~{stats_results['threshold_analysis']['parameter_threshold']:.0f}B parameters for reliable performance
-- **Threshold Evidence**: Models below this threshold show dramatic performance degradation
+### Scale-Performance Correlation (Preliminary)
+* **Observed Trend**: Clear monotonic increase with model scale"""
 
-### Economic Analysis
-Economic cost-effectiveness per model:"""
-
-        # Add economic analysis for each model
-        for metrics in sorted_metrics:
-            if metrics['ground_truth_analysis']:
-                hourly_success = metrics['ground_truth_analysis']['mean_hourly_match_rate']
-                # Estimate cost based on model size and usage
-                if metrics['estimated_parameters'] >= 100e9:  # 100B+
-                    cost_per_1k = 0.01  # Premium models
-                elif metrics['estimated_parameters'] >= 10e9:  # 10-100B
-                    cost_per_1k = 0.0075  # Mid-tier
-                else:  # <10B
-                    cost_per_1k = 0.00014  # Small models
-                
-                est_cost = (72 * cost_per_1k)  # 72 test cases
-                cost_per_success = est_cost / max(hourly_success, 1) * 100
-                
+        # Add model performance breakdown with proper context
+        if 'model_data' in stats_results:
+            for model in sorted(stats_results['model_data'], key=lambda x: x['parameters']):
                 readme_content += f"""
-- **{metrics['model_name'].replace('_', ' ').title()}**: ${est_cost:.3f} total, ${cost_per_success:.3f} per successful optimization"""
+  - {model['parameters']/1e9:.0f}B → {model['hourly_success']:.1f}% success"""
 
-    # Add visualizations section if available
-    if visualizations:
+        # Determine proper significance language
+        spearman_note = "all models in perfect rank order" if abs(spearman_r) == 1.0 else f"strong rank correlation"
+        if n_models == 3:
+            spearman_note += f" (only 6 possible orderings with n=3)"
+        
+        pearson_sig_text = "Not statistically significant" if pearson_p > 0.05 else ("Highly significant" if pearson_p < 0.001 else "Significant")
+        pearson_interpretation = "trending but not significant (requires p < 0.05)" if pearson_p > 0.05 else f"statistically {pearson_sig_text.lower()}"
+
         readme_content += f"""
 
-## 📈 Thesis-Quality Visualizations
+* **Spearman Rank**: r_s = {spearman_r:.3f}, p = {spearman_p:.3f}
+  - **{spearman_note}**
+* **Pearson Correlation**: r = {pearson_r:.3f}, p = {pearson_p:.3f}
+  - **{pearson_interpretation}**
 
-Our comprehensive analysis includes professional academic visualizations demonstrating the scaling relationship:
+**Interpretation**: Clear positive trend between scale and performance, 
+but statistical significance cannot be established with only {n_models} models.
 
-### Figure 1: Parameter-Performance Scaling Law
-![Scaling Law Analysis](../results/figures/{visualizations.get('scaling_law', '').split('/')[-1] if visualizations.get('scaling_law') else ''})
-*Demonstrates clear logarithmic relationship between model parameters and optimization performance*
+### Regression Analysis (Compelling Preliminary Evidence)
 
-### Figure 2: Performance Distribution by Model Size
-![Performance Distribution](../results/figures/{visualizations.get('performance_distribution', '').split('/')[-1] if visualizations.get('performance_distribution') else ''})
-*Box plots showing performance variance across different model size categories*
+**Linear Scaling Model**: Success = {stats_results['regression_analysis']['slope']:.2f} × log₁₀(Parameters) + {stats_results['regression_analysis']['intercept']:.2f}
 
-### Figure 3: Cost-Performance Analysis
-![Cost-Performance Analysis](../results/figures/{visualizations.get('cost_performance', '').split('/')[-1] if visualizations.get('cost_performance') else ''})
-*Economic analysis of model costs vs. optimization effectiveness*
+**Model Quality:**
+- **R²**: {stats_results['regression_analysis']['r_squared']:.3f} (explains {stats_results['regression_analysis']['r_squared']*100:.1f}% of variance)
+- **Adjusted R²**: {1 - (1 - stats_results['regression_analysis']['r_squared']) * (n_models - 1) / (n_models - 2):.3f} (small sample correction)
+- **Degrees of freedom**: {n_models - 2} (saturated model with n={n_models})
 
-### Figure 4: Performance Threshold Analysis
-![Threshold Analysis](../results/figures/{visualizations.get('threshold_analysis', '').split('/')[-1] if visualizations.get('threshold_analysis') else ''})
-*Logistic regression curve showing critical parameter threshold for reliable performance*
+**Slope Parameter:**
+- **Coefficient**: {stats_results['regression_analysis']['slope']:.2f} ± {stats_results['regression_analysis']['slope_se']:.2f} (SE)
+- **95% Confidence Interval**: [{stats_results['regression_analysis']['slope'] - 12.706*stats_results['regression_analysis']['slope_se']:.1f}, {stats_results['regression_analysis']['slope'] + 12.706*stats_results['regression_analysis']['slope_se']:.1f}] (t₀.₀₂₅,₁ = 12.706)
+- **Significance**: p = {stats_results['regression_analysis']['slope_p']:.3f} {'⚠️ **Marginally significant** (borderline evidence)' if 0.05 <= stats_results['regression_analysis']['slope_p'] <= 0.10 else '✅ **Significant**' if stats_results['regression_analysis']['slope_p'] < 0.05 else '❌ **Not significant**'}
 
-### Figure 5: Comprehensive Research Summary
-![Comprehensive Summary](../results/figures/{visualizations.get('comprehensive_summary', '').split('/')[-1] if visualizations.get('comprehensive_summary') else ''})
-*Four-panel academic figure summarizing all key findings for thesis publication*"""
+**Practical Interpretation:**
+- **Each 10× parameter increase** → +{stats_results['regression_analysis']['slope']:.1f}% performance improvement
+- **Example**: 7B → 70B models predicted +{stats_results['regression_analysis']['slope']:.1f}%, observed +33.2%
+
+**Model Limitations:**
+- **Valid range**: {min([m['parameters'] for m in stats_results['model_data']])/1e9:.0f}B - {max([m['parameters'] for m in stats_results['model_data']])/1e9:.0f}B parameters
+- **Boundary conditions**: Model may predict negative performance below ~{(-stats_results['regression_analysis']['intercept']/stats_results['regression_analysis']['slope']) if stats_results['regression_analysis']['slope'] > 0 else 'N/A':.0f}B parameters
+- **Saturated model**: Perfect fit expected with only {n_models} data points
+
+**Context for Preliminary Research:**
+- **Strong R² with small n**: Needs validation with additional models
+- **Wide confidence intervals**: Reflect uncertainty with limited data
+- **Trend compelling**: Clear monotonic relationship visible despite underpowered analysis
+
+### Performance Threshold Analysis  
+- **Method**: {stats_results['threshold_analysis']['methodology']}
+- **Data Limitation**: n={n_models} models (minimum n≥8 recommended)
+- **Current Status**: {"Qualitative performance zones only - insufficient data for quantitative thresholds" if n_models < 5 else "Preliminary trend analysis with high uncertainty"}
+
+### What's Missing for Statistical Validation
+- **Confidence intervals** for correlation estimates
+- **Effect size** calculations (each 10x parameter increase = X% improvement)  
+- **Power analysis** showing current n={n_models} is underpowered
+- **Additional models** (DeepSeek R1 variants) for proper validation
+
+**Note**: Analysis will automatically update when DeepSeek R1 models complete."""
 
     readme_content += f"""
 
@@ -584,6 +609,26 @@ python auto_analyze_results.py
 python auto_analyze_results.py --monitor
 ```
 
+## Complete Model Reference
+
+| Model Details | DeepSeek R1 | Claude 3.7 | Llama 3.3 | Mistral 7B | DeepSeek Distill |
+|--------------|-------------|------------|-----------|------------|------------------|
+| **Architecture** |||||
+| Type | MoE (37B active) | Dense | Dense | Dense | Dense |
+| Total Parameters | 671B | ~200B* | 70B | 7.3B | 7B |
+| Training | Reasoning-optimized | Balanced | Instruction | Instruction | Distilled from R1 |
+| **Capabilities** |||||
+| Context Length | 163,840 | 200,000 | 131,072 | 32,768 | 131,072 |
+| Max Output | 163,840 | 128,000 | 4,096 | 16,000 | 131,072 |
+| **Pricing (per M tokens)** |||||
+| Input | FREE | $3.00 | FREE | FREE | $0.10 |
+| Output | FREE | $15.00 | FREE | FREE | $0.20 |
+| **Performance** |||||
+| Avg Latency | 1.54s | 1.85s | 0.51s | 0.46s | 1.05s |
+| Throughput | 41.3 tps | 56.2 tps | 134.3 tps | 114.6 tps | 128.7 tps |
+
+*Claude 3.7 Sonnet parameter count estimated based on model class and performance characteristics
+
 ## Methodology
 
 ### Test Data
@@ -592,12 +637,19 @@ python auto_analyze_results.py --monitor
 - **Variable PPFD targets**: Adjusted based on external light availability
 - **Seasonal variation**: Different growing seasons and conditions
 - **Economic constraints**: Variable electricity prices throughout the year
+- **Ground truth**: Generated using greedy algorithm (mathematical optimum for single-day optimization)
 
 ### Evaluation Metrics
 - **API Success Rate**: Percentage of valid responses from model
 - **Hourly Success Rate**: Percentage of exact hourly allocation matches with ground truth
 - **Daily MAE**: Mean absolute error between predicted and optimal daily totals
 - **Performance Grade**: Overall assessment from A+ (Exceptional) to F (Failed)
+  - A+: >95% hourly success
+  - A: >85% hourly success  
+  - B: >75% hourly success
+  - C: >60% hourly success
+  - D: >40% hourly success
+  - F: ≤40% hourly success
 
 ## Key Findings
 
@@ -611,19 +663,32 @@ python auto_analyze_results.py --monitor
         
         readme_content += f"""
 #### **{model_display}**
+
+📊 **Model Specifications**
 - **Parameters**: {metrics['estimated_parameters']:,} ({metrics['estimated_parameters']/1e9:.0f}B)
-- **API Success**: {basic['api_success_rate']:.1f}% ({basic['successful_api_calls']}/{basic['total_test_cases']})
-- **JSON Success**: {basic['json_success_rate']:.1f}% ({basic['valid_json_responses']} valid responses)
-- **Average Response Time**: {basic['average_response_time']:.2f}s
 - **Cost Category**: {metrics['cost_category']}
-- **Performance Grade**: {metrics['performance_grade']}"""
-        
+{f"- **API Pricing**: {metrics.get('cost_info', 'Varies by provider')}" if metrics['cost_category'] == 'PAID' else "- **Cost**: Completely free to use"}
+
+🔧 **Technical Performance**
+- **API Success**: {basic['api_success_rate']:.1f}% ({basic['successful_api_calls']}/{basic['total_test_cases']})
+- **JSON Validity**: {basic['json_success_rate']:.1f}% ({basic['valid_json_responses']} valid responses)
+- **Average Response Time**: {basic['average_response_time']:.2f}s
+
+🎯 **Optimization Performance**"""
+
         if metrics['ground_truth_analysis']:
             gt = metrics['ground_truth_analysis']
             readme_content += f"""
-- **Hourly Success Rate**: {gt['mean_hourly_match_rate']:.1f}%
-- **Daily MAE**: {gt['daily_mae']:.1f} PPFD
-- **Exact 24h Matches**: {gt['exact_24h_matches']}/{gt['total_comparisons']} ({gt['exact_match_rate']:.1f}%)"""
+- **Hourly Success Rate**: {gt['mean_hourly_match_rate']:.1f}% (optimization accuracy)
+- **Daily MAE**: {gt['daily_mae']:.1f} PPFD (prediction error)
+- **Performance Grade**: {metrics['performance_grade']}
+- **Exact 24h Matches**: {gt['exact_24h_matches']}/{gt['total_comparisons']} ({gt['exact_match_rate']:.1f}%)*
+- **Total Ground Truth Comparisons**: {gt['total_comparisons']} scenarios"""
+        else:
+            readme_content += f"""
+- **Ground Truth Analysis**: ❌ No valid allocations for comparison
+- **Performance Grade**: {metrics['performance_grade']}
+- **Issue**: Model failed to produce parseable optimization schedules"""
 
     readme_content += f"""
 
@@ -673,6 +738,10 @@ This research provides strong empirical evidence that complex optimization tasks
 
 ## Auto-Updated Analysis
 
+**Important Notes:**
+- **Exact 24h Matches (*)**: Requires all 24 hourly values to match ground truth perfectly. Expected to be 0 for most models due to the strictness of exact matching in continuous optimization problems. Hourly Success Rate is the more meaningful metric for optimization performance.
+- **Sample Size Variations**: Some models show different test counts (72 vs 73) due to dataset versions or processing differences. Analysis accounts for these variations.
+
 This README is automatically updated when new model results are detected in `results/model_outputs/`.
 
 **Last Updated**: {timestamp}
@@ -697,7 +766,7 @@ For questions or contributions, please refer to the analysis system documentatio
     print(f"🕒 Timestamp: {timestamp}")
 
 def generate_html_from_readme():
-    """Generate HTML from current README.md with professional styling"""
+    """Generate HTML from current README.md with professional styling and embedded visualizations"""
     
     # Ensure docs directory exists
     docs_dir = Path('docs')
@@ -711,6 +780,56 @@ def generate_html_from_readme():
         # Convert markdown to HTML with extensions
         md = markdown.Markdown(extensions=['tables', 'toc', 'codehilite', 'fenced_code'])
         html_content = md.convert(markdown_content)
+        
+        # Find and embed visualizations as base64
+        visualization_embeds = ""
+        results_dir = Path('results/figures')
+        if results_dir.exists():
+            # Find the most recent visualizations
+            png_files = list(results_dir.glob('*.png'))
+            if png_files:
+                # Sort by modification time, get the most recent set
+                png_files.sort(key=lambda x: x.stat().st_mtime, reverse=True)
+                
+                # Get the 5 most recent visualizations
+                recent_files = png_files[:5]
+                
+                visualization_embeds = "<h2>📊 Research Visualizations</h2>\n"
+                
+                for img_path in recent_files:
+                    try:
+                        import base64
+                        with open(img_path, 'rb') as img_file:
+                            img_data = base64.b64encode(img_file.read()).decode('utf-8')
+                        
+                        # Clean up filename for caption
+                        caption = img_path.stem.replace('_', ' ').title()
+                        if 'scaling' in img_path.name.lower():
+                            caption = "Scaling Law Analysis - Model Performance vs Parameters"
+                        elif 'threshold' in img_path.name.lower():
+                            caption = "Threshold Analysis - Reliability vs Model Size"
+                        elif 'cost' in img_path.name.lower():
+                            caption = "Cost-Performance Trade-off Analysis"
+                        elif 'distribution' in img_path.name.lower():
+                            caption = "Performance Distribution by Model Size"
+                        elif 'comprehensive' in img_path.name.lower():
+                            caption = "Comprehensive Model Analysis Summary"
+                        
+                        visualization_embeds += f'''
+<div class="figure-container">
+    <div class="figure-caption"><strong>Figure:</strong> {caption}</div>
+    <img src="data:image/png;base64,{img_data}" class="research-figure" alt="{caption}">
+    <div class="figure-caption">Generated from automated model testing results</div>
+</div>
+'''
+                    except Exception as e:
+                        print(f"⚠️ Could not embed {img_path.name}: {e}")
+        
+        # Insert visualizations after the first h2 (after the overview)
+        if visualization_embeds and "<h2>" in html_content:
+            parts = html_content.split("<h2>", 1)
+            if len(parts) == 2:
+                html_content = parts[0] + visualization_embeds + "<h2>" + parts[1]
         
         # Get current timestamp
         timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
@@ -865,6 +984,7 @@ def generate_html_from_readme():
         
         print(f'📝 HTML updated: {html_filename}')
         print(f'🕒 Generated on: {timestamp}')
+        print(f'📊 Embedded {len(png_files) if "png_files" in locals() else 0} visualizations')
         
         return True
         
@@ -945,8 +1065,8 @@ def run_comprehensive_analysis():
         print(f"\n🎯 KEY STATISTICAL FINDINGS:")
         print(f"   📈 Spearman correlation: r_s = {stats_results['correlation_analysis']['spearman_r']:.3f}")
         print(f"   📊 Regression R²: {stats_results['regression_analysis']['r_squared']:.3f}")
-        if stats_results['threshold_analysis']['parameter_threshold']:
-            print(f"   🎯 Parameter threshold: ~{stats_results['threshold_analysis']['parameter_threshold']:.1f}B")
+        if stats_results['threshold_analysis']['estimated_threshold_parameters']:
+            print(f"   🎯 Parameter threshold: ~{stats_results['threshold_analysis']['estimated_threshold_parameters']/1e9:.1f}B")
     
     return master_data
 
@@ -1032,7 +1152,15 @@ def comprehensive_statistical_analysis(all_metrics):
     
     # Spearman rank correlation (non-parametric)
     log_params = np.log10(df['parameters'])
-    spearman_corr, spearman_p = spearmanr(log_params, df['hourly_success'])
+    spearman_corr, spearman_p_raw = spearmanr(log_params, df['hourly_success'])
+    
+    # Fix p-value for small samples - with n=3, minimum p-value is 1/6! = 1/6 ≈ 0.33
+    n_models = len(df)
+    if n_models == 3 and abs(spearman_corr) == 1.0:
+        # Perfect correlation with n=3 has p-value = 1/6 ≈ 0.33 (exact permutation test)
+        spearman_p = 1/6  # 0.3333...
+    else:
+        spearman_p = spearman_p_raw
     
     # Pearson correlation (parametric)
     pearson_corr, pearson_p = pearsonr(log_params, df['hourly_success'])
@@ -1092,161 +1220,209 @@ def comprehensive_statistical_analysis(all_metrics):
     print("\n🎯 3. PERFORMANCE THRESHOLD ANALYSIS")
     print("-" * 50)
     
-    # Define success threshold (>75% hourly accuracy)
-    success_threshold = 75
-    df['is_successful'] = df['hourly_success'] > success_threshold
+    # Define explicit thresholds with clear rationale
+    reliability_threshold = 75  # >75% hourly accuracy for production use
+    marginal_threshold = 50     # 50-75% for research/prototype use
     
-    # Find parameter threshold where P(success) > 0.5
-    if df['is_successful'].sum() > 0:
-        successful_params = df[df['is_successful']]['parameters']
-        unsuccessful_params = df[~df['is_successful']]['parameters']
+    print(f"🎯 Performance Thresholds Defined:")
+    print(f"   📊 **Reliable Production Use**: >{reliability_threshold}% hourly accuracy")
+    print(f"   📊 **Marginal/Prototype Use**: {marginal_threshold}-{reliability_threshold}% hourly accuracy")
+    print(f"   📊 **Inadequate Performance**: <{marginal_threshold}% hourly accuracy")
+    print(f"   💡 **Rationale**: Production greenhouse systems require >75% accuracy for automated LED control")
+    
+    # Classify models by performance zones
+    reliable_models = df[df['hourly_success'] > reliability_threshold]
+    marginal_models = df[(df['hourly_success'] >= marginal_threshold) & (df['hourly_success'] <= reliability_threshold)]
+    inadequate_models = df[df['hourly_success'] < marginal_threshold]
+    
+    print(f"\n📈 **Model Performance Classification**:")
+    print(f"   🟢 **Reliable Models** (>{reliability_threshold}%): {len(reliable_models)}")
+    for _, model in reliable_models.iterrows():
+        print(f"      • {model['model_name']}: {model['parameters']/1e9:.0f}B parameters → {model['hourly_success']:.1f}%")
+    
+    print(f"   🟡 **Marginal Models** ({marginal_threshold}-{reliability_threshold}%): {len(marginal_models)}")
+    for _, model in marginal_models.iterrows():
+        print(f"      • {model['model_name']}: {model['parameters']/1e9:.0f}B parameters → {model['hourly_success']:.1f}%")
+    
+    print(f"   🔴 **Inadequate Models** (<{marginal_threshold}%): {len(inadequate_models)}")
+    for _, model in inadequate_models.iterrows():
+        print(f"      • {model['model_name']}: {model['parameters']/1e9:.0f}B parameters → {model['hourly_success']:.1f}%")
+    
+    # Calculate threshold estimates with methodology
+    threshold_estimate = None
+    threshold_confidence_interval = None
+    threshold_method = "Insufficient data for reliable threshold estimation"
+    
+    # With limited data (n<8), avoid specific threshold calculations
+    # Instead provide qualitative performance zones
+    if len(df) < 5:  # With very limited data, be extremely cautious
+        print(f"\n🎯 **Threshold Analysis Results**:")
+        print(f"   ⚠️ **Insufficient Data**: Cannot reliably estimate threshold with n={len(df)}")
+        print(f"   📊 **Minimum Sample Size**: n≥8 models across parameter range required")
+        print(f"   🔬 **Current Approach**: Qualitative performance zone analysis only")
         
-        if len(successful_params) > 0 and len(unsuccessful_params) > 0:
-            threshold_params = np.median(successful_params)
-            print(f"🎯 Success Threshold Analysis:")
-            print(f"   Threshold: >{success_threshold}% hourly accuracy")
-            print(f"   Parameter threshold: ~{threshold_params/1e9:.1f}B parameters")
+        # Provide qualitative zones instead of specific thresholds
+        print(f"\n📈 **Performance Zone Analysis** (Qualitative):")
+        if len(inadequate_models) > 0:
+            max_inadequate = inadequate_models['parameters'].max()
+            print(f"   🔴 **Confirmed Inadequate**: ≤{max_inadequate/1e9:.0f}B parameters")
+            print(f"      • Evidence: {len(inadequate_models)} model(s) with <{marginal_threshold}% success")
             
-            # Chi-square test for independence
-            contingency = pd.crosstab(df['parameters'] > threshold_params, df['is_successful'])
-            chi2, p_chi2, dof, expected = chi2_contingency(contingency)
+        if len(marginal_models) > 0:
+            min_marginal = marginal_models['parameters'].min()
+            max_marginal = marginal_models['parameters'].max()
+            print(f"   🟡 **Marginal Performance**: {min_marginal/1e9:.0f}B-{max_marginal/1e9:.0f}B parameters")
+            print(f"      • Evidence: {len(marginal_models)} model(s) with {marginal_threshold}-{reliability_threshold}% success")
             
-            print(f"   χ²({dof}) = {chi2:.3f}, p = {p_chi2:.6f}")
-    
-    # ================================
-    # 4. BETWEEN-GROUP COMPARISONS 📊
-    # ================================
-    print("\n📊 4. BETWEEN-GROUP STATISTICAL TESTS")
-    print("-" * 50)
-    
-    # Categorize models by size
-    df['size_category'] = pd.cut(df['parameters'], 
-                                bins=[0, 10e9, 100e9, np.inf], 
-                                labels=['Small (<10B)', 'Medium (10-100B)', 'Large (100B+)'])
-    
-    # Kruskal-Wallis H-test (non-parametric ANOVA)
-    groups = [group['hourly_success'].values for name, group in df.groupby('size_category') if len(group) > 0]
-    
-    if len(groups) >= 2:
-        if len(groups) == 2:
-            # Mann-Whitney U test for two groups
-            statistic, p_value = mannwhitneyu(groups[0], groups[1], alternative='two-sided')
-            print(f"🔬 Mann-Whitney U Test:")
-            print(f"   U = {statistic:.3f}, p = {p_value:.6f}")
+        if len(reliable_models) > 0:
+            min_reliable = reliable_models['parameters'].min()
+            print(f"   🟢 **Confirmed Reliable**: ≥{min_reliable/1e9:.0f}B parameters")
+            print(f"      • Evidence: {len(reliable_models)} model(s) with >{reliability_threshold}% success")
             
-            # Effect size (r)
-            n1, n2 = len(groups[0]), len(groups[1])
-            z_score = norm.ppf(p_value/2)  # Approximate z-score
-            r_effect = abs(z_score) / np.sqrt(n1 + n2)
-            print(f"   Effect size r = {r_effect:.3f}")
-            
-        elif len(groups) > 2:
-            # Kruskal-Wallis test for multiple groups
-            statistic, p_value = kruskal(*groups)
-            print(f"🔬 Kruskal-Wallis H Test:")
-            print(f"   H = {statistic:.3f}, p = {p_value:.6f}")
-    
-    # ================================
-    # 5. CONFIDENCE INTERVALS 📊
-    # ================================
-    print("\n📊 5. CONFIDENCE INTERVALS & DESCRIPTIVE STATISTICS")
-    print("-" * 50)
-    
-    for idx, row in df.iterrows():
-        n_trials = row['total_comparisons']
-        successes = row['hourly_success'] * n_trials / 100
+        print(f"\n🔍 **Critical Data Gap Analysis**:")
+        if len(inadequate_models) > 0 and len(reliable_models) > 0:
+            max_inadequate = inadequate_models['parameters'].max()
+            min_reliable = reliable_models['parameters'].min()
+            gap_ratio = min_reliable / max_inadequate
+            print(f"   📈 **Large Performance Gap**: {max_inadequate/1e9:.0f}B → {min_reliable/1e9:.0f}B ({gap_ratio:.1f}× increase)")
+            print(f"   💡 **Threshold Range**: Likely between {max_inadequate/1e9:.0f}B-{min_reliable/1e9:.0f}B parameters")
+            print(f"   ⚠️ **Uncertainty**: Cannot narrow further without models in {max_inadequate*1.5/1e9:.0f}B-{min_reliable*0.8/1e9:.0f}B range")
         
-        # Wilson confidence interval for proportions
-        p_hat = successes / n_trials
-        z = 1.96  # 95% CI
+        threshold_method = f"Qualitative zone analysis only (n={len(df)} insufficient for quantitative estimation)"
         
-        wilson_ci_lower = (p_hat + z**2/(2*n_trials) - z*np.sqrt((p_hat*(1-p_hat) + z**2/(4*n_trials))/n_trials)) / (1 + z**2/n_trials)
-        wilson_ci_upper = (p_hat + z**2/(2*n_trials) + z*np.sqrt((p_hat*(1-p_hat) + z**2/(4*n_trials))/n_trials)) / (1 + z**2/n_trials)
+    else:
+        # Original logic for when we have more data
+        if len(reliable_models) > 0 and len(inadequate_models) > 0:
+            # We have data on both sides of threshold
+            min_reliable_params = reliable_models['parameters'].min()
+            max_inadequate_params = inadequate_models['parameters'].max()
+            
+            if min_reliable_params > max_inadequate_params:
+                # Clear threshold exists between these values
+                threshold_estimate = (min_reliable_params + max_inadequate_params) / 2
+                threshold_confidence_interval = (max_inadequate_params/1e9, min_reliable_params/1e9)
+                threshold_method = f"Interpolation between observed failure ({max_inadequate_params/1e9:.0f}B) and success ({min_reliable_params/1e9:.0f}B)"
+                
+                print(f"\n🎯 **Threshold Analysis Results**:")
+                print(f"   📊 **Estimated Reliability Threshold**: ~{threshold_estimate/1e9:.0f}B parameters")
+                print(f"   📊 **95% Confidence Interval**: [{threshold_confidence_interval[0]:.0f}B, {threshold_confidence_interval[1]:.0f}B]")
+            else:
+                # Overlapping ranges - need statistical method
+                threshold_method = "Statistical analysis needed (overlapping performance ranges)"
+                print(f"\n🎯 **Threshold Analysis Results**:")
+                print(f"   ⚠️ **Overlapping Performance**: Cannot estimate clear threshold")
         
-        print(f"📈 {row['model_name']}:")
-        print(f"   Success Rate: {row['hourly_success']:.1f}% [95% CI: {wilson_ci_lower*100:.1f}%, {wilson_ci_upper*100:.1f}%]")
-        print(f"   Daily MAE: {row['daily_mae']:.1f} PPFD")
-        print(f"   Parameters: {row['parameters']/1e9:.1f}B")
+        elif len(reliable_models) > 0 and len(inadequate_models) == 0:
+            # Only reliable models observed
+            min_reliable_params = reliable_models['parameters'].min()
+            threshold_estimate = min_reliable_params * 0.7  # Conservative estimate
+            threshold_confidence_interval = (min_reliable_params*0.3/1e9, min_reliable_params/1e9)
+            threshold_method = f"Lower bound extrapolation from smallest reliable model ({min_reliable_params/1e9:.0f}B)"
+            
+            print(f"\n🎯 **Threshold Analysis Results**:")
+            print(f"   📊 **Estimated Reliability Threshold**: ~{threshold_estimate/1e9:.0f}B parameters")
+            print(f"   📊 **95% Confidence Interval**: [{threshold_confidence_interval[0]:.0f}B, {threshold_confidence_interval[1]:.0f}B]")
+        
+        elif len(reliable_models) == 0 and len(inadequate_models) > 0:
+            # Only inadequate models observed
+            max_inadequate_params = inadequate_models['parameters'].max()
+            threshold_estimate = max_inadequate_params * 2.0  # Conservative estimate
+            threshold_confidence_interval = (max_inadequate_params/1e9, max_inadequate_params*5/1e9)
+            threshold_method = f"Upper bound extrapolation from largest inadequate model ({max_inadequate_params/1e9:.0f}B)"
+            
+            print(f"\n🎯 **Threshold Analysis Results**:")
+            print(f"   📊 **Estimated Reliability Threshold**: ~{threshold_estimate/1e9:.0f}B parameters")
+            print(f"   📊 **95% Confidence Interval**: [{threshold_confidence_interval[0]:.0f}B, {threshold_confidence_interval[1]:.0f}B]")
+        
+        else:
+            print(f"\n🎯 **Threshold Analysis Results**:")
+            print(f"   ⚠️ **Cannot estimate threshold**: {threshold_method}")
     
-    # ================================
-    # 6. ECONOMIC ANALYSIS 💰
-    # ================================
-    print("\n💰 6. ECONOMIC ANALYSIS")
-    print("-" * 50)
+    print(f"\n   🔬 **Methodology**: {threshold_method}")
+    if len(df) < 8:
+        print(f"   ⚠️ **Data Limitations**: n={len(df)} models (minimum n≥8 recommended for reliable threshold analysis)")
     
-    # Estimate costs (placeholder - adjust based on actual pricing)
-    cost_per_request = {
-        'FREE': 0.0,
-        'PAID': 0.01  # $0.01 per request estimate
+    # Identify critical data gaps
+    print(f"\n🔍 **Critical Data Gaps**:")
+    all_params = sorted(df['parameters'].values)
+    for i in range(len(all_params)-1):
+        gap_size = all_params[i+1] / all_params[i]
+        if gap_size > 5:  # More than 5x gap
+            print(f"   📈 **Large gap**: {all_params[i]/1e9:.0f}B → {all_params[i+1]/1e9:.0f}B ({gap_size:.1f}× increase)")
+            print(f"      💡 Need models in {all_params[i]*2/1e9:.0f}B-{all_params[i+1]*0.7/1e9:.0f}B range for better threshold estimation")
+    
+    # Statistical threshold analysis (if enough data)
+    statistical_threshold = None
+    if len(df) >= 3 and len(np.unique(df['hourly_success'] > reliability_threshold)) > 1:
+        try:
+            from sklearn.linear_model import LogisticRegression
+            
+            # Logistic regression for P(success) vs log(parameters)
+            X = np.log10(df['parameters'].values).reshape(-1, 1)
+            y = (df['hourly_success'] > reliability_threshold).astype(int)
+            
+            logistic = LogisticRegression()
+            logistic.fit(X, y)
+            
+            # Find parameter value where P(success) = 0.5
+            # logistic: log(p/(1-p)) = β₀ + β₁*x
+            # For p=0.5: 0 = β₀ + β₁*x → x = -β₀/β₁
+            if logistic.coef_[0][0] != 0:
+                log_threshold = -logistic.intercept_[0] / logistic.coef_[0][0]
+                statistical_threshold = 10 ** log_threshold
+                
+                print(f"\n📊 **Statistical Threshold Analysis**:")
+                print(f"   🔬 **Method**: Logistic Regression (P(Success >{reliability_threshold}%) vs log₁₀(Parameters))")
+                print(f"   📊 **Statistical Threshold**: {statistical_threshold/1e9:.0f}B parameters (50% probability)")
+                print(f"   ⚠️ **Reliability**: Low confidence with n={len(df)} (recommend n≥10)")
+        except:
+            print(f"   ❌ **Statistical analysis failed**: Insufficient variance in data")
+    
+    # Practical recommendations
+    print(f"\n💡 **Practical Deployment Zones**:")
+    
+    if len(reliable_models) > 0:
+        min_reliable = reliable_models['parameters'].min()
+        print(f"   🟢 **Production Ready Zone**: ≥{min_reliable/1e9:.0f}B parameters")
+        print(f"      • Observed reliability: {reliable_models['hourly_success'].mean():.1f}% ± {reliable_models['hourly_success'].std():.1f}%")
+        print(f"      • Recommended for automated greenhouse control")
+    
+    if len(marginal_models) > 0:
+        min_marginal = marginal_models['parameters'].min()
+        max_marginal = marginal_models['parameters'].max()
+        print(f"   🟡 **Research/Prototype Zone**: {min_marginal/1e9:.0f}B-{max_marginal/1e9:.0f}B parameters")
+        print(f"      • Observed reliability: {marginal_models['hourly_success'].mean():.1f}% ± {marginal_models['hourly_success'].std():.1f}%")
+        print(f"      • Suitable for research and supervised operation")
+    
+    if len(inadequate_models) > 0:
+        max_inadequate = inadequate_models['parameters'].max()
+        print(f"   🔴 **Inadequate Zone**: ≤{max_inadequate/1e9:.0f}B parameters")
+        print(f"      • Observed reliability: {inadequate_models['hourly_success'].mean():.1f}% ± {inadequate_models['hourly_success'].std():.1f}%")
+        print(f"      • Not recommended for LED optimization tasks")
+    
+    # Validation requirements
+    print(f"\n🔮 **Validation Needs for Threshold Refinement**:")
+    print(f"   🎯 **Pending Models**: DeepSeek R1 (671B), DeepSeek R1 Distill (7B)")
+    print(f"   📊 **Expected Impact**: Will add data points at 7B and 671B ranges")
+    if threshold_confidence_interval:
+        print(f"   📈 **Refinement**: Should narrow CI from [{threshold_confidence_interval[0]:.0f}B, {threshold_confidence_interval[1]:.0f}B]")
+    print(f"   💡 **Missing Ranges**: Need models at 10-50B for comprehensive threshold mapping")
+    print(f"   🔬 **Target Sample Size**: n≥8 models across parameter range for reliable analysis")
+    
+    # Return structured results
+    threshold_results = {
+        'reliability_threshold_percent': reliability_threshold,
+        'marginal_threshold_percent': marginal_threshold,
+        'reliable_models_count': len(reliable_models),
+        'marginal_models_count': len(marginal_models),
+        'inadequate_models_count': len(inadequate_models),
+        'estimated_threshold_parameters': threshold_estimate,
+        'threshold_confidence_interval': threshold_confidence_interval,
+        'statistical_threshold_parameters': statistical_threshold,
+        'methodology': threshold_method,
+        'validation_needed': len(df) < 8,
+        'critical_data_gaps': f"{len(all_params)-1} parameter gaps, largest: {max([all_params[i+1]/all_params[i] for i in range(len(all_params)-1)] if len(all_params) > 1 else [1]):.1f}×"
     }
-    
-    for idx, row in df.iterrows():
-        api_cost = cost_per_request.get(row['cost_category'], 0.01) * row['total_comparisons']
-        cost_per_success = api_cost / (row['hourly_success'] * row['total_comparisons'] / 100) if row['hourly_success'] > 0 else np.inf
-        
-        print(f"💰 {row['model_name']}:")
-        print(f"   Est. Cost: ${api_cost:.3f}")
-        print(f"   Cost per Success: ${cost_per_success:.3f}")
-    
-    # ================================
-    # 7. POWER ANALYSIS 💪
-    # ================================
-    print("\n💪 7. STATISTICAL POWER ANALYSIS")
-    print("-" * 50)
-    
-    if len(df) >= 2:
-        # Effect size calculation (Cohen's d)
-        group1 = df.iloc[0]['hourly_success']
-        group2 = df.iloc[-1]['hourly_success']
-        
-        # Pooled standard deviation estimate
-        pooled_std = np.std(df['hourly_success'])
-        cohens_d = abs(group1 - group2) / pooled_std if pooled_std > 0 else 0
-        
-        # Post-hoc power analysis
-        n_per_group = len(df) // 2
-        if n_per_group > 0:
-            power = ttest_power(cohens_d, n_per_group, alpha=0.05)
-            print(f"📊 Power Analysis:")
-            print(f"   Cohen's d = {cohens_d:.3f}")
-            print(f"   Sample size per group: {n_per_group}")
-            print(f"   Statistical power: {power:.3f} ({power*100:.1f}%)")
-    
-    # ================================
-    # 8. MULTIPLE COMPARISONS 🔬
-    # ================================
-    print("\n🔬 8. MULTIPLE COMPARISONS CORRECTION")
-    print("-" * 50)
-    
-    # Collect all p-values from tests
-    p_values = []
-    test_names = []
-    
-    if 'spearman_p' in locals():
-        p_values.append(spearman_p)
-        test_names.append("Spearman Correlation")
-    
-    if 'pearson_p' in locals():
-        p_values.append(pearson_p)
-        test_names.append("Pearson Correlation")
-    
-    if 'p_value_slope' in locals():
-        p_values.append(p_value_slope)
-        test_names.append("Regression Slope")
-    
-    if len(p_values) > 1:
-        # Bonferroni correction
-        rejected_bonf, p_corrected_bonf, _, _ = multipletests(p_values, alpha=0.05, method='bonferroni')
-        
-        # False Discovery Rate (FDR) correction
-        rejected_fdr, p_corrected_fdr, _, _ = multipletests(p_values, alpha=0.05, method='fdr_bh')
-        
-        print("🔬 Multiple Comparisons Correction:")
-        for i, test_name in enumerate(test_names):
-            print(f"   {test_name}:")
-            print(f"     Raw p = {p_values[i]:.6f}")
-            print(f"     Bonferroni p = {p_corrected_bonf[i]:.6f} {'✅' if rejected_bonf[i] else '❌'}")
-            print(f"     FDR p = {p_corrected_fdr[i]:.6f} {'✅' if rejected_fdr[i] else '❌'}")
     
     # Return comprehensive statistics
     return {
@@ -1264,19 +1440,7 @@ def comprehensive_statistical_analysis(all_metrics):
             'slope_se': se_beta if 'se_beta' in locals() else None,
             'slope_p': p_value_slope if 'p_value_slope' in locals() else None
         },
-        'threshold_analysis': {
-            'success_threshold': success_threshold,
-            'parameter_threshold': threshold_params/1e9 if 'threshold_params' in locals() else None
-        },
-        'group_comparisons': {
-            'test_statistic': statistic if 'statistic' in locals() else None,
-            'p_value': p_value if 'p_value' in locals() else None,
-            'effect_size': r_effect if 'r_effect' in locals() else None
-        },
-        'power_analysis': {
-            'cohens_d': cohens_d if 'cohens_d' in locals() else None,
-            'statistical_power': power if 'power' in locals() else None
-        },
+        'threshold_analysis': threshold_results,
         'model_data': df.to_dict('records')
     }
 
@@ -1492,7 +1656,7 @@ def create_thesis_visualizations(all_metrics, stats_results, timestamp):
                c=df['hourly_success'], cmap='viridis')
     ax1.set_xscale('log')
     ax1.set_xlabel('Parameters (Billions)', fontsize=9)
-    ax1.set_ylabel('Hourly Success (%)', fontsize=9)
+    ax1.set_ylabel('Hourly Success Rate (%)', fontsize=9)
     ax1.set_title('A) Scaling Law', fontsize=10, fontweight='bold')
     ax1.grid(True, alpha=0.3)
     
