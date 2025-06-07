@@ -1,0 +1,25 @@
+{
+  "analysis_timestamp": "20250607_115718",
+  "total_models_analyzed": 1,
+  "thesis_ready_models": 1,
+  "analysis_methodology": {
+    "ground_truth_comparison": "Compared against greedy algorithm optimal solutions",
+    "api_success_measurement": "Percentage of non-null responses from model",
+    "json_capability_assessment": "Valid structured output generation rate",
+    "optimization_effectiveness": "Hourly allocation accuracy vs mathematical optimum",
+    "statistical_significance": "Minimum 30 valid responses required for thesis use"
+  },
+  "model_summaries": [
+    {
+      "model_name": "meta-llama_llama-3.3-70b-instruct_free_v1_prompt",
+      "api_success_rate": 75.0,
+      "json_success_rate": 75.0,
+      "valid_responses": 54,
+      "thesis_quality": "EXCELLENT",
+      "cost_category": "PAID",
+      "optimization_effectiveness": 54.012345679012334,
+      "exact_matches": 0,
+      "mean_error_ppfd": 109.58970592042058
+    }
+  ]
+}

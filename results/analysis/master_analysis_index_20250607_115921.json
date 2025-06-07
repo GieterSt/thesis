@@ -1,0 +1,25 @@
+{
+  "analysis_timestamp": "20250607_115921",
+  "total_models_analyzed": 2,
+  "models": [
+    "meta-llama_llama-3.3-70b-instruct_free_v1_prompt",
+    "mistralai_mistral-7b-instruct_free_v0_improved"
+  ],
+  "best_performers": {
+    "best_json_accuracy": {
+      "model": "meta-llama_llama-3.3-70b-instruct_free_v1_prompt",
+      "valid_responses": 54,
+      "success_rate": 75.0
+    },
+    "fastest_response": {
+      "model": "meta-llama_llama-3.3-70b-instruct_free_v1_prompt",
+      "avg_time": 4.549932705031501,
+      "valid_responses": 54
+    },
+    "best_api_reliability": {
+      "model": "mistralai_mistral-7b-instruct_free_v0_improved",
+      "api_success_rate": 100.0,
+      "valid_responses": 27
+    }
+  }
+}
