@@ -2,7 +2,7 @@
 
 ## Research Summary
 
-This research evaluates Large Language Model performance on **greenhouse LED lighting optimization tasks**, testing 4 major models across 72 optimization scenarios. The study provides empirical evidence for the hypothesis: **"When Small Isn't Enough: Why Complex Scheduling Tasks Require Large-Scale LLMs"**.
+This research evaluates Large Language Model performance on **greenhouse LED lighting optimization tasks**, testing 5 major models across 72 optimization scenarios. The study provides empirical evidence for the hypothesis: **"When Small Isn't Enough: Why Complex Scheduling Tasks Require Large-Scale LLMs"**.
 
 ## Executive Summary
 
@@ -11,9 +11,10 @@ This research evaluates Large Language Model performance on **greenhouse LED lig
 | **Anthropic Claude-3.7-Sonnet V2 Prompt** | 100.0% ✅ | 78.4% | 410.1 PPFD | 🥈 **B (Good)** |
 | **Mistralai Mistral-7B-Instruct Free V0 Improved** | 100.0% ✅ | 0.3% | 746.5 PPFD | ❌ **F (Failed)** |
 | **Deepseek Deepseek-R1-Distill-Qwen-7B V0** | 93.2% ✅ | 0.7% | 1124.3 PPFD | ❌ **F (Failed)** |
+| **Deepseek Deepseek-R1-0528 Free V2 Prompt** | 93.1% ✅ | 92.8% | 0.0 PPFD | 🥇 **A (Excellent)** |
 | **Meta-Llama Llama-3.3-70B-Instruct Free V1 Prompt** | 75.0% ⚠️ | 40.5% | 674.2 PPFD | 📊 **D (Poor)** |
 
-**Notes:** *When API successful, **Analysis updated: 2025-06-07 14:36:16 UTC
+**Notes:** *When API successful, **Analysis updated: 2025-06-07 15:02:02 UTC
 
 ## Research Highlights
 
@@ -34,7 +35,7 @@ The LED optimization task combines multiple challenging requirements:
 
 ### ⚠️ **Important Statistical Limitations**
 
-**Current Sample**: n=4 models (preliminary analysis only)
+**Current Sample**: n=5 models (preliminary analysis only)
 - ⚠️ **Underpowered**: Need n≥5 for reliable correlation analysis
 - 📊 **Pending**: DeepSeek R1 (671B) & DeepSeek R1 Distill (7B) will complete analysis
 
@@ -44,37 +45,38 @@ The LED optimization task combines multiple challenging requirements:
   - 7B → 0.7% success
   - 70B → 40.5% success
   - 200B → 78.4% success
+  - 671B → 92.8% success
 
-* **Spearman Rank**: r_s = 0.949, p = 0.051
+* **Spearman Rank**: r_s = 0.975, p = 0.005
   - **strong rank correlation**
-* **Pearson Correlation**: r = 0.986, p = 0.014
+* **Pearson Correlation**: r = 0.991, p = 0.001
   - **statistically significant**
 
 **Interpretation**: Clear positive trend between scale and performance, 
-but statistical significance cannot be established with only 4 models.
+but statistical significance cannot be established with only 5 models.
 
 ### Regression Analysis (Compelling Preliminary Evidence)
 
-**Linear Scaling Model**: Success = 50.27 × log₁₀(Parameters) + -495.79
+**Linear Scaling Model**: Success = 48.17 × log₁₀(Parameters) + -474.42
 
 **Model Quality:**
-- **R²**: 0.971 (explains 97.1% of variance)
-- **Adjusted R²**: 0.957 (small sample correction)
-- **Degrees of freedom**: 2 (saturated model with n=4)
+- **R²**: 0.982 (explains 98.2% of variance)
+- **Adjusted R²**: 0.976 (small sample correction)
+- **Degrees of freedom**: 3 (saturated model with n=5)
 
 **Slope Parameter:**
-- **Coefficient**: 50.27 ± 4.32 (SE)
-- **95% Confidence Interval**: [-4.6, 105.1] (t₀.₀₂₅,₁ = 12.706)
-- **Significance**: p = 0.007 ✅ **Significant**
+- **Coefficient**: 48.17 ± 2.95 (SE)
+- **95% Confidence Interval**: [10.7, 85.6] (t₀.₀₂₅,₁ = 12.706)
+- **Significance**: p = 0.000 ✅ **Significant**
 
 **Practical Interpretation:**
-- **Each 10× parameter increase** → +50.3% performance improvement
-- **Example**: 7B → 70B models predicted +50.3%, observed +33.2%
+- **Each 10× parameter increase** → +48.2% performance improvement
+- **Example**: 7B → 70B models predicted +48.2%, observed +33.2%
 
 **Model Limitations:**
-- **Valid range**: 7B - 200B parameters
+- **Valid range**: 7B - 671B parameters
 - **Boundary conditions**: Model may predict negative performance below ~10B parameters
-- **Saturated model**: Perfect fit expected with only 4 data points
+- **Saturated model**: Perfect fit expected with only 5 data points
 
 **Context for Preliminary Research:**
 - **Strong R² with small n**: Needs validation with additional models
@@ -82,14 +84,14 @@ but statistical significance cannot be established with only 4 models.
 - **Trend compelling**: Clear monotonic relationship visible despite underpowered analysis
 
 ### Performance Threshold Analysis  
-- **Method**: Qualitative zone analysis only (n=4 insufficient for quantitative estimation)
-- **Data Limitation**: n=4 models (minimum n≥8 recommended)
-- **Current Status**: Qualitative performance zones only - insufficient data for quantitative thresholds
+- **Method**: Interpolation between observed failure (70B) and success (200B)
+- **Data Limitation**: n=5 models (minimum n≥8 recommended)
+- **Current Status**: Preliminary trend analysis with high uncertainty
 
 ### What's Missing for Statistical Validation
 - **Confidence intervals** for correlation estimates
 - **Effect size** calculations (each 10x parameter increase = X% improvement)  
-- **Power analysis** showing current n=4 is underpowered
+- **Power analysis** showing current n=5 is underpowered
 - **Additional models** (DeepSeek R1 variants) for proper validation
 
 **Note**: Analysis will automatically update when DeepSeek R1 models complete.
@@ -101,19 +103,15 @@ but statistical significance cannot be established with only 4 models.
 The following publication-ready visualizations were automatically generated from the current dataset:
 
 #### Figure 1: Scaling Law Analysis
-![Scaling Law](figures/scaling_law_20250607_143616.png)
-*Clear exponential relationship between model parameters and LED optimization performance. The regression line shows strong linear relationship in log-parameter space (R² = 0.971), with 95% confidence interval. Each model's parameter count and performance are labeled for reference.*
+![Scaling Law](figures/scaling_law_20250607_150202.png)
+*Clear exponential relationship between model parameters and LED optimization performance. The regression line shows strong linear relationship in log-parameter space (R² = 0.982), with 95% confidence interval. Each model's parameter count and performance are labeled for reference.*
 
 #### Figure 2: Model Performance Comparison  
-![Performance Comparison](figures/performance_comparison_20250607_143616.png)
+![Performance Comparison](figures/performance_comparison_20250607_150202.png)
 *Performance comparison showing both optimization success rates (top) and JSON format compliance (bottom). Color coding represents academic grades: Green (A-B), Gold (C), Orange (D), Red (F). Critical failure mode visible in 7B models' inability to produce valid JSON responses.*
 
-#### Figure 3: Cost-Effectiveness Analysis
-![Cost-Performance](figures/cost_performance_20250607_143616.png)
-*Cost-performance trade-off analysis with bubble sizes proportional to model parameters. Free models (Llama, Mistral) cluster in high-cost-per-success region due to low performance, while Claude 3.7 achieves optimal cost-effectiveness despite higher per-token pricing.*
-
 #### Figure 4: Technical Performance Matrix
-![JSON Validity Heatmap](figures/json_validity_heatmap_20250607_143616.png)
+![JSON Validity Heatmap](figures/json_validity_heatmap_20250607_150202.png)
 *Critical technical capabilities matrix showing the cascade failure in smaller models. Red cells indicate catastrophic failure modes where models cannot even produce valid output format, rendering optimization performance meaningless.*
 
 ### Key Visual Insights
@@ -256,6 +254,24 @@ python auto_analyze_results.py --monitor
 - **Performance Grade**: ❌ **F (Failed)**
 - **Exact 24h Matches**: 0/73 (0.0%)*
 - **Total Ground Truth Comparisons**: 73 scenarios
+#### **Deepseek Deepseek-R1-0528 Free V2 Prompt**
+
+📊 **Model Specifications**
+- **Parameters**: 671,000,000,000.0 (671B)
+- **Cost Category**: FREE
+- **Cost**: Completely free to use
+
+🔧 **Technical Performance**
+- **API Success**: 93.1% (67/72)
+- **JSON Validity**: 93.1% (67 valid responses)
+- **Average Response Time**: 188.76s
+
+🎯 **Optimization Performance**
+- **Hourly Success Rate**: 92.8% (optimization accuracy)
+- **Daily MAE**: 0.0 PPFD (prediction error)
+- **Performance Grade**: 🥇 **A (Excellent)**
+- **Exact 24h Matches**: 65/72 (90.3%)*
+- **Total Ground Truth Comparisons**: 72 scenarios
 #### **Meta-Llama Llama-3.3-70B-Instruct Free V1 Prompt**
 
 📊 **Model Specifications**
@@ -327,9 +343,9 @@ This research provides strong empirical evidence that complex optimization tasks
 
 This README is automatically updated when new model results are detected in `results/model_outputs/`.
 
-**Last Updated**: 2025-06-07 14:36:16 UTC
+**Last Updated**: 2025-06-07 15:02:02 UTC
 **Analysis System**: `auto_analyze_results.py --monitor`
-**Models Analyzed**: 4
+**Models Analyzed**: 5
 
 ## Dependencies
 

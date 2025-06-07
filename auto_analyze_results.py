@@ -858,11 +858,28 @@ def generate_html_from_readme():
             # Find the most recent visualizations
             png_files = list(results_dir.glob('*.png'))
             if png_files:
-                # Sort by modification time, get the most recent set
-                png_files.sort(key=lambda x: x.stat().st_mtime, reverse=True)
+                # Get one file per type (to avoid duplicates with different timestamps)
+                unique_files = {}
+                for png_file in png_files:
+                    if 'scaling_law' in png_file.name:
+                        if 'scaling' not in unique_files or png_file.stat().st_mtime > unique_files['scaling'].stat().st_mtime:
+                            unique_files['scaling'] = png_file
+                    elif 'performance_comparison' in png_file.name:
+                        if 'performance' not in unique_files or png_file.stat().st_mtime > unique_files['performance'].stat().st_mtime:
+                            unique_files['performance'] = png_file
+                    elif 'cost_performance' in png_file.name:
+                        if 'cost' not in unique_files or png_file.stat().st_mtime > unique_files['cost'].stat().st_mtime:
+                            unique_files['cost'] = png_file
+                    elif 'json_validity_heatmap' in png_file.name:
+                        if 'validity' not in unique_files or png_file.stat().st_mtime > unique_files['validity'].stat().st_mtime:
+                            unique_files['validity'] = png_file
+                    elif 'two_stage' in png_file.name or 'stage' in png_file.name:
+                        if 'two_stage' not in unique_files or png_file.stat().st_mtime > unique_files['two_stage'].stat().st_mtime:
+                            unique_files['two_stage'] = png_file
                 
-                # Get the 4 most recent visualizations (one of each type)
-                recent_files = png_files[:4]
+                # Use the unique files in consistent order (Figure 1, 2, 3, 4)
+                ordered_types = ['scaling', 'performance', 'two_stage', 'validity']
+                recent_files = [unique_files[fig_type] for fig_type in ordered_types if fig_type in unique_files]
                 
                 visualization_embeds = "\n<h2>📊 Research Visualizations</h2>\n"
                 
@@ -876,10 +893,10 @@ def generate_html_from_readme():
                         caption = img_path.stem.replace('_', ' ').title()
                         if 'scaling' in img_path.name.lower():
                             caption = "Figure 1: Scaling Law Analysis - Model Performance vs Parameters"
+                        elif 'two_stage' in img_path.name.lower() or 'stage' in img_path.name.lower():
+                            caption = "Figure 3: Two-Stage Failure Analysis - JSON Generation → Optimization Success"
                         elif 'performance' in img_path.name.lower():
                             caption = "Figure 2: Performance Comparison with Academic Grading"
-                        elif 'cost' in img_path.name.lower():
-                            caption = "Figure 3: Cost-Performance Trade-off Analysis"
                         elif 'validity' in img_path.name.lower():
                             caption = "Figure 4: JSON Validity Heatmap - Technical Performance"
                         
@@ -1705,68 +1722,107 @@ def create_thesis_visualizations(all_metrics, stats_results, timestamp):
     visualization_paths.append(performance_plot_path)
     
     # ================================
-    # 3. 💰 COST-PERFORMANCE SCATTER WITH BUBBLES
+    # 3. 🎯 TWO-STAGE FAILURE ANALYSIS (CRITICAL INSIGHT!)
     # ================================
-    print("💰 Creating cost-performance scatter plot...")
+    print("🎯 Creating two-stage failure analysis...")
     
-    fig, ax = plt.subplots(1, 1, figsize=(10, 7))
+    fig, ax = plt.subplots(1, 1, figsize=(12, 8))
     
-    # Calculate cost per successful optimization
-    cost_multiplier = {'FREE': 0.0, 'PAID': 0.015}  # Approximate cost per request
-    df['cost_per_success'] = df.apply(lambda row: 
-        cost_multiplier.get(row['cost_category'], 0.015) / 
-        (row['hourly_success'] / 100) if row['hourly_success'] > 0 else 1.0, axis=1)
-    
-    # Create scatter with bubble sizes = parameter count
-    bubble_sizes = (df['parameters'] / 1e9) * 8  # Scale for visibility
-    
-    scatter = ax.scatter(df['hourly_success'], df['cost_per_success'], 
-                        s=bubble_sizes, alpha=0.7,
-                        c=df['parameters']/1e9, cmap='plasma', 
-                        edgecolors='black', linewidth=2)
-    
-    # Add model labels
+    # Create the pipeline data
+    models_data = []
     for idx, row in df.iterrows():
         model_name = row['model_name'].split('_')[0].replace('-', ' ').title()
         if 'claude' in model_name.lower():
-            model_name = 'Claude 3.7\\n(200B)'
+            display_name = 'Claude 3.7\n(200B)'
+            short_name = 'Claude'
         elif 'llama' in model_name.lower():
-            model_name = 'Llama 3.3\\n(70B)'
+            display_name = 'Llama 3.3\n(70B)'
+            short_name = 'Llama'
         elif 'mistral' in model_name.lower():
-            model_name = 'Mistral\\n(7B)'
+            display_name = 'Mistral\n(7B)'
+            short_name = 'Mistral'
+        elif 'deepseek-r1-0528' in row['model_name'].lower():
+            display_name = 'DeepSeek R1\n(671B)'
+            short_name = 'DeepSeek R1'
         elif 'deepseek' in model_name.lower():
-            model_name = 'DeepSeek\\n(7B)'
+            display_name = 'DeepSeek Distill\n(7B)'
+            short_name = 'DeepSeek'
+        else:
+            display_name = model_name
+            short_name = model_name
             
-        ax.annotate(model_name, 
-                   (row['hourly_success'], row['cost_per_success']),
-                   xytext=(10, 10), textcoords='offset points', 
-                   fontsize=10, fontweight='bold',
-                   bbox=dict(boxstyle='round,pad=0.4', facecolor='white', alpha=0.8))
+        models_data.append({
+            'name': display_name,
+            'short_name': short_name,
+            'json_success': row['json_success'],
+            'optimization_success': row['hourly_success'],
+            'parameters': row['parameters']
+        })
     
-    # Add quadrant lines
-    ax.axhline(y=0.01, color='red', linestyle='--', alpha=0.7, 
-              label='$0.01 Cost Threshold')
-    ax.axvline(x=75, color='blue', linestyle='--', alpha=0.7, 
-              label='75% Performance Threshold')
+    # Sort by JSON success for better visualization
+    models_data = sorted(models_data, key=lambda x: x['json_success'], reverse=True)
+    
+    # Set up the plot
+    y_positions = range(len(models_data))
+    colors = plt.cm.viridis([m['parameters']/671e9 for m in models_data])  # Color by model size
+    
+    # Draw the pipeline for each model
+    for i, model in enumerate(models_data):
+        y = y_positions[i]
+        
+        # Stage 1: JSON Generation (from 0 to json_success)
+        ax.barh(y, model['json_success'], height=0.6, 
+               color=colors[i], alpha=0.8, 
+               label=f"{model['short_name']}" if i < 4 else "")
+        
+        # Stage 2: Optimization Success (from json_success to optimization)
+        # Only show the "loss" portion in red
+        loss_width = model['json_success'] - model['optimization_success']
+        if loss_width > 0:
+            ax.barh(y, loss_width, left=model['optimization_success'], height=0.6,
+                   color='red', alpha=0.7)
+        
+        # Add arrows showing the pipeline flow
+        if model['json_success'] > 5:  # Only add arrow if there's enough space
+            ax.annotate('', xy=(model['optimization_success'], y), 
+                       xytext=(model['json_success'], y),
+                       arrowprops=dict(arrowstyle='->', lw=2, color='white'))
+        
+        # Add percentage labels
+        ax.text(model['json_success'] + 2, y, f"{model['json_success']:.1f}%", 
+               va='center', fontweight='bold', fontsize=10)
+        ax.text(model['optimization_success'] + 2, y + 0.15, f"→ {model['optimization_success']:.1f}%", 
+               va='center', fontweight='bold', fontsize=9, color='darkgreen')
     
     # Formatting
-    ax.set_xlabel('Hourly Success Rate (%)', fontsize=12, fontweight='bold')
-    ax.set_ylabel('Cost per Successful Optimization ($)', fontsize=12, fontweight='bold')
-    ax.set_title('💰 Cost-Effectiveness Analysis\\n(Bubble Size = Model Parameters)', 
+    ax.set_yticks(y_positions)
+    ax.set_yticklabels([m['name'] for m in models_data])
+    ax.set_xlabel('Success Rate (%)', fontsize=12, fontweight='bold')
+    ax.set_title('🎯 Two-Stage Failure Analysis: JSON Generation → Optimization Success\n' +
+                'Green = Success Pipeline, Red = Optimization Failure', 
                 fontsize=14, fontweight='bold', pad=20)
-    ax.grid(True, alpha=0.3)
-    ax.legend(fontsize=11)
-    ax.set_yscale('log')
     
-    # Add colorbar for parameter count
-    cbar = plt.colorbar(scatter, ax=ax)
-    cbar.set_label('Model Parameters (Billions)', fontsize=11, fontweight='bold')
+    # Add vertical reference lines
+    ax.axvline(x=50, color='gray', linestyle='--', alpha=0.5, label='50% Threshold')
+    ax.axvline(x=75, color='blue', linestyle='--', alpha=0.7, label='75% Production Threshold')
+    
+    # Add stage labels
+    ax.text(25, len(models_data), 'Stage 1: JSON Generation', 
+           ha='center', fontsize=11, fontweight='bold', 
+           bbox=dict(boxstyle='round,pad=0.5', facecolor='lightblue', alpha=0.8))
+    ax.text(75, len(models_data), 'Stage 2: Optimization Quality', 
+           ha='center', fontsize=11, fontweight='bold',
+           bbox=dict(boxstyle='round,pad=0.5', facecolor='lightgreen', alpha=0.8))
+    
+    ax.grid(True, alpha=0.3, axis='x')
+    ax.legend(loc='lower right', fontsize=10)
+    ax.set_xlim(0, 105)
     
     plt.tight_layout()
-    cost_plot_path = fig_dir / f'cost_performance_{timestamp}.png'
-    plt.savefig(cost_plot_path, dpi=200, bbox_inches='tight', facecolor='white')
+    two_stage_plot_path = fig_dir / f'two_stage_failure_analysis_{timestamp}.png'
+    plt.savefig(two_stage_plot_path, dpi=200, bbox_inches='tight', facecolor='white')
     plt.close()
-    visualization_paths.append(cost_plot_path)
+    visualization_paths.append(two_stage_plot_path)
     
     # ================================
     # 4. 🔥 JSON VALIDITY HEATMAP (CRITICAL FAILURE MODE)
@@ -1816,6 +1872,71 @@ def create_thesis_visualizations(all_metrics, stats_results, timestamp):
         print(f"   📊 {path.name}")
     
     return visualization_paths
+
+def format_parameter_count(params):
+    """Format parameter count with proper units"""
+    if params >= 1e9:
+        return f"{params/1e9:.1f}B"
+    elif params >= 1e6:
+        return f"{params/1e6:.1f}M"
+    else:
+        return f"{params:.0f}"
+
+def format_model_name(model_name):
+    """Format model name for display"""
+    # Clean up model names for better display
+    if 'claude' in model_name.lower():
+        return "Claude 3.7 Sonnet"
+    elif 'llama' in model_name.lower():
+        return "Llama 3.3 70B"
+    elif 'mistral' in model_name.lower():
+        return "Mistral 7B"
+    elif 'deepseek-r1-distill' in model_name.lower():
+        return "DeepSeek R1 Distill 7B"
+    elif 'deepseek-r1' in model_name.lower():
+        return "DeepSeek R1 671B"
+    else:
+        return model_name.replace('_', ' ').title()
+
+def format_model_analysis_section(analysis):
+    """Format detailed analysis section for a single model"""
+    model_name = format_model_name(analysis['model_name'])
+    
+    section = f"""
+#### {model_name}
+
+**Performance Summary:**
+- API Success: {analysis['api_success_rate']:.1f}%
+- JSON Validity: {analysis.get('json_validity_rate', 'N/A'):.1f}%
+- Hourly Success: {analysis['hourly_success_rate']:.1f}%  
+- Daily MAE: {analysis['daily_mae']:.1f} PPFD
+- Grade: **{analysis['performance_grade']}**
+
+**Technical Details:**
+- Parameters: {format_parameter_count(analysis.get('parameters', 0))}
+- Avg Response Time: {analysis.get('avg_response_time', 0):.1f}s
+- Cost Category: {'FREE' if analysis.get('cost_category') == 'free' else 'PAID 💰'}
+
+**Analysis:**"""
+    
+    # Add specific analysis based on performance
+    if analysis['hourly_success_rate'] > 75:
+        section += """
+- ✅ **Production Ready**: Achieves reliable optimization performance
+- ✅ **JSON Reliable**: Consistent structured output generation
+- ✅ **Deployment Suitable**: Meets minimum performance thresholds"""
+    elif analysis['hourly_success_rate'] > 40:
+        section += """
+- ⚠️ **Marginal Performance**: Inconsistent optimization results
+- ⚠️ **Requires Monitoring**: May need additional validation systems
+- ⚠️ **Limited Deployment**: Suitable only for non-critical applications"""
+    else:
+        section += """
+- ❌ **Failed Performance**: Cannot achieve reliable optimization
+- ❌ **JSON Issues**: Fundamental output formatting problems
+- ❌ **Not Deployment Ready**: Requires significant improvement"""
+    
+    return section + "\n"
 
 def generate_readme_content(all_analyses, timestamp):
     """Generate comprehensive README content with improved structure and critical review fixes"""
