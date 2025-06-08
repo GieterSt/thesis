@@ -1549,7 +1549,7 @@ def create_thesis_visualizations(all_metrics, stats_results, timestamp):
     🎨 CREATE ESSENTIAL THESIS VISUALIZATIONS
     Generates the 4 most important publication-ready plots for academic thesis
     """
-    print("\n" + "="*80)
+    print("\\n" + "="*80)
     print("🎨 GENERATING ESSENTIAL THESIS VISUALIZATIONS")
     print("="*80)
     
@@ -1568,7 +1568,27 @@ def create_thesis_visualizations(all_metrics, stats_results, timestamp):
     
     df = pd.DataFrame(stats_results['model_data'])
     visualization_paths = []
-    
+
+    # --- REFACTORED: Centralized Model Name Generation ---
+    display_names = []
+    for _, row in df.iterrows():
+        name_raw = row['model_name'].lower()
+        params = row['parameters']
+        if 'claude' in name_raw:
+            display_names.append(f'Claude 3.7 ({params/1e9:.0f}B)')
+        elif 'llama' in name_raw:
+            display_names.append(f'Llama 3.3 ({params/1e9:.0f}B)')
+        elif 'mistral' in name_raw:
+            display_names.append(f'Mistral ({params/1e9:.0f}B)')
+        elif 'deepseek-r1-distill' in name_raw:
+            display_names.append(f'DeepSeek Distill ({params/1e9:.0f}B)')
+        elif 'deepseek-r1' in name_raw:
+            display_names.append(f'DeepSeek R1 ({params/1e9:.0f}B)')
+        else:
+            display_names.append(row['model_name'].replace('_', ' ').title())
+    df['display_name'] = display_names
+    # --- END REFACTOR ---
+
     # ================================
     # 1. 📈 SCALING LAW PLOT (MOST IMPORTANT!)
     # ================================
@@ -1603,19 +1623,9 @@ def create_thesis_visualizations(all_metrics, stats_results, timestamp):
                        reg_line + 1.96*std_resid, 
                        alpha=0.2, color='red', label='95% Confidence')
     
-    # Add model labels with smart positioning
+    # Add model labels using the new 'display_name'
     for idx, row in df.iterrows():
-        model_name = row['model_name'].split('_')[0].replace('-', ' ').title()
-        if 'claude' in model_name.lower():
-            model_name = 'Claude 3.7'
-        elif 'llama' in model_name.lower():
-            model_name = 'Llama 3.3'
-        elif 'mistral' in model_name.lower():
-            model_name = 'Mistral 7B'
-        elif 'deepseek' in model_name.lower():
-            model_name = 'DeepSeek Distill'
-            
-        ax.annotate(f'{model_name}\\n({row["parameters"]/1e9:.0f}B)', 
+        ax.annotate(row['display_name'], 
                    (np.log10(row['parameters']), row['hourly_success']),
                    xytext=(8, 8), textcoords='offset points', 
                    fontsize=9, fontweight='bold',
@@ -1672,19 +1682,8 @@ def create_thesis_visualizations(all_metrics, stats_results, timestamp):
         ax1.text(value + 1, i, f'{value:.1f}%', 
                 va='center', fontweight='bold', fontsize=10)
     
-    # Model names on y-axis
-    model_labels = []
-    for _, row in df_sorted.iterrows():
-        name = row['model_name'].split('_')[0].replace('-', ' ').title()
-        if 'claude' in name.lower():
-            name = 'Claude 3.7 (200B)'
-        elif 'llama' in name.lower():
-            name = 'Llama 3.3 (70B)'
-        elif 'mistral' in name.lower():
-            name = 'Mistral 7B'
-        elif 'deepseek' in name.lower():
-            name = 'DeepSeek Distill (7B)'
-        model_labels.append(name)
+    # Model names on y-axis using the new 'display_name'
+    model_labels = df_sorted['display_name']
     
     ax1.set_yticks(range(len(df_sorted)))
     ax1.set_yticklabels(model_labels, fontsize=11)
@@ -1727,43 +1726,15 @@ def create_thesis_visualizations(all_metrics, stats_results, timestamp):
     
     fig, ax = plt.subplots(1, 1, figsize=(12, 8))
     
-    # Create the pipeline data
-    models_data = []
-    for idx, row in df.iterrows():
-        model_name = row['model_name'].split('_')[0].replace('-', ' ').title()
-        if 'claude' in model_name.lower():
-            display_name = 'Claude 3.7\n(200B)'
-            short_name = 'Claude'
-        elif 'llama' in model_name.lower():
-            display_name = 'Llama 3.3\n(70B)'
-            short_name = 'Llama'
-        elif 'mistral' in model_name.lower():
-            display_name = 'Mistral\n(7B)'
-            short_name = 'Mistral'
-        elif 'deepseek-r1-0528' in row['model_name'].lower():
-            display_name = 'DeepSeek R1\n(671B)'
-            short_name = 'DeepSeek R1'
-        elif 'deepseek' in model_name.lower():
-            display_name = 'DeepSeek Distill\n(7B)'
-            short_name = 'DeepSeek'
-        else:
-            display_name = model_name
-            short_name = model_name
-            
-        models_data.append({
-            'name': display_name,
-            'short_name': short_name,
-            'json_success': row['json_success'],
-            'optimization_success': row['hourly_success'],
-            'parameters': row['parameters']
-        })
+    # Create the pipeline data using the new 'display_name'
+    models_data = df.to_dict('records')
     
     # Sort by JSON success for better visualization
     models_data = sorted(models_data, key=lambda x: x['json_success'], reverse=True)
     
     # Set up the plot
     y_positions = range(len(models_data))
-    colors = plt.cm.viridis([m['parameters']/671e9 for m in models_data])  # Color by model size
+    colors = plt.cm.viridis([m['parameters']/df['parameters'].max() for m in models_data])
     
     # Draw the pipeline for each model
     for i, model in enumerate(models_data):
@@ -1771,18 +1742,16 @@ def create_thesis_visualizations(all_metrics, stats_results, timestamp):
         
         # Stage 1: JSON Generation (from 0 to json_success)
         ax.barh(y, model['json_success'], height=0.6, 
-               color=colors[i], alpha=0.8, 
-               label=f"{model['short_name']}" if i < 4 else "")
+               color=colors[i], alpha=0.8)
         
         # Stage 2: Optimization Success (from json_success to optimization)
-        # Only show the "loss" portion in red
         loss_width = model['json_success'] - model['optimization_success']
         if loss_width > 0:
             ax.barh(y, loss_width, left=model['optimization_success'], height=0.6,
                    color='red', alpha=0.7)
         
         # Add arrows showing the pipeline flow
-        if model['json_success'] > 5:  # Only add arrow if there's enough space
+        if model['json_success'] > 5:
             ax.annotate('', xy=(model['optimization_success'], y), 
                        xytext=(model['json_success'], y),
                        arrowprops=dict(arrowstyle='->', lw=2, color='white'))
@@ -1795,83 +1764,7 @@ def create_thesis_visualizations(all_metrics, stats_results, timestamp):
     
     # Formatting
     ax.set_yticks(y_positions)
-    ax.set_yticklabels([m['name'] for m in models_data])
-    ax.set_xlabel('Success Rate (%)', fontsize=12, fontweight='bold')
-    ax.set_title('🎯 Two-Stage Failure Analysis: JSON Generation → Optimization Success\n' +
-                'Green = Success Pipeline, Red = Optimization Failure', 
-                fontsize=14, fontweight='bold', pad=20)
     
-    # Add vertical reference lines
-    ax.axvline(x=50, color='gray', linestyle='--', alpha=0.5, label='50% Threshold')
-    ax.axvline(x=75, color='blue', linestyle='--', alpha=0.7, label='75% Production Threshold')
-    
-    # Add stage labels
-    ax.text(25, len(models_data), 'Stage 1: JSON Generation', 
-           ha='center', fontsize=11, fontweight='bold', 
-           bbox=dict(boxstyle='round,pad=0.5', facecolor='lightblue', alpha=0.8))
-    ax.text(75, len(models_data), 'Stage 2: Optimization Quality', 
-           ha='center', fontsize=11, fontweight='bold',
-           bbox=dict(boxstyle='round,pad=0.5', facecolor='lightgreen', alpha=0.8))
-    
-    ax.grid(True, alpha=0.3, axis='x')
-    ax.legend(loc='lower right', fontsize=10)
-    ax.set_xlim(0, 105)
-    
-    plt.tight_layout()
-    two_stage_plot_path = fig_dir / f'two_stage_failure_analysis_{timestamp}.png'
-    plt.savefig(two_stage_plot_path, dpi=200, bbox_inches='tight', facecolor='white')
-    plt.close()
-    visualization_paths.append(two_stage_plot_path)
-    
-    # ================================
-    # 4. 🔥 JSON VALIDITY HEATMAP (CRITICAL FAILURE MODE)
-    # ================================
-    print("🔥 Creating JSON validity heatmap...")
-    
-    fig, ax = plt.subplots(1, 1, figsize=(10, 6))
-    
-    # Create heatmap data
-    heatmap_data = df[['api_success', 'json_success', 'hourly_success']].values
-    model_names = []
-    for name in df['model_name']:
-        if 'claude' in name.lower():
-            model_names.append('Claude 3.7 (200B)')
-        elif 'llama' in name.lower():
-            model_names.append('Llama 3.3 (70B)')
-        elif 'mistral' in name.lower():
-            model_names.append('Mistral 7B')
-        elif 'deepseek' in name.lower():
-            model_names.append('DeepSeek Distill 7B')
-        else:
-            model_names.append(name.split('_')[0])
-    
-    # Create heatmap
-    sns.heatmap(heatmap_data, 
-                xticklabels=['API Success', 'JSON Validity', 'Optimization Success'],
-                yticklabels=model_names,
-                annot=True, fmt='.1f', 
-                cmap='RdYlGn', vmin=0, vmax=100,
-                cbar_kws={'label': 'Success Rate (%)'},
-                linewidths=1, linecolor='black',
-                ax=ax)
-    
-    ax.set_title('🔥 Technical Performance Matrix\\n(Red = Failure, Green = Success)', 
-                fontsize=14, fontweight='bold', pad=20)
-    ax.set_xlabel('Performance Metrics', fontsize=12, fontweight='bold')
-    ax.set_ylabel('Model Architectures', fontsize=12, fontweight='bold')
-    
-    plt.tight_layout()
-    heatmap_plot_path = fig_dir / f'json_validity_heatmap_{timestamp}.png'
-    plt.savefig(heatmap_plot_path, dpi=200, bbox_inches='tight', facecolor='white')
-    plt.close()
-    visualization_paths.append(heatmap_plot_path)
-    
-    print(f"✅ Generated {len(visualization_paths)} essential visualizations!")
-    for path in visualization_paths:
-        print(f"   📊 {path.name}")
-    
-    return visualization_paths
-
 def format_parameter_count(params):
     """Format parameter count with proper units"""
     if params >= 1e9:
