@@ -87,7 +87,6 @@ def format_model_analysis_section(metrics):
     
     section += f"""**Model Specifications:**
 - Parameters: {format_parameter_count(params)}
-- Architecture: {metrics['model_parameters']['architecture']}
 - Type: {metrics['model_parameters']['type']}
 
 ---
@@ -127,7 +126,7 @@ This analysis evaluates Large Language Model performance on complex LED optimiza
 ⚡ **Performance Threshold**: ~200B parameters appear necessary for production deployment  
 💰 **Cost-Performance Trade-off**: Larger models achieve better cost-per-success despite higher pricing  
 
-## 📈 Performance Rankings
+## 📈 Performance Summary
 
 """
     
@@ -137,17 +136,38 @@ This analysis evaluates Large Language Model performance on complex LED optimiza
                                        if x['ground_truth_analysis'] else x['basic_performance']['json_success_rate'],
                           reverse=True)
     
-    readme_content += "| Rank | Model | Grade | Hourly Success | JSON Validity | Parameters |\n"
-    readme_content += "|------|--------|-------|---------------|---------------|------------|\n"
+    # TRANSPOSED TABLE: Models as columns, metrics as rows
+    model_names = [metrics['model_name'] for metrics in ranked_models]
     
-    for i, metrics in enumerate(ranked_models, 1):
-        model_name = metrics['model_name']
-        grade = assign_performance_grade(metrics).split()[1]  # Extract grade without emoji
-        hourly_rate = metrics['ground_truth_analysis']['mean_hourly_match_rate'] if metrics['ground_truth_analysis'] else 0
-        json_rate = metrics['basic_performance']['json_success_rate']
-        params = format_parameter_count(metrics['model_parameters']['parameters'])
-        
-        readme_content += f"| {i} | {model_name} | {grade} | {hourly_rate:.1f}% | {json_rate:.1f}% | {params} |\n"
+    # Create header with model names
+    header = "| **Metric** |"
+    for name in model_names:
+        # Use full model names instead of shortening them
+        header += f" **{name}** |"
+    header += "\n"
+    
+    # Create separator
+    separator = "|" + "---|" * (len(model_names) + 1) + "\n"
+    
+    readme_content += header + separator
+    
+    # Add each metric as a row
+    metrics_rows = [
+        ("**Rank**", [str(i+1) for i in range(len(ranked_models))]),
+        ("**Parameters**", [format_parameter_count(m['model_parameters']['parameters']) for m in ranked_models]),
+        ("**Grade**", [assign_performance_grade(m).split()[1] for m in ranked_models]),
+        ("**API Success**", [f"{m['basic_performance']['api_success_rate']:.1f}%" for m in ranked_models]),
+        ("**JSON Validity**", [f"{m['basic_performance']['json_success_rate']:.1f}%" for m in ranked_models]),
+        ("**Hourly Success**", [f"{m['ground_truth_analysis']['mean_hourly_match_rate']:.1f}%" if m['ground_truth_analysis'] else "0.0%" for m in ranked_models]),
+        ("**Daily MAE**", [f"{m['ground_truth_analysis']['mean_daily_mae']:.0f} PPFD" if m['ground_truth_analysis'] else "N/A" for m in ranked_models])
+    ]
+    
+    for metric_name, values in metrics_rows:
+        row = f"| {metric_name} |"
+        for value in values:
+            row += f" {value} |"
+        row += "\n"
+        readme_content += row
     
     # Statistical insights
     if stats_results and 'insights' in stats_results:
