@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LED Optimization LLM Analysis Report</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; 
+               margin: 40px; line-height: 1.6; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f5f5f5; font-weight: bold; }
+        h1, h2, h3 { color: #333; }
+        h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        code { background-color: #f6f8fa; padding: 2px 4px; border-radius: 3px; }
+        pre { background-color: #f6f8fa; padding: 16px; border-radius: 6px; overflow-x: auto; }
+        hr { border: none; border-top: 1px solid #eee; margin: 30px 0; }
+    </style>
+</head>
+<body>
+<h1>LED Optimization LLM Analysis Results</h1>
+<p><strong>Analysis Timestamp:</strong> 20250608_213140<br />
+<strong>Models Analyzed:</strong> 5<br />
+<strong>Total Test Scenarios:</strong> 72</p>
+<h2>Performance Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Parameters</th>
+<th>Architecture</th>
+<th>API_Success_Rate</th>
+<th>JSON_Success_Rate</th>
+<th>Total_Responses</th>
+<th>Hourly_Success_Rate</th>
+<th>Conditional_Hourly_Success_Rate</th>
+<th>Exact_24h_Matches</th>
+<th>Total_Scenarios</th>
+<th>Exact_Match_Rate</th>
+<th>Daily_MAE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deepseek_deepseek-r1-0528_free_v2_prompt</td>
+<td>671B</td>
+<td>MoE</td>
+<td>93.1</td>
+<td>93.1</td>
+<td>72</td>
+<td>68.9</td>
+<td>74.1</td>
+<td>26</td>
+<td>72</td>
+<td>36.1</td>
+<td>343.2</td>
+</tr>
+<tr>
+<td>anthropic_claude-3.7-sonnet_v2_prompt</td>
+<td>200B</td>
+<td>Dense</td>
+<td>100</td>
+<td>100</td>
+<td>72</td>
+<td>48.3</td>
+<td>48.3</td>
+<td>0</td>
+<td>72</td>
+<td>0</td>
+<td>1158.7</td>
+</tr>
+<tr>
+<td>meta-llama_llama-3.3-70b-instruct_free_v1_prompt</td>
+<td>70B</td>
+<td>Dense</td>
+<td>75</td>
+<td>75</td>
+<td>72</td>
+<td>29.5</td>
+<td>39.3</td>
+<td>0</td>
+<td>72</td>
+<td>0</td>
+<td>1219.3</td>
+</tr>
+<tr>
+<td>deepseek_deepseek-r1-distill-qwen-7b_v0</td>
+<td>7B</td>
+<td>Dense</td>
+<td>93.2</td>
+<td>93.2</td>
+<td>73</td>
+<td>0.7</td>
+<td>0.8</td>
+<td>0</td>
+<td>73</td>
+<td>0</td>
+<td>1124.3</td>
+</tr>
+<tr>
+<td>mistralai_mistral-7b-instruct_free_v0_improved</td>
+<td>7B</td>
+<td>Dense</td>
+<td>100</td>
+<td>100</td>
+<td>73</td>
+<td>0.3</td>
+<td>0.3</td>
+<td>0</td>
+<td>73</td>
+<td>0</td>
+<td>746.5</td>
+</tr>
+</tbody>
+</table>
+<h2>Statistical Analysis</h2>
+<h3>Descriptive Statistics</h3>
+<p><strong>parameters:</strong>
+- Mean: 191.00
+- Standard Deviation: 279.66
+- Range: 7.00 - 671.00</p>
+<p><strong>api_success_rate:</strong>
+- Mean: 92.24
+- Standard Deviation: 10.24
+- Range: 75.00 - 100.00</p>
+<p><strong>json_success_rate:</strong>
+- Mean: 92.24
+- Standard Deviation: 10.24
+- Range: 75.00 - 100.00</p>
+<p><strong>hourly_success_rate:</strong>
+- Mean: 29.53
+- Standard Deviation: 29.95
+- Range: 0.29 - 68.92</p>
+<h3>Correlation Analysis</h3>
+<p><strong>parameters_vs_performance:</strong></p>
+<h3>Regression Analysis</h3>
+<p><strong>Best-Fitting Model:</strong> log_linear
+- R² = 0.994
+- Equation: Performance = -29.13 + 33.86 × log₁₀(Parameters)</p>
+<p><strong>All Models Comparison:</strong>
+- Linear: R² = 0.790
+  - Performance = 11.36 + 0.095145 × Parameters
+- Log Linear: R² = 0.994
+  - Performance = -29.13 + 33.86 × log₁₀(Parameters)</p>
+<h3>Performance Threshold Analysis</h3>
+<p><strong>Deployment Readiness Classification:</strong>
+- ⚠️ <strong>anthropic_claude-3.7-sonnet_v2_prompt</strong>: Conditional
+- 🚀 <strong>deepseek_deepseek-r1-0528_free_v2_prompt</strong>: Ready
+- ❌ <strong>deepseek_deepseek-r1-distill-qwen-7b_v0</strong>: Not Ready
+- ⚠️ <strong>meta-llama_llama-3.3-70b-instruct_free_v1_prompt</strong>: Conditional
+- ❌ <strong>mistralai_mistral-7b-instruct_free_v0_improved</strong>: Not Ready</p>
+<p><strong>Viability Threshold:</strong> 25.0%
+<strong>Deployment Threshold:</strong> 50.0%
+<strong>Viable Models:</strong> 3/5 (60%)</p>
+<h3>Formal Hypothesis Testing</h3>
+<p><strong>H1: Model Performance Comparisons</strong></p>
+<ul>
+<li><strong>deepseek_deepseek-r1-0528_free_v2_prompt vs mistralai_mistral-7b-instruct_free_v0_improved</strong></li>
+<li>Performance: 68.9% vs 0.3%</li>
+<li>Difference: 68.6%</li>
+<li>
+<p>Effect Size: 2.29 (Large effect)</p>
+</li>
+<li>
+<p><strong>deepseek_deepseek-r1-0528_free_v2_prompt vs deepseek_deepseek-r1-distill-qwen-7b_v0</strong></p>
+</li>
+<li>Performance: 68.9% vs 0.7%</li>
+<li>Difference: 68.2%</li>
+<li>
+<p>Effect Size: 2.28 (Large effect)</p>
+</li>
+<li>
+<p><strong>anthropic_claude-3.7-sonnet_v2_prompt vs mistralai_mistral-7b-instruct_free_v0_improved</strong></p>
+</li>
+<li>Performance: 48.3% vs 0.3%</li>
+<li>Difference: 48.0%</li>
+<li>Effect Size: 1.60 (Large effect)</li>
+</ul>
+<p><strong>H2: Architecture Performance Differences</strong></p>
+<ul>
+<li><strong>Dense vs MoE</strong></li>
+<li>Mean Performance: 19.7% vs 68.9%</li>
+<li>Effect Size: 1.64 (Large effect)</li>
+<li>Better Architecture: <strong>MoE</strong></li>
+</ul>
+<p><strong>H3: Parameter Scaling Law Validation</strong></p>
+<ul>
+<li><strong>Linear Model</strong>: R² = 0.790</li>
+<li>Regression is statistically significant (F=11.25 &gt; 10.10)</li>
+<li>Residuals are normally distributed</li>
+<li><strong>Log-Linear Model</strong>: R² = 0.994</li>
+<li>Residuals are normally distributed</li>
+</ul>
+<p><strong>H4: Outlier Detection</strong>
+- ✅ No statistical outliers detected (all models within 2 standard deviations)</p>
+<p><strong>H5: Statistical Power Assessment</strong></p>
+<ul>
+<li>Sample Size: n = 5</li>
+<li>Power Assessment: Low power due to small sample size (n=5)</li>
+<li>Recommendation: Results should be interpreted cautiously due to limited statistical power</li>
+</ul>
+<h2>Generated Visualizations</h2>
+<ol>
+<li><code>figure_1_scaling_law_20250608_213140.png</code></li>
+<li><code>figure_2_performance_comparison_20250608_213140.png</code></li>
+<li><code>figure_3_failure_analysis_20250608_213140.png</code></li>
+<li><code>figure_4_daily_mae_20250608_213140.png</code></li>
+<li><code>figure_5_parameter_efficiency_20250608_213140.png</code></li>
+<li><code>figure_6_performance_heatmap_20250608_213140.png</code></li>
+</ol>
+<h2>Detailed Model Metrics</h2>
+<h3>deepseek_deepseek-r1-0528_free_v2_prompt</h3>
+<p><strong>Basic Performance:</strong>
+- API Success Rate: 93.1%
+- JSON Success Rate: 93.1%
+- Total Responses: 72
+- Parsing Errors: 5</p>
+<p><strong>Optimization Performance:</strong>
+- Hourly Success Rate: 68.9%
+- Conditional Hourly Success Rate: 74.1%
+- Exact 24h Matches: 26/72 (36.1%)
+- Daily Mean Absolute Error: 343.23 PPFD
+- Total Hourly Matches: 1191</p>
+<p><strong>Performance Consistency:</strong>
+- Consistency Level: Moderately Variable
+- Hourly Match Rate CV: 32.2%
+- Daily MAE CV: 152.6%
+- Scenarios Analyzed: 67</p>
+<p><strong>Error Pattern Analysis:</strong>
+- Dominant Error Type: Zero errors (8.9%)
+- Over-allocation Rate: 5.2%
+- Under-allocation Rate: 3.7%
+- Zero Error Rate: 8.9%
+- Waste Error Rate: 8.1%
+- Avg Excess per Over-allocation: 89.9 PPFD
+- Avg Deficit per Under-allocation: 88.1 PPFD</p>
+<p><strong>Model Specifications:</strong>
+- Parameters: 671B
+- Architecture: MoE
+- Type: Reasoning</p>
+<hr />
+<h3>anthropic_claude-3.7-sonnet_v2_prompt</h3>
+<p><strong>Basic Performance:</strong>
+- API Success Rate: 100.0%
+- JSON Success Rate: 100.0%
+- Total Responses: 72
+- Parsing Errors: 0</p>
+<p><strong>Optimization Performance:</strong>
+- Hourly Success Rate: 48.3%
+- Conditional Hourly Success Rate: 48.3%
+- Exact 24h Matches: 0/72 (0.0%)
+- Daily Mean Absolute Error: 1158.71 PPFD
+- Total Hourly Matches: 834</p>
+<p><strong>Performance Consistency:</strong>
+- Consistency Level: Moderately Variable
+- Hourly Match Rate CV: 27.9%
+- Daily MAE CV: 83.2%
+- Scenarios Analyzed: 72</p>
+<p><strong>Error Pattern Analysis:</strong>
+- Dominant Error Type: Zero errors (23.0%)
+- Over-allocation Rate: 5.4%
+- Under-allocation Rate: 4.9%
+- Zero Error Rate: 23.0%
+- Waste Error Rate: 18.4%
+- Avg Excess per Over-allocation: 99.5 PPFD
+- Avg Deficit per Under-allocation: 99.4 PPFD</p>
+<p><strong>Model Specifications:</strong>
+- Parameters: 200B
+- Architecture: Dense
+- Type: Multi-modal</p>
+<hr />
+<h3>meta-llama_llama-3.3-70b-instruct_free_v1_prompt</h3>
+<p><strong>Basic Performance:</strong>
+- API Success Rate: 75.0%
+- JSON Success Rate: 75.0%
+- Total Responses: 72
+- Parsing Errors: 18</p>
+<p><strong>Optimization Performance:</strong>
+- Hourly Success Rate: 29.5%
+- Conditional Hourly Success Rate: 39.3%
+- Exact 24h Matches: 0/72 (0.0%)
+- Daily Mean Absolute Error: 1219.31 PPFD
+- Total Hourly Matches: 509</p>
+<p><strong>Performance Consistency:</strong>
+- Consistency Level: Moderately Variable
+- Hourly Match Rate CV: 36.7%
+- Daily MAE CV: 69.9%
+- Scenarios Analyzed: 54</p>
+<p><strong>Error Pattern Analysis:</strong>
+- Dominant Error Type: Waste errors (28.9%)
+- Over-allocation Rate: 5.8%
+- Under-allocation Rate: 3.4%
+- Zero Error Rate: 22.7%
+- Waste Error Rate: 28.9%
+- Avg Excess per Over-allocation: 126.0 PPFD
+- Avg Deficit per Under-allocation: 93.3 PPFD</p>
+<p><strong>Model Specifications:</strong>
+- Parameters: 70B
+- Architecture: Dense
+- Type: Instruction</p>
+<hr />
+<h3>deepseek_deepseek-r1-distill-qwen-7b_v0</h3>
+<p><strong>Basic Performance:</strong>
+- API Success Rate: 93.2%
+- JSON Success Rate: 93.2%
+- Total Responses: 73
+- Parsing Errors: 5</p>
+<p><strong>Optimization Performance:</strong>
+- Hourly Success Rate: 0.7%
+- Conditional Hourly Success Rate: 0.8%
+- Exact 24h Matches: 0/73 (0.0%)
+- Daily Mean Absolute Error: 1124.31 PPFD
+- Total Hourly Matches: 13</p>
+<p><strong>Performance Consistency:</strong>
+- Consistency Level: Insufficient Data
+- Hourly Match Rate CV: 0.0%
+- Daily MAE CV: 0.0%
+- Scenarios Analyzed: 1</p>
+<p><strong>Error Pattern Analysis:</strong>
+- Dominant Error Type: Under-allocation (29.2%)
+- Over-allocation Rate: 0.0%
+- Under-allocation Rate: 29.2%
+- Zero Error Rate: 0.0%
+- Waste Error Rate: 16.7%
+- Avg Deficit per Under-allocation: 175.4 PPFD</p>
+<p><strong>Model Specifications:</strong>
+- Parameters: 7B
+- Architecture: Dense
+- Type: Distilled</p>
+<hr />
+<h3>mistralai_mistral-7b-instruct_free_v0_improved</h3>
+<p><strong>Basic Performance:</strong>
+- API Success Rate: 100.0%
+- JSON Success Rate: 100.0%
+- Total Responses: 73
+- Parsing Errors: 0</p>
+<p><strong>Optimization Performance:</strong>
+- Hourly Success Rate: 0.3%
+- Conditional Hourly Success Rate: 0.3%
+- Exact 24h Matches: 0/73 (0.0%)
+- Daily Mean Absolute Error: 746.54 PPFD
+- Total Hourly Matches: 5</p>
+<p><strong>Performance Consistency:</strong>
+- Consistency Level: Insufficient Data
+- Hourly Match Rate CV: 0.0%
+- Daily MAE CV: 0.0%
+- Scenarios Analyzed: 1</p>
+<p><strong>Error Pattern Analysis:</strong>
+- Dominant Error Type: Waste errors (33.3%)
+- Over-allocation Rate: 4.2%
+- Under-allocation Rate: 12.5%
+- Zero Error Rate: 29.2%
+- Waste Error Rate: 33.3%
+- Avg Excess per Over-allocation: 185.0 PPFD
+- Avg Deficit per Under-allocation: 127.3 PPFD</p>
+<p><strong>Model Specifications:</strong>
+- Parameters: 7B
+- Architecture: Dense
+- Type: Instruction</p>
+<hr />
+<h2>Analysis Metadata</h2>
+<p><strong>Generated:</strong> 2025-06-08 21:31:42<br />
+<strong>Analysis Framework:</strong> Modular LED Optimization LLM Analysis System<br />
+<strong>Evaluation Method:</strong> Ground truth comparison with optimal greedy algorithm solutions  </p>
+<h3>Metrics Definitions</h3>
+<ul>
+<li><strong>API Success Rate:</strong> Percentage of successful API calls</li>
+<li><strong>JSON Success Rate:</strong> Percentage of valid JSON responses</li>
+<li><strong>Hourly Success Rate:</strong> Percentage of exact hourly allocation matches (±0.01 PPFD)</li>
+<li><strong>Conditional Hourly Success Rate:</strong> Hourly success rate calculated only from valid JSON responses</li>
+<li><strong>Daily MAE:</strong> Mean Absolute Error in daily PPFD totals</li>
+<li><strong>Exact 24h Matches:</strong> Complete scenarios with perfect hourly allocation</li>
+<li><strong>Consistency Level:</strong> Performance reliability classification based on coefficient of variation</li>
+<li><strong>Hourly Match Rate CV:</strong> Coefficient of variation in hourly match rates across scenarios</li>
+<li><strong>Daily MAE CV:</strong> Coefficient of variation in daily mean absolute errors</li>
+<li><strong>Dominant Error Type:</strong> Most frequent type of allocation error made by the model</li>
+<li><strong>Over-allocation Rate:</strong> Percentage of hours where model allocated more than optimal</li>
+<li><strong>Under-allocation Rate:</strong> Percentage of hours where model allocated less than optimal</li>
+<li><strong>Zero Error Rate:</strong> Percentage of hours where model gave zero when should allocate</li>
+<li><strong>Waste Error Rate:</strong> Percentage of hours where model allocated when should be zero</li>
+</ul>
+<h3>File Structure</h3>
+<ul>
+<li><code>results/analysis/</code>: Raw analysis data (JSON)</li>
+<li><code>results/figures/</code>: Generated visualizations (PNG)</li>
+<li><code>results/analysis_reports/</code>: Analysis reports (MD, HTML)</li>
+</ul>
+</body>
+</html>
