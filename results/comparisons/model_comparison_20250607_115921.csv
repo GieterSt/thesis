@@ -1,3 +1,0 @@
-Model,API_Success_Rate,JSON_Success_Rate,Allocation_Success_Rate,Avg_Response_Time,Cost_Category,Thesis_Quality,Valid_Responses
-meta-llama_llama-3.3-70b-instruct_free_v1_prompt,75.0,75.0,75.0,4.549932705031501,PAID,EXCELLENT,54
-mistralai_mistral-7b-instruct_free_v0_improved,100.0,36.986301369863014,1.36986301369863,9.945792968959024,PAID,GOOD,27
