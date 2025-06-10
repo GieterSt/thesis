@@ -141,29 +141,57 @@ def comprehensive_statistical_analysis(all_metrics):
         X = df[['parameters']].values
         y = df['hourly_success_rate'].values
         
-        # Fit linear regression
-        reg = LinearRegression()
-        reg.fit(X, y)
-        y_pred = reg.predict(X)
+        # Linear regression (existing)
+        reg_linear = LinearRegression()
+        reg_linear.fit(X, y)
+        y_pred_linear = reg_linear.predict(X)
+        r2_linear = r2_score(y, y_pred_linear)
+        residuals_linear = y - y_pred_linear
+        mse_linear = np.mean(residuals_linear ** 2)
         
-        # Calculate metrics
-        r2 = r2_score(y, y_pred)
-        
-        # Calculate prediction intervals (rough approximation)
-        residuals = y - y_pred
-        mse = np.mean(residuals ** 2)
+        # Log-linear regression (new for thesis equation)
+        X_log = np.log10(X)  # Transform parameters to log10
+        reg_log = LinearRegression()
+        reg_log.fit(X_log, y)
+        y_pred_log = reg_log.predict(X_log)
+        r2_log = r2_score(y, y_pred_log)
+        residuals_log = y - y_pred_log
+        mse_log = np.mean(residuals_log ** 2)
         
         regression_results['hourly_success_rate'] = {
-            'coefficient': reg.coef_[0],
-            'intercept': reg.intercept_,
-            'r_squared': r2,
-            'rmse': np.sqrt(mse),
-            'equation': f"Hourly Success = {reg.intercept_:.2f} + {reg.coef_[0]:.4f} × Parameters"
+            'linear': {
+                'coefficient': reg_linear.coef_[0],
+                'intercept': reg_linear.intercept_,
+                'r_squared': r2_linear,
+                'rmse': np.sqrt(mse_linear),
+                'equation': f"Hourly Success = {reg_linear.intercept_:.2f} + {reg_linear.coef_[0]:.4f} × Parameters"
+            },
+            'log_linear': {
+                'coefficient': reg_log.coef_[0],
+                'intercept': reg_log.intercept_,
+                'r_squared': r2_log,
+                'rmse': np.sqrt(mse_log),
+                'equation': f"Performance = {reg_log.intercept_:.1f} + {reg_log.coef_[0]:.1f} × log₁₀(Parameters)",
+                'log_coefficients': {
+                    'intercept': reg_log.intercept_,
+                    'coefficient': reg_log.coef_[0]
+                }
+            }
         }
         
-        print(f"  Hourly Success Rate Regression:")
-        print(f"    R² = {r2:.3f}")
-        print(f"    Equation: {regression_results['hourly_success_rate']['equation']}")
+        print(f"  Linear Regression:")
+        print(f"    R² = {r2_linear:.3f}")
+        print(f"    Equation: {regression_results['hourly_success_rate']['linear']['equation']}")
+        
+        print(f"  Log-Linear Regression (Thesis Model):")
+        print(f"    R² = {r2_log:.3f}")
+        print(f"    Equation: {regression_results['hourly_success_rate']['log_linear']['equation']}")
+        
+        # Determine which model fits better
+        if r2_log > r2_linear:
+            print(f"    ✅ Log-linear model provides better fit (ΔR² = {r2_log - r2_linear:.3f})")
+        else:
+            print(f"    ⚠️  Linear model provides better fit (ΔR² = {r2_linear - r2_log:.3f})")
     
     results['regression_analysis'] = regression_results
     
