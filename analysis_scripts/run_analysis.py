@@ -159,7 +159,30 @@ def run_comprehensive_analysis():
     
     # Final Summary
     print("\n" + "="*80)
-    print("🎉 ANALYSIS COMPLETE!")
+    
+# Auto-cleanup: Archive old reports, keep only latest
+try:
+    import sys
+    sys.path.append('..')
+    from cleanup_analysis_reports import cleanup_analysis_reports
+    cleanup_analysis_reports()
+# Auto-cleanup: Archive old JSON analysis files
+try:
+    import sys
+    sys.path.append('..')
+    from cleanup_analysis_json import cleanup_analysis_json
+    cleanup_analysis_json()
+except ImportError:
+    print("⚠️  JSON cleanup script not found - skipping archive cleanup")
+except Exception as e:
+    print(f"⚠️  JSON cleanup failed: {e}")
+
+except ImportError:
+    print("⚠️  Cleanup script not found - skipping archive cleanup")
+except Exception as e:
+    print(f"⚠️  Cleanup failed: {e}")
+
+print("🎉 ANALYSIS COMPLETE!")
     print("="*80)
     
     print(f"📊 Models Analyzed: {len(all_metrics)}")
