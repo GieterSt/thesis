@@ -1,0 +1,121 @@
+date,hour,total_supplemental_ppfd_requirement_umol_m2_s_h,example_type,RANK eur/ppfd,max_ppfd_to_addumol_m2_s,optimal_ppfd_allocation
+2024-06-15,0,2850.0,Validation 1 - Evening Peak Pricing,8,360.0,330.0
+2024-06-15,1,2850.0,Validation 1 - Evening Peak Pricing,7,360.0,360.0
+2024-06-15,2,2850.0,Validation 1 - Evening Peak Pricing,6,360.0,360.0
+2024-06-15,3,2850.0,Validation 1 - Evening Peak Pricing,5,360.0,360.0
+2024-06-15,4,2850.0,Validation 1 - Evening Peak Pricing,4,360.0,360.0
+2024-06-15,5,2850.0,Validation 1 - Evening Peak Pricing,3,360.0,360.0
+2024-06-15,6,2850.0,Validation 1 - Evening Peak Pricing,12,360.0,0.0
+2024-06-15,7,2850.0,Validation 1 - Evening Peak Pricing,15,360.0,0.0
+2024-06-15,8,2850.0,Validation 1 - Evening Peak Pricing,18,360.0,0.0
+2024-06-15,9,2850.0,Validation 1 - Evening Peak Pricing,20,360.0,0.0
+2024-06-15,10,2850.0,Validation 1 - Evening Peak Pricing,22,360.0,0.0
+2024-06-15,11,2850.0,Validation 1 - Evening Peak Pricing,24,360.0,0.0
+2024-06-15,12,2850.0,Validation 1 - Evening Peak Pricing,23,360.0,0.0
+2024-06-15,13,2850.0,Validation 1 - Evening Peak Pricing,21,360.0,0.0
+2024-06-15,14,2850.0,Validation 1 - Evening Peak Pricing,19,360.0,0.0
+2024-06-15,15,2850.0,Validation 1 - Evening Peak Pricing,17,360.0,0.0
+2024-06-15,16,2850.0,Validation 1 - Evening Peak Pricing,16,360.0,0.0
+2024-06-15,17,2850.0,Validation 1 - Evening Peak Pricing,14,360.0,0.0
+2024-06-15,18,2850.0,Validation 1 - Evening Peak Pricing,13,360.0,0.0
+2024-06-15,19,2850.0,Validation 1 - Evening Peak Pricing,11,360.0,0.0
+2024-06-15,20,2850.0,Validation 1 - Evening Peak Pricing,10,360.0,0.0
+2024-06-15,21,2850.0,Validation 1 - Evening Peak Pricing,9,360.0,0.0
+2024-06-15,22,2850.0,Validation 1 - Evening Peak Pricing,2,360.0,360.0
+2024-06-15,23,2850.0,Validation 1 - Evening Peak Pricing,1,360.0,360.0
+2024-09-22,0,1200.0,Validation 2 - Maintenance Windows,15,360.0,0.0
+2024-09-22,1,1200.0,Validation 2 - Maintenance Windows,14,360.0,0.0
+2024-09-22,2,1200.0,Validation 2 - Maintenance Windows,13,0.0,0.0
+2024-09-22,3,1200.0,Validation 2 - Maintenance Windows,12,0.0,0.0
+2024-09-22,4,1200.0,Validation 2 - Maintenance Windows,11,0.0,0.0
+2024-09-22,5,1200.0,Validation 2 - Maintenance Windows,10,360.0,0.0
+2024-09-22,6,1200.0,Validation 2 - Maintenance Windows,9,360.0,0.0
+2024-09-22,7,1200.0,Validation 2 - Maintenance Windows,8,360.0,0.0
+2024-09-22,8,1200.0,Validation 2 - Maintenance Windows,7,360.0,0.0
+2024-09-22,9,1200.0,Validation 2 - Maintenance Windows,6,360.0,0.0
+2024-09-22,10,1200.0,Validation 2 - Maintenance Windows,5,360.0,0.0
+2024-09-22,11,1200.0,Validation 2 - Maintenance Windows,4,360.0,120.0
+2024-09-22,12,1200.0,Validation 2 - Maintenance Windows,3,360.0,360.0
+2024-09-22,13,1200.0,Validation 2 - Maintenance Windows,2,360.0,360.0
+2024-09-22,14,1200.0,Validation 2 - Maintenance Windows,1,360.0,360.0
+2024-09-22,15,1200.0,Validation 2 - Maintenance Windows,16,0.0,0.0
+2024-09-22,16,1200.0,Validation 2 - Maintenance Windows,17,0.0,0.0
+2024-09-22,17,1200.0,Validation 2 - Maintenance Windows,18,360.0,0.0
+2024-09-22,18,1200.0,Validation 2 - Maintenance Windows,19,360.0,0.0
+2024-09-22,19,1200.0,Validation 2 - Maintenance Windows,20,360.0,0.0
+2024-09-22,20,1200.0,Validation 2 - Maintenance Windows,21,360.0,0.0
+2024-09-22,21,1200.0,Validation 2 - Maintenance Windows,22,360.0,0.0
+2024-09-22,22,1200.0,Validation 2 - Maintenance Windows,23,360.0,0.0
+2024-09-22,23,1200.0,Validation 2 - Maintenance Windows,24,360.0,0.0
+2024-12-21,0,4500.0,Validation 3 - Variable Capacity,12,180.0,180.0
+2024-12-21,1,4500.0,Validation 3 - Variable Capacity,11,220.0,220.0
+2024-12-21,2,4500.0,Validation 3 - Variable Capacity,10,280.0,280.0
+2024-12-21,3,4500.0,Validation 3 - Variable Capacity,9,340.0,340.0
+2024-12-21,4,4500.0,Validation 3 - Variable Capacity,8,360.0,360.0
+2024-12-21,5,4500.0,Validation 3 - Variable Capacity,7,360.0,360.0
+2024-12-21,6,4500.0,Validation 3 - Variable Capacity,6,320.0,320.0
+2024-12-21,7,4500.0,Validation 3 - Variable Capacity,5,290.0,290.0
+2024-12-21,8,4500.0,Validation 3 - Variable Capacity,4,250.0,250.0
+2024-12-21,9,4500.0,Validation 3 - Variable Capacity,3,200.0,200.0
+2024-12-21,10,4500.0,Validation 3 - Variable Capacity,2,150.0,150.0
+2024-12-21,11,4500.0,Validation 3 - Variable Capacity,1,100.0,100.0
+2024-12-21,12,4500.0,Validation 3 - Variable Capacity,13,80.0,80.0
+2024-12-21,13,4500.0,Validation 3 - Variable Capacity,14,120.0,120.0
+2024-12-21,14,4500.0,Validation 3 - Variable Capacity,15,160.0,160.0
+2024-12-21,15,4500.0,Validation 3 - Variable Capacity,16,200.0,200.0
+2024-12-21,16,4500.0,Validation 3 - Variable Capacity,17,240.0,240.0
+2024-12-21,17,4500.0,Validation 3 - Variable Capacity,18,280.0,280.0
+2024-12-21,18,4500.0,Validation 3 - Variable Capacity,19,320.0,320.0
+2024-12-21,19,4500.0,Validation 3 - Variable Capacity,20,360.0,50.0
+2024-12-21,20,4500.0,Validation 3 - Variable Capacity,21,360.0,0.0
+2024-12-21,21,4500.0,Validation 3 - Variable Capacity,22,340.0,0.0
+2024-12-21,22,4500.0,Validation 3 - Variable Capacity,23,300.0,0.0
+2024-12-21,23,4500.0,Validation 3 - Variable Capacity,24,240.0,0.0
+2025-03-20,0,12000.0,Validation 4 - Infeasible Target (Edge Case),20,200.0,200.0
+2025-03-20,1,12000.0,Validation 4 - Infeasible Target (Edge Case),19,180.0,180.0
+2025-03-20,2,12000.0,Validation 4 - Infeasible Target (Edge Case),18,160.0,160.0
+2025-03-20,3,12000.0,Validation 4 - Infeasible Target (Edge Case),17,140.0,140.0
+2025-03-20,4,12000.0,Validation 4 - Infeasible Target (Edge Case),16,120.0,120.0
+2025-03-20,5,12000.0,Validation 4 - Infeasible Target (Edge Case),15,100.0,100.0
+2025-03-20,6,12000.0,Validation 4 - Infeasible Target (Edge Case),14,80.0,80.0
+2025-03-20,7,12000.0,Validation 4 - Infeasible Target (Edge Case),13,60.0,60.0
+2025-03-20,8,12000.0,Validation 4 - Infeasible Target (Edge Case),12,40.0,40.0
+2025-03-20,9,12000.0,Validation 4 - Infeasible Target (Edge Case),11,20.0,20.0
+2025-03-20,10,12000.0,Validation 4 - Infeasible Target (Edge Case),10,0.0,0.0
+2025-03-20,11,12000.0,Validation 4 - Infeasible Target (Edge Case),9,0.0,0.0
+2025-03-20,12,12000.0,Validation 4 - Infeasible Target (Edge Case),8,0.0,0.0
+2025-03-20,13,12000.0,Validation 4 - Infeasible Target (Edge Case),7,0.0,0.0
+2025-03-20,14,12000.0,Validation 4 - Infeasible Target (Edge Case),6,0.0,0.0
+2025-03-20,15,12000.0,Validation 4 - Infeasible Target (Edge Case),5,0.0,0.0
+2025-03-20,16,12000.0,Validation 4 - Infeasible Target (Edge Case),4,20.0,20.0
+2025-03-20,17,12000.0,Validation 4 - Infeasible Target (Edge Case),3,40.0,40.0
+2025-03-20,18,12000.0,Validation 4 - Infeasible Target (Edge Case),2,60.0,60.0
+2025-03-20,19,12000.0,Validation 4 - Infeasible Target (Edge Case),1,80.0,80.0
+2025-03-20,20,12000.0,Validation 4 - Infeasible Target (Edge Case),21,100.0,100.0
+2025-03-20,21,12000.0,Validation 4 - Infeasible Target (Edge Case),22,120.0,120.0
+2025-03-20,22,12000.0,Validation 4 - Infeasible Target (Edge Case),23,140.0,140.0
+2025-03-20,23,12000.0,Validation 4 - Infeasible Target (Edge Case),24,160.0,160.0
+2024-08-10,0,3141.592653589793,Validation 5 - Fractional Precision Challenge,13,123.456789,0.0
+2024-08-10,1,3141.592653589793,Validation 5 - Fractional Precision Challenge,12,234.567891,0.0
+2024-08-10,2,3141.592653589793,Validation 5 - Fractional Precision Challenge,11,345.678912,0.0
+2024-08-10,3,3141.592653589793,Validation 5 - Fractional Precision Challenge,10,456.789123,0.0
+2024-08-10,4,3141.592653589793,Validation 5 - Fractional Precision Challenge,9,567.891234,0.0
+2024-08-10,5,3141.592653589793,Validation 5 - Fractional Precision Challenge,8,678.912345,0.0
+2024-08-10,6,3141.592653589793,Validation 5 - Fractional Precision Challenge,7,789.123456,177.51969358979295
+2024-08-10,7,3141.592653589793,Validation 5 - Fractional Precision Challenge,6,891.234567,891.234567
+2024-08-10,8,3141.592653589793,Validation 5 - Fractional Precision Challenge,5,912.345678,912.345678
+2024-08-10,9,3141.592653589793,Validation 5 - Fractional Precision Challenge,4,123.456789,123.456789
+2024-08-10,10,3141.592653589793,Validation 5 - Fractional Precision Challenge,3,234.567891,234.567891
+2024-08-10,11,3141.592653589793,Validation 5 - Fractional Precision Challenge,2,345.678912,345.678912
+2024-08-10,12,3141.592653589793,Validation 5 - Fractional Precision Challenge,1,456.789123,456.789123
+2024-08-10,13,3141.592653589793,Validation 5 - Fractional Precision Challenge,14,567.891234,0.0
+2024-08-10,14,3141.592653589793,Validation 5 - Fractional Precision Challenge,15,678.912345,0.0
+2024-08-10,15,3141.592653589793,Validation 5 - Fractional Precision Challenge,16,789.123456,0.0
+2024-08-10,16,3141.592653589793,Validation 5 - Fractional Precision Challenge,17,891.234567,0.0
+2024-08-10,17,3141.592653589793,Validation 5 - Fractional Precision Challenge,18,912.345678,0.0
+2024-08-10,18,3141.592653589793,Validation 5 - Fractional Precision Challenge,19,123.456789,0.0
+2024-08-10,19,3141.592653589793,Validation 5 - Fractional Precision Challenge,20,234.567891,0.0
+2024-08-10,20,3141.592653589793,Validation 5 - Fractional Precision Challenge,21,345.678912,0.0
+2024-08-10,21,3141.592653589793,Validation 5 - Fractional Precision Challenge,22,456.789123,0.0
+2024-08-10,22,3141.592653589793,Validation 5 - Fractional Precision Challenge,23,567.891234,0.0
+2024-08-10,23,3141.592653589793,Validation 5 - Fractional Precision Challenge,24,678.912345,0.0

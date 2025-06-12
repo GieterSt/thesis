@@ -1,0 +1,1154 @@
+[
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 4373.5831522859\\n- EUR/PPFD rankings by hour: {'hour_0': 7, 'hour_1': 5, 'hour_2': 1, 'hour_3': 1, 'hour_4': 3, 'hour_5': 4, 'hour_6': 8, 'hour_7': 12, 'hour_8': 14, 'hour_9': 18, 'hour_10': 22, 'hour_11': 20, 'hour_12': 17, 'hour_13': 15, 'hour_14': 16, 'hour_15': 21, 'hour_16': 24, 'hour_17': 23, 'hour_18': 19, 'hour_19': 13, 'hour_20': 11, 'hour_21': 10, 'hour_22': 6, 'hour_23': 9}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 360.0, 'hour_9': 359.7572604, 'hour_10': 345.2986176, 'hour_11': 318.280062, 'hour_12': 296.6404968, 'hour_13': 280.7775384, 'hour_14': 290.6941212, 'hour_15': 309.203388, 'hour_16': 335.1110004, 'hour_17': 355.5949464, 'hour_18': 360.0, 'hour_19': 360.0, 'hour_20': 360.0, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 3795.0508274605\\n- EUR/PPFD rankings by hour: {'hour_0': 6, 'hour_1': 5, 'hour_2': 4, 'hour_3': 3, 'hour_4': 1, 'hour_5': 7, 'hour_6': 16, 'hour_7': 23, 'hour_8': 19, 'hour_9': 15, 'hour_10': 13, 'hour_11': 10, 'hour_12': 9, 'hour_13': 12, 'hour_14': 17, 'hour_15': 21, 'hour_16': 24, 'hour_17': 22, 'hour_18': 20, 'hour_19': 18, 'hour_20': 14, 'hour_21': 11, 'hour_22': 2, 'hour_23': 8}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 360.0, 'hour_9': 358.7029068, 'hour_10': 311.1899808, 'hour_11': 233.7724296, 'hour_12': 178.8596688, 'hour_13': 167.6147196, 'hour_14': 182.241642, 'hour_15': 234.788064, 'hour_16': 296.82069, 'hour_17': 348.8354676, 'hour_18': 360.0, 'hour_19': 360.0, 'hour_20': 360.0, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 4234.0137274305\\n- EUR/PPFD rankings by hour: {'hour_0': 5, 'hour_1': 3, 'hour_2': 2, 'hour_3': 1, 'hour_4': 4, 'hour_5': 7, 'hour_6': 9, 'hour_7': 12, 'hour_8': 14, 'hour_9': 15, 'hour_10': 16, 'hour_11': 18, 'hour_12': 19, 'hour_13': 20, 'hour_14': 22, 'hour_15': 23, 'hour_16': 24, 'hour_17': 21, 'hour_18': 17, 'hour_19': 13, 'hour_20': 11, 'hour_21': 10, 'hour_22': 8, 'hour_23': 6}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 360.0, 'hour_9': 358.4244264, 'hour_10': 329.21079, 'hour_11': 295.1468292, 'hour_12': 272.866908, 'hour_13': 263.142432, 'hour_14': 262.0210644, 'hour_15': 295.912278, 'hour_16': 323.5011972, 'hour_17': 351.5651712, 'hour_18': 359.9970216, 'hour_19': 360.0, 'hour_20': 360.0, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 3358.7804032444\\n- EUR/PPFD rankings by hour: {'hour_0': 5, 'hour_1': 2, 'hour_2': 1, 'hour_3': 3, 'hour_4': 6, 'hour_5': 16, 'hour_6': 19, 'hour_7': 24, 'hour_8': 23, 'hour_9': 20, 'hour_10': 17, 'hour_11': 10, 'hour_12': 13, 'hour_13': 15, 'hour_14': 12, 'hour_15': 18, 'hour_16': 22, 'hour_17': 21, 'hour_18': 14, 'hour_19': 11, 'hour_20': 9, 'hour_21': 7, 'hour_22': 4, 'hour_23': 8}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 360.0, 'hour_9': 357.1198872, 'hour_10': 300.2071308, 'hour_11': 213.0070248, 'hour_12': 127.230594, 'hour_13': 85.52852640000003, 'hour_14': 89.17110960000002, 'hour_15': 143.909634, 'hour_16': 233.0322972, 'hour_17': 327.3850308, 'hour_18': 359.9642592, 'hour_19': 360.0, 'hour_20': 360.0, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 4220.4217881570\\n- EUR/PPFD rankings by hour: {'hour_0': 14, 'hour_1': 10, 'hour_2': 5, 'hour_3': 4, 'hour_4': 3, 'hour_5': 2, 'hour_6': 1, 'hour_7': 6, 'hour_8': 19, 'hour_9': 17, 'hour_10': 13, 'hour_11': 18, 'hour_12': 7, 'hour_13': 12, 'hour_14': 16, 'hour_15': 11, 'hour_16': 23, 'hour_17': 24, 'hour_18': 22, 'hour_19': 20, 'hour_20': 14, 'hour_21': 9, 'hour_22': 8, 'hour_23': 21}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 360.0, 'hour_9': 357.8361924, 'hour_10': 335.160144, 'hour_11': 305.2331808, 'hour_12': 290.1609876, 'hour_13': 265.592166, 'hour_14': 266.6807712, 'hour_15': 270.5169504, 'hour_16': 305.875026, 'hour_17': 341.19885, 'hour_18': 359.9419212, 'hour_19': 360.0, 'hour_20': 360.0, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 3138.6466831376\\n- EUR/PPFD rankings by hour: {'hour_0': 11, 'hour_1': 9, 'hour_2': 5, 'hour_3': 3, 'hour_4': 4, 'hour_5': 7, 'hour_6': 10, 'hour_7': 21, 'hour_8': 20, 'hour_9': 17, 'hour_10': 8, 'hour_11': 2, 'hour_12': 1, 'hour_13': 6, 'hour_14': 16, 'hour_15': 18, 'hour_16': 22, 'hour_17': 24, 'hour_18': 23, 'hour_19': 19, 'hour_20': 14, 'hour_21': 15, 'hour_22': 12, 'hour_23': 13}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 360.0, 'hour_9': 352.0685208, 'hour_10': 272.84457, 'hour_11': 169.3109184, 'hour_12': 90.0422916, 'hour_13': 54.62166960000002, 'hour_14': 69.0386148, 'hour_15': 123.2231568, 'hour_16': 215.078502, 'hour_17': 311.0961612, 'hour_18': 359.0975448, 'hour_19': 360.0, 'hour_20': 360.0, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 4722.2260000000\\n- EUR/PPFD rankings by hour: {'hour_0': 13, 'hour_1': 10, 'hour_2': 9, 'hour_3': 7, 'hour_4': 11, 'hour_5': 19, 'hour_6': 23, 'hour_7': 24, 'hour_8': 22, 'hour_9': 18, 'hour_10': 15, 'hour_11': 14, 'hour_12': 6, 'hour_13': 5, 'hour_14': 12, 'hour_15': 16, 'hour_16': 21, 'hour_17': 20, 'hour_18': 8, 'hour_19': 4, 'hour_20': 3, 'hour_21': 2, 'hour_22': 1, 'hour_23': 17}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 360.0, 'hour_9': 360.0, 'hour_10': 360.0, 'hour_11': 360.0, 'hour_12': 360.0, 'hour_13': 360.0, 'hour_14': 360.0, 'hour_15': 360.0, 'hour_16': 360.0, 'hour_17': 360.0, 'hour_18': 360.0, 'hour_19': 360.0, 'hour_20': 360.0, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 3079.6683591549\\n- EUR/PPFD rankings by hour: {'hour_0': 1, 'hour_1': 2, 'hour_2': 3, 'hour_3': 4, 'hour_4': 6, 'hour_5': 9, 'hour_6': 17, 'hour_7': 22, 'hour_8': 20, 'hour_9': 15, 'hour_10': 12, 'hour_11': 8, 'hour_12': 7, 'hour_13': 10, 'hour_14': 18, 'hour_15': 16, 'hour_16': 23, 'hour_17': 24, 'hour_18': 21, 'hour_19': 19, 'hour_20': 14, 'hour_21': 13, 'hour_22': 11, 'hour_23': 5}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 360.0, 'hour_9': 348.0432132, 'hour_10': 261.6711024, 'hour_11': 153.0935304, 'hour_12': 71.74895880000003, 'hour_13': 33.50928120000003, 'hour_14': 70.83310080000001, 'hour_15': 137.6505264, 'hour_16': 218.9236164, 'hour_17': 304.9427868, 'hour_18': 357.0275568, 'hour_19': 360.0, 'hour_20': 360.0, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 4181.0875170896\\n- EUR/PPFD rankings by hour: {'hour_0': 9, 'hour_1': 5, 'hour_2': 3, 'hour_3': 1, 'hour_4': 2, 'hour_5': 4, 'hour_6': 6, 'hour_7': 11, 'hour_8': 21, 'hour_9': 19, 'hour_10': 17, 'hour_11': 15, 'hour_12': 12, 'hour_13': 8, 'hour_14': 10, 'hour_15': 14, 'hour_16': 20, 'hour_17': 24, 'hour_18': 23, 'hour_19': 22, 'hour_20': 18, 'hour_21': 16, 'hour_22': 7, 'hour_23': 13}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 360.0, 'hour_9': 355.562184, 'hour_10': 331.511604, 'hour_11': 303.052992, 'hour_12': 268.8788304, 'hour_13': 252.1178844, 'hour_14': 257.297322, 'hour_15': 281.0470836, 'hour_16': 310.3604964, 'hour_17': 340.56594, 'hour_18': 358.4676132, 'hour_19': 360.0, 'hour_20': 360.0, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 4211.0710938764\\n- EUR/PPFD rankings by hour: {'hour_0': 14, 'hour_1': 7, 'hour_2': 4, 'hour_3': 1, 'hour_4': 1, 'hour_5': 1, 'hour_6': 5, 'hour_7': 8, 'hour_8': 12, 'hour_9': 16, 'hour_10': 11, 'hour_11': 10, 'hour_12': 6, 'hour_13': 9, 'hour_14': 13, 'hour_15': 17, 'hour_16': 22, 'hour_17': 24, 'hour_18': 23, 'hour_19': 20, 'hour_20': 21, 'hour_21': 19, 'hour_22': 15, 'hour_23': 18}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 360.0, 'hour_9': 354.4348596, 'hour_10': 324.102834, 'hour_11': 292.3635144, 'hour_12': 273.7291548, 'hour_13': 264.274224, 'hour_14': 280.4648064, 'hour_15': 292.5898728, 'hour_16': 309.091698, 'hour_17': 339.3879828, 'hour_18': 358.406556, 'hour_19': 360.0, 'hour_20': 360.0, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 4356.5958342961\\n- EUR/PPFD rankings by hour: {'hour_0': 7, 'hour_1': 6, 'hour_2': 3, 'hour_3': 2, 'hour_4': 5, 'hour_5': 14, 'hour_6': 22, 'hour_7': 24, 'hour_8': 23, 'hour_9': 21, 'hour_10': 20, 'hour_11': 18, 'hour_12': 19, 'hour_13': 15, 'hour_14': 16, 'hour_15': 10, 'hour_16': 11, 'hour_17': 16, 'hour_18': 13, 'hour_19': 12, 'hour_20': 9, 'hour_21': 4, 'hour_22': 1, 'hour_23': 8}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 360.0, 'hour_9': 349.6217652, 'hour_10': 313.9152168, 'hour_11': 300.0760812, 'hour_12': 286.448412, 'hour_13': 298.339674, 'hour_14': 315.3225108, 'hour_15': 325.9360392, 'hour_16': 337.9255884, 'hour_17': 348.2472336, 'hour_18': 358.5376056, 'hour_19': 360.0, 'hour_20': 360.0, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 3637.6109883087\\n- EUR/PPFD rankings by hour: {'hour_0': 5, 'hour_1': 4, 'hour_2': 2, 'hour_3': 1, 'hour_4': 3, 'hour_5': 6, 'hour_6': 8, 'hour_7': 13, 'hour_8': 12, 'hour_9': 15, 'hour_10': 11, 'hour_11': 10, 'hour_12': 8, 'hour_13': 14, 'hour_14': 19, 'hour_15': 21, 'hour_16': 23, 'hour_17': 24, 'hour_18': 22, 'hour_19': 20, 'hour_20': 18, 'hour_21': 17, 'hour_22': 16, 'hour_23': 7}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 360.0, 'hour_9': 352.4765616, 'hour_10': 320.7029904, 'hour_11': 278.8862544, 'hour_12': 242.2385316, 'hour_13': 174.2357028, 'hour_14': 129.940938, 'hour_15': 151.6594308, 'hour_16': 231.3837528, 'hour_17': 282.7060524, 'hour_18': 351.1556412, 'hour_19': 360.0, 'hour_20': 360.0, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 3461.1302227242\\n- EUR/PPFD rankings by hour: {'hour_0': 6, 'hour_1': 11, 'hour_2': 8, 'hour_3': 7, 'hour_4': 17, 'hour_5': 4, 'hour_6': 13, 'hour_7': 19, 'hour_8': 21, 'hour_9': 9, 'hour_10': 5, 'hour_11': 2, 'hour_12': 1, 'hour_13': 3, 'hour_14': 10, 'hour_15': 15, 'hour_16': 22, 'hour_17': 24, 'hour_18': 23, 'hour_19': 20, 'hour_20': 18, 'hour_21': 16, 'hour_22': 14, 'hour_23': 12}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 359.8019364, 'hour_9': 335.0544108, 'hour_10': 281.869122, 'hour_11': 228.0285852, 'hour_12': 171.035412, 'hour_13': 147.0280188, 'hour_14': 130.5172584, 'hour_15': 174.6928872, 'hour_16': 235.6756272, 'hour_17': 288.414156, 'hour_18': 346.7878176, 'hour_19': 360.0, 'hour_20': 360.0, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 3920.0469294573\\n- EUR/PPFD rankings by hour: {'hour_0': 2, 'hour_1': 3, 'hour_2': 4, 'hour_3': 7, 'hour_4': 9, 'hour_5': 17, 'hour_6': 23, 'hour_7': 24, 'hour_8': 22, 'hour_9': 21, 'hour_10': 20, 'hour_11': 19, 'hour_12': 18, 'hour_13': 16, 'hour_14': 15, 'hour_15': 13, 'hour_16': 14, 'hour_17': 11, 'hour_18': 12, 'hour_19': 10, 'hour_20': 8, 'hour_21': 6, 'hour_22': 1, 'hour_23': 5}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 359.545794, 'hour_9': 341.7558108, 'hour_10': 296.8326036, 'hour_11': 244.5006264, 'hour_12': 212.7806664, 'hour_13': 228.2519652, 'hour_14': 221.333142, 'hour_15': 253.4670996, 'hour_16': 303.343386, 'hour_17': 340.5465804, 'hour_18': 355.4907024, 'hour_19': 359.9731944, 'hour_20': 360.0, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 2862.8123708703\\n- EUR/PPFD rankings by hour: {'hour_0': 5, 'hour_1': 4, 'hour_2': 1, 'hour_3': 2, 'hour_4': 3, 'hour_5': 10, 'hour_6': 15, 'hour_7': 16, 'hour_8': 14, 'hour_9': 12, 'hour_10': 11, 'hour_11': 8, 'hour_12': 7, 'hour_13': 9, 'hour_14': 13, 'hour_15': 17, 'hour_16': 22, 'hour_17': 24, 'hour_18': 23, 'hour_19': 21, 'hour_20': 20, 'hour_21': 19, 'hour_22': 18, 'hour_23': 6}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 358.2769956, 'hour_9': 322.3262184, 'hour_10': 257.6204784, 'hour_11': 145.0146204, 'hour_12': 84.04677240000001, 'hour_13': 54.00811920000001, 'hour_14': 71.7638508, 'hour_15': 86.79285719999996, 'hour_16': 156.7048404, 'hour_17': 239.3182104, 'hour_18': 324.8072256, 'hour_19': 359.9076696, 'hour_20': 360.0, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 3301.5399770521\\n- EUR/PPFD rankings by hour: {'hour_0': 4, 'hour_1': 7, 'hour_2': 10, 'hour_3': 11, 'hour_4': 14, 'hour_5': 19, 'hour_6': 23, 'hour_7': 24, 'hour_8': 21, 'hour_9': 18, 'hour_10': 15, 'hour_11': 9, 'hour_12': 2, 'hour_13': 3, 'hour_14': 5, 'hour_15': 17, 'hour_16': 16, 'hour_17': 22, 'hour_18': 20, 'hour_19': 13, 'hour_20': 8, 'hour_21': 12, 'hour_22': 1, 'hour_23': 6}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 354.7178076, 'hour_9': 312.3202836, 'hour_10': 265.3121964, 'hour_11': 213.0919092, 'hour_12': 152.882064, 'hour_13': 118.5351552, 'hour_14': 125.2097496, 'hour_15': 161.3243388, 'hour_16': 215.1961488, 'hour_17': 286.24737, 'hour_18': 334.8682608, 'hour_19': 359.6098296, 'hour_20': 360.0, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 4179.7978688578\\n- EUR/PPFD rankings by hour: {'hour_0': 5, 'hour_1': 4, 'hour_2': 2, 'hour_3': 1, 'hour_4': 3, 'hour_5': 10, 'hour_6': 20, 'hour_7': 21, 'hour_8': 17, 'hour_9': 14, 'hour_10': 15, 'hour_11': 8, 'hour_12': 7, 'hour_13': 11, 'hour_14': 13, 'hour_15': 18, 'hour_16': 22, 'hour_17': 24, 'hour_18': 23, 'hour_19': 19, 'hour_20': 16, 'hour_21': 12, 'hour_22': 9, 'hour_23': 6}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 357.2211528, 'hour_9': 339.9762168, 'hour_10': 318.0313656, 'hour_11': 275.5340652, 'hour_12': 270.4663176, 'hour_13': 264.7984224, 'hour_14': 293.931642, 'hour_15': 301.3359444, 'hour_16': 314.6285436, 'hour_17': 331.466928, 'hour_18': 350.4363576, 'hour_19': 359.7453468, 'hour_20': 360.0, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 4722.2260000000\\n- EUR/PPFD rankings by hour: {'hour_0': 6, 'hour_1': 4, 'hour_2': 3, 'hour_3': 5, 'hour_4': 8, 'hour_5': 15, 'hour_6': 20, 'hour_7': 21, 'hour_8': 18, 'hour_9': 12, 'hour_10': 10, 'hour_11': 1, 'hour_12': 2, 'hour_13': 9, 'hour_14': 14, 'hour_15': 19, 'hour_16': 23, 'hour_17': 24, 'hour_18': 22, 'hour_19': 17, 'hour_20': 16, 'hour_21': 13, 'hour_22': 11, 'hour_23': 7}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 360.0, 'hour_9': 360.0, 'hour_10': 360.0, 'hour_11': 360.0, 'hour_12': 360.0, 'hour_13': 360.0, 'hour_14': 360.0, 'hour_15': 360.0, 'hour_16': 360.0, 'hour_17': 360.0, 'hour_18': 360.0, 'hour_19': 360.0, 'hour_20': 360.0, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 2308.9745826004\\n- EUR/PPFD rankings by hour: {'hour_0': 14, 'hour_1': 13, 'hour_2': 6, 'hour_3': 5, 'hour_4': 8, 'hour_5': 12, 'hour_6': 15, 'hour_7': 16, 'hour_8': 19, 'hour_9': 11, 'hour_10': 4, 'hour_11': 3, 'hour_12': 1, 'hour_13': 2, 'hour_14': 7, 'hour_15': 10, 'hour_16': 21, 'hour_17': 24, 'hour_18': 23, 'hour_19': 22, 'hour_20': 20, 'hour_21': 17, 'hour_22': 18, 'hour_23': 9}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 360.0, 'hour_9': 349.3611552, 'hour_10': 283.700838, 'hour_11': 186.7286016, 'hour_12': 98.62901879999998, 'hour_13': 13.71781319999997, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 98.97749160000001, 'hour_18': 207.1023468, 'hour_19': 309.9077796, 'hour_20': 358.6254684, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 2438.8233888794\\n- EUR/PPFD rankings by hour: {'hour_0': 10, 'hour_1': 8, 'hour_2': 7, 'hour_3': 6, 'hour_4': 13, 'hour_5': 18, 'hour_6': 21, 'hour_7': 23, 'hour_8': 19, 'hour_9': 14, 'hour_10': 3, 'hour_11': 4, 'hour_12': 1, 'hour_13': 2, 'hour_14': 12, 'hour_15': 16, 'hour_16': 20, 'hour_17': 24, 'hour_18': 22, 'hour_19': 17, 'hour_20': 15, 'hour_21': 9, 'hour_22': 5, 'hour_23': 11}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 360.0, 'hour_9': 350.603148, 'hour_10': 289.5280776, 'hour_11': 188.5022388, 'hour_12': 105.041514, 'hour_13': 40.58595959999997, 'hour_14': 1.277036399999986, 'hour_15': 14.02607760000001, 'hour_16': 61.3662564, 'hour_17': 125.3586696, 'hour_18': 199.5431676, 'hour_19': 303.6963264, 'hour_20': 357.0707436, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 2449.0080358271\\n- EUR/PPFD rankings by hour: {'hour_0': 10, 'hour_1': 8, 'hour_2': 7, 'hour_3': 6, 'hour_4': 5, 'hour_5': 17, 'hour_6': 20, 'hour_7': 21, 'hour_8': 14, 'hour_9': 11, 'hour_10': 3, 'hour_11': 2, 'hour_12': 1, 'hour_13': 4, 'hour_14': 9, 'hour_15': 18, 'hour_16': 22, 'hour_17': 23, 'hour_18': 24, 'hour_19': 19, 'hour_20': 15, 'hour_21': 16, 'hour_22': 13, 'hour_23': 12}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 359.8406556, 'hour_9': 328.9174176, 'hour_10': 270.789474, 'hour_11': 170.1597624, 'hour_12': 103.6237956, 'hour_13': 32.3223888, 'hour_14': 23.71630199999998, 'hour_15': 63.27690000000001, 'hour_16': 87.38853720000003, 'hour_17': 127.9990212, 'hour_18': 208.0301184, 'hour_19': 281.7365832, 'hour_20': 348.9828984, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 2291.3558433054\\n- EUR/PPFD rankings by hour: {'hour_0': 12, 'hour_1': 11, 'hour_2': 9, 'hour_3': 8, 'hour_4': 10, 'hour_5': 17, 'hour_6': 21, 'hour_7': 20, 'hour_8': 14, 'hour_9': 6, 'hour_10': 4, 'hour_11': 2, 'hour_12': 1, 'hour_13': 3, 'hour_14': 5, 'hour_15': 7, 'hour_16': 19, 'hour_17': 22, 'hour_18': 24, 'hour_19': 23, 'hour_20': 18, 'hour_21': 16, 'hour_22': 15, 'hour_23': 13}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 359.2792272, 'hour_9': 322.95615, 'hour_10': 248.0449224, 'hour_11': 197.8425012, 'hour_12': 103.440624, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 82.32823559999997, 'hour_17': 131.914128, 'hour_18': 177.7129848, 'hour_19': 280.40226, 'hour_20': 345.2107548, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 1919.2863716501\\n- EUR/PPFD rankings by hour: {'hour_0': 13, 'hour_1': 10, 'hour_2': 14, 'hour_3': 15, 'hour_4': 16, 'hour_5': 11, 'hour_6': 9, 'hour_7': 1, 'hour_8': 1, 'hour_9': 1, 'hour_10': 1, 'hour_11': 1, 'hour_12': 1, 'hour_13': 1, 'hour_14': 1, 'hour_15': 12, 'hour_16': 18, 'hour_17': 23, 'hour_18': 24, 'hour_19': 22, 'hour_20': 21, 'hour_21': 20, 'hour_22': 19, 'hour_23': 17}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 355.7766288, 'hour_9': 298.9174836, 'hour_10': 223.269102, 'hour_11': 141.0399456, 'hour_12': 67.4779332, 'hour_13': 11.34849600000001, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 57.49880400000001, 'hour_18': 148.0168476, 'hour_19': 242.3427756, 'hour_20': 331.3745976, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 2202.4231241593\\n- EUR/PPFD rankings by hour: {'hour_0': 10, 'hour_1': 14, 'hour_2': 13, 'hour_3': 21, 'hour_4': 11, 'hour_5': 16, 'hour_6': 18, 'hour_7': 7, 'hour_8': 9, 'hour_9': 5, 'hour_10': 3, 'hour_11': 4, 'hour_12': 1, 'hour_13': 2, 'hour_14': 6, 'hour_15': 8, 'hour_16': 19, 'hour_17': 22, 'hour_18': 24, 'hour_19': 23, 'hour_20': 20, 'hour_21': 17, 'hour_22': 12, 'hour_23': 15}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 353.5845264, 'hour_9': 308.0522364, 'hour_10': 254.2459512, 'hour_11': 182.978796, 'hour_12': 61.19648760000001, 'hour_13': 0.8570819999999912, 'hour_14': 45.88900079999996, 'hour_15': 70.83905759999993, 'hour_16': 83.3423808, 'hour_17': 100.037802, 'hour_18': 153.9259932, 'hour_19': 225.2839896, 'hour_20': 320.1758136, 'hour_21': 359.7900228, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 1643.8466976985\\n- EUR/PPFD rankings by hour: {'hour_0': 9, 'hour_1': 8, 'hour_2': 3, 'hour_3': 7, 'hour_4': 14, 'hour_5': 17, 'hour_6': 16, 'hour_7': 15, 'hour_8': 11, 'hour_9': 10, 'hour_10': 6, 'hour_11': 4, 'hour_12': 2, 'hour_13': 1, 'hour_14': 5, 'hour_15': 13, 'hour_16': 19, 'hour_17': 23, 'hour_18': 24, 'hour_19': 22, 'hour_20': 21, 'hour_21': 18, 'hour_22': 10, 'hour_23': 12}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 338.4914844, 'hour_9': 236.9191092, 'hour_10': 111.7995036, 'hour_11': 76.3312272, 'hour_12': 34.17048600000004, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 30.9121164, 'hour_17': 86.19419880000004, 'hour_18': 140.782314, 'hour_19': 226.9578504, 'hour_20': 319.6307664, 'hour_21': 359.434104, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 1382.9146321530\\n- EUR/PPFD rankings by hour: {'hour_0': 9, 'hour_1': 9, 'hour_2': 9, 'hour_3': 9, 'hour_4': 9, 'hour_5': 9, 'hour_6': 9, 'hour_7': 8, 'hour_8': 6, 'hour_9': 4, 'hour_10': 3, 'hour_11': 1, 'hour_12': 2, 'hour_13': 5, 'hour_14': 7, 'hour_15': 17, 'hour_16': 18, 'hour_17': 23, 'hour_18': 24, 'hour_19': 22, 'hour_20': 21, 'hour_21': 19, 'hour_22': 9, 'hour_23': 16}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 359.9970216, 'hour_8': 340.4512716, 'hour_9': 223.6235316, 'hour_10': 48.89569559999995, 'hour_11': 0.0, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 0.0, 'hour_18': 142.42788, 'hour_19': 258.4469844, 'hour_20': 328.406622, 'hour_21': 358.4422968, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 1080.7884728523\\n- EUR/PPFD rankings by hour: {'hour_0': 3, 'hour_1': 6, 'hour_2': 9, 'hour_3': 11, 'hour_4': 17, 'hour_5': 21, 'hour_6': 22, 'hour_7': 18, 'hour_8': 15, 'hour_9': 12, 'hour_10': 7, 'hour_11': 5, 'hour_12': 2, 'hour_13': 1, 'hour_14': 8, 'hour_15': 13, 'hour_16': 19, 'hour_17': 24, 'hour_18': 23, 'hour_19': 20, 'hour_20': 16, 'hour_21': 14, 'hour_22': 4, 'hour_23': 4}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 359.8332096, 'hour_8': 315.9330828, 'hour_9': 193.4612748, 'hour_10': 37.81157999999999, 'hour_11': 0.0, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 0.0, 'hour_18': 43.64030880000001, 'hour_19': 166.0197864, 'hour_20': 286.4767068, 'hour_21': 355.3894368, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 1590.5101650293\\n- EUR/PPFD rankings by hour: {'hour_0': 17, 'hour_1': 16, 'hour_2': 15, 'hour_3': 21, 'hour_4': 22, 'hour_5': 24, 'hour_6': 23, 'hour_7': 12, 'hour_8': 9, 'hour_9': 10, 'hour_10': 7, 'hour_11': 5, 'hour_12': 4, 'hour_13': 3, 'hour_14': 2, 'hour_15': 8, 'hour_16': 14, 'hour_17': 20, 'hour_18': 18, 'hour_19': 13, 'hour_20': 11, 'hour_21': 6, 'hour_22': 20, 'hour_23': 19}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 358.2963552, 'hour_8': 297.1959684, 'hour_9': 177.528324, 'hour_10': 51.72070800000006, 'hour_11': 0.0, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 113.6327088, 'hour_16': 153.3243564, 'hour_17': 155.2186188, 'hour_18': 140.127066, 'hour_19': 188.2833264, 'hour_20': 281.4387432, 'hour_21': 351.5204952, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 1027.7348884095\\n- EUR/PPFD rankings by hour: {'hour_0': 12, 'hour_1': 11, 'hour_2': 13, 'hour_3': 16, 'hour_4': 21, 'hour_5': 24, 'hour_6': 23, 'hour_7': 17, 'hour_8': 9, 'hour_9': 2, 'hour_10': 1, 'hour_11': 3, 'hour_12': 5, 'hour_13': 4, 'hour_14': 7, 'hour_15': 15, 'hour_16': 18, 'hour_17': 20, 'hour_18': 22, 'hour_19': 19, 'hour_20': 10, 'hour_21': 8, 'hour_22': 14, 'hour_23': 14}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 349.8704616, 'hour_8': 250.5914544, 'hour_9': 117.0340416000001, 'hour_10': 0.0, 'hour_11': 0.0, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 0.0, 'hour_18': 115.9454364, 'hour_19': 211.5431412, 'hour_20': 308.9383104, 'hour_21': 351.5889984, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 819.1759371624\\n- EUR/PPFD rankings by hour: {'hour_0': 11, 'hour_1': 6, 'hour_2': 7, 'hour_3': 14, 'hour_4': 18, 'hour_5': 20, 'hour_6': 22, 'hour_7': 15, 'hour_8': 9, 'hour_9': 13, 'hour_10': 5, 'hour_11': 3, 'hour_12': 1, 'hour_13': 2, 'hour_14': 4, 'hour_15': 8, 'hour_16': 10, 'hour_17': 19, 'hour_18': 24, 'hour_19': 23, 'hour_20': 21, 'hour_21': 17, 'hour_22': 6, 'hour_23': 12}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 351.332856, 'hour_8': 281.2987584, 'hour_9': 153.8664252, 'hour_10': 0.0, 'hour_11': 0.0, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 0.0, 'hour_18': 0.0, 'hour_19': 126.9297756, 'hour_20': 243.663696, 'hour_21': 339.8615484, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 1140.1615299507\\n- EUR/PPFD rankings by hour: {'hour_0': 9, 'hour_1': 8, 'hour_2': 10, 'hour_3': 14, 'hour_4': 19, 'hour_5': 21, 'hour_6': 20, 'hour_7': 13, 'hour_8': 12, 'hour_9': 6, 'hour_10': 4, 'hour_11': 2, 'hour_12': 1, 'hour_13': 3, 'hour_14': 5, 'hour_15': 11, 'hour_16': 18, 'hour_17': 23, 'hour_18': 24, 'hour_19': 22, 'hour_20': 17, 'hour_21': 15, 'hour_22': 12, 'hour_23': 7}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 351.7453644, 'hour_8': 292.3411764, 'hour_9': 192.9891984, 'hour_10': 93.47489760000002, 'hour_11': 9.52571519999998, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 5.323192800000015, 'hour_18': 106.3266936, 'hour_19': 173.6668284, 'hour_20': 251.8557852, 'hour_21': 340.6895436, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 793.0889026928\\n- EUR/PPFD rankings by hour: {'hour_0': 17, 'hour_1': 16, 'hour_2': 15, 'hour_3': 14, 'hour_4': 12, 'hour_5': 11, 'hour_6': 9, 'hour_7': 8, 'hour_8': 7, 'hour_9': 5, 'hour_10': 3, 'hour_11': 2, 'hour_12': 1, 'hour_13': 4, 'hour_14': 6, 'hour_15': 10, 'hour_16': 13, 'hour_17': 21, 'hour_18': 23, 'hour_19': 24, 'hour_20': 22, 'hour_21': 20, 'hour_22': 8, 'hour_23': 18}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 350.5331556, 'hour_8': 276.619692, 'hour_9': 126.8448912, 'hour_10': 0.0, 'hour_11': 0.0, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 0.0, 'hour_18': 12.26286479999999, 'hour_19': 131.7890352, 'hour_20': 237.5609544, 'hour_21': 335.2554528, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 4722.2260000000\\n- EUR/PPFD rankings by hour: {'hour_0': 19, 'hour_1': 17, 'hour_2': 12, 'hour_3': 13, 'hour_4': 17, 'hour_5': 21, 'hour_6': 16, 'hour_7': 9, 'hour_8': 7, 'hour_9': 5, 'hour_10': 3, 'hour_11': 1, 'hour_12': 1, 'hour_13': 4, 'hour_14': 6, 'hour_15': 8, 'hour_16': 10, 'hour_17': 23, 'hour_18': 24, 'hour_19': 21, 'hour_20': 19, 'hour_21': 14, 'hour_22': 13, 'hour_23': 15}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 360.0, 'hour_9': 360.0, 'hour_10': 360.0, 'hour_11': 360.0, 'hour_12': 360.0, 'hour_13': 360.0, 'hour_14': 360.0, 'hour_15': 360.0, 'hour_16': 360.0, 'hour_17': 360.0, 'hour_18': 360.0, 'hour_19': 360.0, 'hour_20': 360.0, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 1230.7369328110\\n- EUR/PPFD rankings by hour: {'hour_0': 11, 'hour_1': 10, 'hour_2': 8, 'hour_3': 14, 'hour_4': 20, 'hour_5': 22, 'hour_6': 18, 'hour_7': 15, 'hour_8': 6, 'hour_9': 2, 'hour_10': 1, 'hour_11': 3, 'hour_12': 4, 'hour_13': 13, 'hour_14': 5, 'hour_15': 17, 'hour_16': 21, 'hour_17': 23, 'hour_18': 24, 'hour_19': 19, 'hour_20': 16, 'hour_21': 12, 'hour_22': 13, 'hour_23': 9}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 359.9836188, 'hour_7': 335.8139028, 'hour_8': 260.834172, 'hour_9': 119.6624796, 'hour_10': 0.0, 'hour_11': 0.0, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 52.75570199999999, 'hour_17': 120.171786, 'hour_18': 169.4896224, 'hour_19': 221.4120696, 'hour_20': 288.2399196, 'hour_21': 340.1504532, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 564.6476263400\\n- EUR/PPFD rankings by hour: {'hour_0': 12, 'hour_1': 11, 'hour_2': 10, 'hour_3': 14, 'hour_4': 20, 'hour_5': 19, 'hour_6': 18, 'hour_7': 8, 'hour_8': 6, 'hour_9': 4, 'hour_10': 3, 'hour_11': 2, 'hour_12': 1, 'hour_13': 5, 'hour_14': 7, 'hour_15': 9, 'hour_16': 17, 'hour_17': 22, 'hour_18': 24, 'hour_19': 23, 'hour_20': 21, 'hour_21': 15, 'hour_22': 22, 'hour_23': 16}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 359.8272528, 'hour_7': 325.7230836, 'hour_8': 227.3450424, 'hour_9': 66.86289360000006, 'hour_10': 0.0, 'hour_11': 0.0, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 0.0, 'hour_18': 0.0, 'hour_19': 104.3728632, 'hour_20': 210.0986172, 'hour_21': 308.1951996, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 974.7372912114\\n- EUR/PPFD rankings by hour: {'hour_0': 14, 'hour_1': 9, 'hour_2': 15, 'hour_3': 13, 'hour_4': 11, 'hour_5': 12, 'hour_6': 10, 'hour_7': 8, 'hour_8': 6, 'hour_9': 5, 'hour_10': 3, 'hour_11': 1, 'hour_12': 2, 'hour_13': 4, 'hour_14': 7, 'hour_15': 22, 'hour_16': 17, 'hour_17': 23, 'hour_18': 24, 'hour_19': 21, 'hour_20': 19, 'hour_21': 18, 'hour_22': 23, 'hour_23': 16}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 359.0662716, 'hour_7': 317.944992, 'hour_8': 222.0792312, 'hour_9': 111.4480524, 'hour_10': 1.162368000000015, 'hour_11': 0.0, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 78.92094600000001, 'hour_18': 129.5969328, 'hour_19': 201.8707872, 'hour_20': 262.4752704, 'hour_21': 327.9494376, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 538.2396216136\\n- EUR/PPFD rankings by hour: {'hour_0': 17, 'hour_1': 11, 'hour_2': 12, 'hour_3': 15, 'hour_4': 16, 'hour_5': 14, 'hour_6': 10, 'hour_7': 8, 'hour_8': 7, 'hour_9': 6, 'hour_10': 4, 'hour_11': 3, 'hour_12': 1, 'hour_13': 2, 'hour_14': 4, 'hour_15': 9, 'hour_16': 18, 'hour_17': 22, 'hour_18': 24, 'hour_19': 23, 'hour_20': 21, 'hour_21': 19, 'hour_22': 10, 'hour_23': 13}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 358.5227136, 'hour_7': 314.1013668, 'hour_8': 217.9839312, 'hour_9': 84.06762119999996, 'hour_10': 0.0, 'hour_11': 0.0, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 0.0, 'hour_18': 0.0, 'hour_19': 90.49351919999998, 'hour_20': 209.829072, 'hour_21': 301.0187448, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 573.4570433875\\n- EUR/PPFD rankings by hour: {'hour_0': 21, 'hour_1': 18, 'hour_2': 19, 'hour_3': 14, 'hour_4': 13, 'hour_5': 12, 'hour_6': 10, 'hour_7': 9, 'hour_8': 7, 'hour_9': 4, 'hour_10': 3, 'hour_11': 1, 'hour_12': 2, 'hour_13': 5, 'hour_14': 6, 'hour_15': 8, 'hour_16': 11, 'hour_17': 17, 'hour_18': 23, 'hour_19': 24, 'hour_20': 22, 'hour_21': 16, 'hour_22': 20, 'hour_23': 20}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 358.1340324, 'hour_7': 307.1810544, 'hour_8': 200.0182224, 'hour_9': 102.1435308, 'hour_10': 7.24426079999995, 'hour_11': 0.0, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 0.0, 'hour_18': 0.0, 'hour_19': 120.7808688, 'hour_20': 215.4388884, 'hour_21': 300.2935044, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 920.0306934462\\n- EUR/PPFD rankings by hour: {'hour_0': 13, 'hour_1': 8, 'hour_2': 10, 'hour_3': 9, 'hour_4': 15, 'hour_5': 20, 'hour_6': 17, 'hour_7': 12, 'hour_8': 7, 'hour_9': 6, 'hour_10': 2, 'hour_11': 1, 'hour_12': 3, 'hour_13': 4, 'hour_14': 5, 'hour_15': 11, 'hour_16': 18, 'hour_17': 22, 'hour_18': 24, 'hour_19': 23, 'hour_20': 21, 'hour_21': 16, 'hour_22': 17, 'hour_23': 19}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 358.875654, 'hour_7': 337.1750316, 'hour_8': 296.8698336, 'hour_9': 209.687598, 'hour_10': 75.71618760000001, 'hour_11': 0.0, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 0.0, 'hour_18': 65.41539120000004, 'hour_19': 109.1129868, 'hour_20': 207.0085272, 'hour_21': 297.9465252, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 1051.8153664738\\n- EUR/PPFD rankings by hour: {'hour_0': 16, 'hour_1': 14, 'hour_2': 13, 'hour_3': 15, 'hour_4': 17, 'hour_5': 10, 'hour_6': 9, 'hour_7': 12, 'hour_8': 7, 'hour_9': 5, 'hour_10': 4, 'hour_11': 3, 'hour_12': 1, 'hour_13': 2, 'hour_14': 6, 'hour_15': 8, 'hour_16': 11, 'hour_17': 20, 'hour_18': 23, 'hour_19': 24, 'hour_20': 21, 'hour_21': 19, 'hour_22': 12, 'hour_23': 18}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 358.8726756, 'hour_7': 335.3194884, 'hour_8': 288.4424508, 'hour_9': 239.866236, 'hour_10': 181.6593648, 'hour_11': 101.2931976, 'hour_12': 33.01188840000003, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 0.0, 'hour_18': 0.0, 'hour_19': 70.59482880000002, 'hour_20': 183.4389588, 'hour_21': 297.0932136, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 483.9076053480\\n- EUR/PPFD rankings by hour: {'hour_0': 11, 'hour_1': 14, 'hour_2': 10, 'hour_3': 13, 'hour_4': 18, 'hour_5': 19, 'hour_6': 12, 'hour_7': 9, 'hour_8': 7, 'hour_9': 5, 'hour_10': 4, 'hour_11': 1, 'hour_12': 2, 'hour_13': 3, 'hour_14': 6, 'hour_15': 8, 'hour_16': 17, 'hour_17': 22, 'hour_18': 24, 'hour_19': 23, 'hour_20': 21, 'hour_21': 15, 'hour_22': 19, 'hour_23': 20}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 354.8146056, 'hour_7': 300.3158424, 'hour_8': 206.791104, 'hour_9': 94.6186032, 'hour_10': 0.0, 'hour_11': 0.0, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 0.0, 'hour_18': 0.0, 'hour_19': 70.9373448, 'hour_20': 200.372652, 'hour_21': 293.834844, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 366.9971686197\\n- EUR/PPFD rankings by hour: {'hour_0': 13, 'hour_1': 7, 'hour_2': 6, 'hour_3': 9, 'hour_4': 18, 'hour_5': 22, 'hour_6': 20, 'hour_7': 16, 'hour_8': 11, 'hour_9': 8, 'hour_10': 5, 'hour_11': 3, 'hour_12': 1, 'hour_13': 2, 'hour_14': 4, 'hour_15': 12, 'hour_16': 17, 'hour_17': 21, 'hour_18': 24, 'hour_19': 23, 'hour_20': 19, 'hour_21': 15, 'hour_22': 23, 'hour_23': 10}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 355.7796072, 'hour_7': 304.244352, 'hour_8': 192.0167508, 'hour_9': 58.37147519999996, 'hour_10': 0.0, 'hour_11': 0.0, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 0.0, 'hour_18': 6.453495599999997, 'hour_19': 58.72143720000003, 'hour_20': 158.7688716, 'hour_21': 283.0872876, 'hour_22': 347.3313756, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: -42.4849021657\\n- EUR/PPFD rankings by hour: {'hour_0': 11, 'hour_1': 10, 'hour_2': 12, 'hour_3': 14, 'hour_4': 20, 'hour_5': 21, 'hour_6': 16, 'hour_7': 8, 'hour_8': 7, 'hour_9': 4, 'hour_10': 3, 'hour_11': 1, 'hour_12': 2, 'hour_13': 5, 'hour_14': 6, 'hour_15': 9, 'hour_16': 15, 'hour_17': 19, 'hour_18': 23, 'hour_19': 24, 'hour_20': 22, 'hour_21': 18, 'hour_22': 15, 'hour_23': 13}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 349.411788, 'hour_7': 260.2548732, 'hour_8': 136.068996, 'hour_9': 0.0, 'hour_10': 0.0, 'hour_11': 0.0, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 0.0, 'hour_18': 0.0, 'hour_19': 0.0, 'hour_20': 69.24561360000001, 'hour_21': 207.76653, 'hour_22': 332.5451088, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 211.8916049354\\n- EUR/PPFD rankings by hour: {'hour_0': 14, 'hour_1': 13, 'hour_2': 11, 'hour_3': 17, 'hour_4': 20, 'hour_5': 22, 'hour_6': 19, 'hour_7': 10, 'hour_8': 6, 'hour_9': 5, 'hour_10': 3, 'hour_11': 2, 'hour_12': 1, 'hour_13': 4, 'hour_14': 7, 'hour_15': 9, 'hour_16': 16, 'hour_17': 21, 'hour_18': 24, 'hour_19': 23, 'hour_20': 18, 'hour_21': 12, 'hour_22': 16, 'hour_23': 15}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 349.806426, 'hour_7': 257.811096, 'hour_8': 79.48982040000004, 'hour_9': 0.0, 'hour_10': 0.0, 'hour_11': 0.0, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 0.0, 'hour_18': 6.618796799999984, 'hour_19': 103.3453152, 'hour_20': 207.1440444, 'hour_21': 262.6495068, 'hour_22': 342.8042076, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 1513.3012296622\\n- EUR/PPFD rankings by hour: {'hour_0': 9, 'hour_1': 6, 'hour_2': 4, 'hour_3': 8, 'hour_4': 13, 'hour_5': 16, 'hour_6': 18, 'hour_7': 17, 'hour_8': 12, 'hour_9': 11, 'hour_10': 7, 'hour_11': 3, 'hour_12': 1, 'hour_13': 2, 'hour_14': 5, 'hour_15': 14, 'hour_16': 15, 'hour_17': 22, 'hour_18': 24, 'hour_19': 23, 'hour_20': 21, 'hour_21': 20, 'hour_22': 8, 'hour_23': 10}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 353.3492328, 'hour_7': 310.8102348, 'hour_8': 305.3776332, 'hour_9': 82.23739440000003, 'hour_10': 39.00294000000002, 'hour_11': 133.1099556, 'hour_12': 135.1442028, 'hour_13': 26.47727880000002, 'hour_14': 202.0003476, 'hour_15': 171.7963932, 'hour_16': 49.81304280000001, 'hour_17': 185.9482608, 'hour_18': 94.87623480000002, 'hour_19': 71.44069439999998, 'hour_20': 188.6362668, 'hour_21': 230.3740752, 'hour_22': 330.6836088, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: -248.3886076885\\n- EUR/PPFD rankings by hour: {'hour_0': 17, 'hour_1': 16, 'hour_2': 15, 'hour_3': 14, 'hour_4': 13, 'hour_5': 11, 'hour_6': 9, 'hour_7': 8, 'hour_8': 7, 'hour_9': 6, 'hour_10': 5, 'hour_11': 3, 'hour_12': 1, 'hour_13': 2, 'hour_14': 4, 'hour_15': 10, 'hour_16': 12, 'hour_17': 19, 'hour_18': 22, 'hour_19': 24, 'hour_20': 23, 'hour_21': 20, 'hour_22': 20, 'hour_23': 18}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 347.6589996, 'hour_7': 242.330862, 'hour_8': 63.93214800000004, 'hour_9': 0.0, 'hour_10': 0.0, 'hour_11': 0.0, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 0.0, 'hour_18': 0.0, 'hour_19': 0.0, 'hour_20': 0.0, 'hour_21': 175.2036828, 'hour_22': 320.2636764, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: -75.9174689117\\n- EUR/PPFD rankings by hour: {'hour_0': 13, 'hour_1': 10, 'hour_2': 11, 'hour_3': 18, 'hour_4': 21, 'hour_5': 20, 'hour_6': 17, 'hour_7': 8, 'hour_8': 6, 'hour_9': 5, 'hour_10': 3, 'hour_11': 2, 'hour_12': 1, 'hour_13': 4, 'hour_14': 7, 'hour_15': 9, 'hour_16': 15, 'hour_17': 22, 'hour_18': 24, 'hour_19': 23, 'hour_20': 19, 'hour_21': 14, 'hour_22': 21, 'hour_23': 16}\\n- Max PPFD capacity by hour: {'hour_0': 359.9985108, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 350.4929472, 'hour_7': 289.426812, 'hour_8': 164.6258952, 'hour_9': 0.0, 'hour_10': 0.0, 'hour_11': 0.0, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 0.0, 'hour_18': 0.0, 'hour_19': 0.0, 'hour_20': 1.481056800000033, 'hour_21': 192.658596, 'hour_22': 323.1765516, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: -154.4087961047\\n- EUR/PPFD rankings by hour: {'hour_0': 14, 'hour_1': 11, 'hour_2': 13, 'hour_3': 15, 'hour_4': 22, 'hour_5': 18, 'hour_6': 12, 'hour_7': 9, 'hour_8': 7, 'hour_9': 5, 'hour_10': 3, 'hour_11': 1, 'hour_12': 1, 'hour_13': 4, 'hour_14': 6, 'hour_15': 8, 'hour_16': 10, 'hour_17': 16, 'hour_18': 20, 'hour_19': 24, 'hour_20': 23, 'hour_21': 19, 'hour_22': 16, 'hour_23': 17}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 349.72452, 'hour_7': 250.2444708, 'hour_8': 85.063896, 'hour_9': 0.0, 'hour_10': 0.0, 'hour_11': 0.0, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 0.0, 'hour_18': 0.0, 'hour_19': 0.0, 'hour_20': 45.81007319999998, 'hour_21': 190.9519728, 'hour_22': 321.5741724, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 4722.2260000000\\n- EUR/PPFD rankings by hour: {'hour_0': 9, 'hour_1': 8, 'hour_2': 10, 'hour_3': 11, 'hour_4': 20, 'hour_5': 23, 'hour_6': 22, 'hour_7': 19, 'hour_8': 17, 'hour_9': 14, 'hour_10': 7, 'hour_11': 5, 'hour_12': 3, 'hour_13': 1, 'hour_14': 2, 'hour_15': 4, 'hour_16': 6, 'hour_17': 16, 'hour_18': 24, 'hour_19': 21, 'hour_20': 18, 'hour_21': 15, 'hour_22': 21, 'hour_23': 13}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 360.0, 'hour_9': 360.0, 'hour_10': 360.0, 'hour_11': 360.0, 'hour_12': 360.0, 'hour_13': 360.0, 'hour_14': 360.0, 'hour_15': 360.0, 'hour_16': 360.0, 'hour_17': 360.0, 'hour_18': 360.0, 'hour_19': 360.0, 'hour_20': 360.0, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 2752.1334491272\\n- EUR/PPFD rankings by hour: {'hour_0': 11, 'hour_1': 9, 'hour_2': 5, 'hour_3': 7, 'hour_4': 22, 'hour_5': 24, 'hour_6': 23, 'hour_7': 21, 'hour_8': 16, 'hour_9': 13, 'hour_10': 10, 'hour_11': 2, 'hour_12': 3, 'hour_13': 4, 'hour_14': 1, 'hour_15': 6, 'hour_16': 15, 'hour_17': 20, 'hour_18': 18, 'hour_19': 19, 'hour_20': 14, 'hour_21': 8, 'hour_22': 17, 'hour_23': 12}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 357.267318, 'hour_7': 313.8079944, 'hour_8': 245.3747868, 'hour_9': 211.7784348, 'hour_10': 174.9728568, 'hour_11': 179.069646, 'hour_12': 193.678698, 'hour_13': 189.9065544, 'hour_14': 168.5961024, 'hour_15': 197.0323764, 'hour_16': 197.4746688, 'hour_17': 200.6972976, 'hour_18': 256.9220436, 'hour_19': 272.4692916, 'hour_20': 311.198916, 'hour_21': 319.6620396, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 372.3038896651\\n- EUR/PPFD rankings by hour: {'hour_0': 17, 'hour_1': 16, 'hour_2': 14, 'hour_3': 13, 'hour_4': 12, 'hour_5': 11, 'hour_6': 10, 'hour_7': 8, 'hour_8': 6, 'hour_9': 5, 'hour_10': 3, 'hour_11': 2, 'hour_12': 1, 'hour_13': 4, 'hour_14': 7, 'hour_15': 9, 'hour_16': 15, 'hour_17': 21, 'hour_18': 24, 'hour_19': 23, 'hour_20': 22, 'hour_21': 20, 'hour_22': 24, 'hour_23': 18}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 357.61728, 'hour_7': 302.0611848, 'hour_8': 187.5327696, 'hour_9': 34.71255480000002, 'hour_10': 0.0, 'hour_11': 0.0, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 0.0, 'hour_18': 0.0, 'hour_19': 86.63500199999999, 'hour_20': 173.6608716, 'hour_21': 267.8617068, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 616.6103235101\\n- EUR/PPFD rankings by hour: {'hour_0': 14, 'hour_1': 16, 'hour_2': 15, 'hour_3': 20, 'hour_4': 12, 'hour_5': 10, 'hour_6': 11, 'hour_7': 8, 'hour_8': 6, 'hour_9': 4, 'hour_10': 3, 'hour_11': 2, 'hour_12': 1, 'hour_13': 5, 'hour_14': 7, 'hour_15': 9, 'hour_16': 13, 'hour_17': 19, 'hour_18': 23, 'hour_19': 24, 'hour_20': 21, 'hour_21': 17, 'hour_22': 15, 'hour_23': 18}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 359.2419972, 'hour_7': 324.0179496, 'hour_8': 250.0627884, 'hour_9': 94.53520800000001, 'hour_10': 0.0, 'hour_11': 0.0, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 0.0, 'hour_18': 0.0, 'hour_19': 108.7436652, 'hour_20': 206.4813504, 'hour_21': 311.3046492, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 1116.3909005342\\n- EUR/PPFD rankings by hour: {'hour_0': 10, 'hour_1': 7, 'hour_2': 9, 'hour_3': 12, 'hour_4': 19, 'hour_5': 23, 'hour_6': 22, 'hour_7': 16, 'hour_8': 8, 'hour_9': 6, 'hour_10': 4, 'hour_11': 2, 'hour_12': 1, 'hour_13': 3, 'hour_14': 5, 'hour_15': 13, 'hour_16': 14, 'hour_17': 18, 'hour_18': 24, 'hour_19': 21, 'hour_20': 20, 'hour_21': 17, 'hour_22': 12, 'hour_23': 11}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 359.77662, 'hour_7': 340.5763644, 'hour_8': 301.1185212, 'hour_9': 259.9883064, 'hour_10': 166.7748108, 'hour_11': 134.0704896, 'hour_12': 22.3134756, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 0.0, 'hour_18': 4.407334800000001, 'hour_19': 90.6826476, 'hour_20': 188.4173544, 'hour_21': 286.0418604, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 1101.3654629139\\n- EUR/PPFD rankings by hour: {'hour_0': 7, 'hour_1': 9, 'hour_2': 8, 'hour_3': 11, 'hour_4': 14, 'hour_5': 22, 'hour_6': 18, 'hour_7': 15, 'hour_8': 13, 'hour_9': 10, 'hour_10': 4, 'hour_11': 2, 'hour_12': 1, 'hour_13': 3, 'hour_14': 5, 'hour_15': 12, 'hour_16': 16, 'hour_17': 21, 'hour_18': 24, 'hour_19': 23, 'hour_20': 20, 'hour_21': 17, 'hour_22': 12, 'hour_23': 6}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 359.970216, 'hour_7': 354.2099904, 'hour_8': 331.6128696, 'hour_9': 276.0627312, 'hour_10': 141.5030868, 'hour_11': 0.0, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 0.0, 'hour_18': 0.0, 'hour_19': 128.5827876, 'hour_20': 231.3018468, 'hour_21': 315.8988312, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 306.6561307469\\n- EUR/PPFD rankings by hour: {'hour_0': 10, 'hour_1': 11, 'hour_2': 14, 'hour_3': 18, 'hour_4': 23, 'hour_5': 20, 'hour_6': 15, 'hour_7': 8, 'hour_8': 6, 'hour_9': 1, 'hour_10': 5, 'hour_11': 2, 'hour_12': 3, 'hour_13': 4, 'hour_14': 7, 'hour_15': 9, 'hour_16': 17, 'hour_17': 21, 'hour_18': 24, 'hour_19': 22, 'hour_20': 19, 'hour_21': 16, 'hour_22': 15, 'hour_23': 12}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 359.9448996, 'hour_7': 324.3828036, 'hour_8': 207.8692848, 'hour_9': 41.40799800000002, 'hour_10': 0.0, 'hour_11': 0.0, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 0.0, 'hour_18': 0.0, 'hour_19': 0.0, 'hour_20': 134.0555976, 'hour_21': 276.7730796, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 144.3368764916\\n- EUR/PPFD rankings by hour: {'hour_0': 11, 'hour_1': 9, 'hour_2': 10, 'hour_3': 13, 'hour_4': 18, 'hour_5': 22, 'hour_6': 20, 'hour_7': 17, 'hour_8': 6, 'hour_9': 7, 'hour_10': 4, 'hour_11': 3, 'hour_12': 2, 'hour_13': 1, 'hour_14': 5, 'hour_15': 8, 'hour_16': 15, 'hour_17': 23, 'hour_18': 24, 'hour_19': 21, 'hour_20': 19, 'hour_21': 14, 'hour_22': 14, 'hour_23': 12}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 324.9352968, 'hour_8': 179.017524, 'hour_9': 0.0, 'hour_10': 0.0, 'hour_11': 0.0, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 0.0, 'hour_18': 0.0, 'hour_19': 0.0, 'hour_20': 69.16817520000006, 'hour_21': 253.8900324, 'hour_22': 355.1035104, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 441.2315668072\\n- EUR/PPFD rankings by hour: {'hour_0': 13, 'hour_1': 12, 'hour_2': 11, 'hour_3': 15, 'hour_4': 17, 'hour_5': 14, 'hour_6': 10, 'hour_7': 8, 'hour_8': 7, 'hour_9': 5, 'hour_10': 4, 'hour_11': 2, 'hour_12': 1, 'hour_13': 3, 'hour_14': 6, 'hour_15': 9, 'hour_16': 17, 'hour_17': 20, 'hour_18': 23, 'hour_19': 24, 'hour_20': 22, 'hour_21': 17, 'hour_22': 16, 'hour_23': 16}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 329.8868868, 'hour_8': 200.1388476, 'hour_9': 10.37753759999998, 'hour_10': 0.0, 'hour_11': 0.0, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 0.0, 'hour_18': 0.0, 'hour_19': 52.49658119999998, 'hour_20': 207.3435972, 'hour_21': 321.3001596, 'hour_22': 357.4653816, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 1527.5123922312\\n- EUR/PPFD rankings by hour: {'hour_0': 13, 'hour_1': 11, 'hour_2': 15, 'hour_3': 10, 'hour_4': 17, 'hour_5': 18, 'hour_6': 14, 'hour_7': 9, 'hour_8': 8, 'hour_9': 7, 'hour_10': 6, 'hour_11': 5, 'hour_12': 3, 'hour_13': 1, 'hour_14': 2, 'hour_15': 4, 'hour_16': 12, 'hour_17': 19, 'hour_18': 23, 'hour_19': 24, 'hour_20': 22, 'hour_21': 21, 'hour_22': 15, 'hour_23': 16}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 353.8957692, 'hour_8': 325.8720036, 'hour_9': 298.1326752, 'hour_10': 292.740282, 'hour_11': 275.0753916, 'hour_12': 158.7971664, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 0.0, 'hour_18': 0.0, 'hour_19': 24.27028439999998, 'hour_20': 185.0517624, 'hour_21': 292.1431128, 'hour_22': 359.3105004, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 362.5220242396\\n- EUR/PPFD rankings by hour: {'hour_0': 8, 'hour_1': 9, 'hour_2': 12, 'hour_3': 13, 'hour_4': 20, 'hour_5': 22, 'hour_6': 18, 'hour_7': 14, 'hour_8': 6, 'hour_9': 4, 'hour_10': 2, 'hour_11': 1, 'hour_12': 3, 'hour_13': 5, 'hour_14': 7, 'hour_15': 15, 'hour_16': 19, 'hour_17': 23, 'hour_18': 24, 'hour_19': 21, 'hour_20': 17, 'hour_21': 16, 'hour_22': 15, 'hour_23': 10}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 345.1705464, 'hour_8': 214.3621968, 'hour_9': 4.337342399999955, 'hour_10': 0.0, 'hour_11': 0.0, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 0.0, 'hour_18': 0.0, 'hour_19': 0.0, 'hour_20': 156.8492928, 'hour_21': 319.5801336, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 712.6474191397\\n- EUR/PPFD rankings by hour: {'hour_0': 14, 'hour_1': 11, 'hour_2': 12, 'hour_3': 16, 'hour_4': 21, 'hour_5': 22, 'hour_6': 18, 'hour_7': 9, 'hour_8': 8, 'hour_9': 6, 'hour_10': 5, 'hour_11': 4, 'hour_12': 3, 'hour_13': 2, 'hour_14': 1, 'hour_15': 7, 'hour_16': 15, 'hour_17': 19, 'hour_18': 24, 'hour_19': 23, 'hour_20': 20, 'hour_21': 13, 'hour_22': 14, 'hour_23': 17}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 353.5577208, 'hour_8': 304.9561896, 'hour_9': 159.806844, 'hour_10': 0.0, 'hour_11': 0.0, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 0.0, 'hour_18': 0.0, 'hour_19': 57.67601880000001, 'hour_20': 201.9467364, 'hour_21': 312.4811172, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 510.7325864080\\n- EUR/PPFD rankings by hour: {'hour_0': 10, 'hour_1': 7, 'hour_2': 6, 'hour_3': 9, 'hour_4': 19, 'hour_5': 22, 'hour_6': 20, 'hour_7': 18, 'hour_8': 14, 'hour_9': 11, 'hour_10': 5, 'hour_11': 1, 'hour_12': 2, 'hour_13': 3, 'hour_14': 4, 'hour_15': 15, 'hour_16': 17, 'hour_17': 23, 'hour_18': 24, 'hour_19': 21, 'hour_20': 16, 'hour_21': 8, 'hour_22': 16, 'hour_23': 12}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 352.323174, 'hour_8': 238.5750996, 'hour_9': 63.92172360000001, 'hour_10': 0.0, 'hour_11': 0.0, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 0.0, 'hour_18': 0.0, 'hour_19': 27.12656999999996, 'hour_20': 172.2371964, 'hour_21': 334.326192, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 1180.2775368435\\n- EUR/PPFD rankings by hour: {'hour_0': 11, 'hour_1': 10, 'hour_2': 8, 'hour_3': 12, 'hour_4': 20, 'hour_5': 22, 'hour_6': 18, 'hour_7': 16, 'hour_8': 7, 'hour_9': 5, 'hour_10': 4, 'hour_11': 2, 'hour_12': 1, 'hour_13': 3, 'hour_14': 6, 'hour_15': 15, 'hour_16': 19, 'hour_17': 23, 'hour_18': 24, 'hour_19': 21, 'hour_20': 17, 'hour_21': 14, 'hour_22': 13, 'hour_23': 13}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 353.276262, 'hour_8': 246.8535624, 'hour_9': 44.73040320000001, 'hour_10': 0.0, 'hour_11': 0.0, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 98.40117120000002, 'hour_18': 124.0600872, 'hour_19': 291.9971712, 'hour_20': 340.1668344, 'hour_21': 358.5688788, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 1143.1137291125\\n- EUR/PPFD rankings by hour: {'hour_0': 19, 'hour_1': 18, 'hour_2': 20, 'hour_3': 24, 'hour_4': 22, 'hour_5': 21, 'hour_6': 15, 'hour_7': 10, 'hour_8': 8, 'hour_9': 6, 'hour_10': 4, 'hour_11': 2, 'hour_12': 1, 'hour_13': 3, 'hour_14': 5, 'hour_15': 7, 'hour_16': 13, 'hour_17': 17, 'hour_18': 16, 'hour_19': 14, 'hour_20': 12, 'hour_21': 11, 'hour_22': 19, 'hour_23': 23}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 359.1258396, 'hour_8': 341.0409948, 'hour_9': 207.773976, 'hour_10': 75.93658920000001, 'hour_11': 0.0, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 0.0, 'hour_18': 0.0, 'hour_19': 167.4136776, 'hour_20': 313.2599688, 'hour_21': 356.3395464, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 717.5260422426\\n- EUR/PPFD rankings by hour: {'hour_0': 13, 'hour_1': 10, 'hour_2': 11, 'hour_3': 13, 'hour_4': 16, 'hour_5': 12, 'hour_6': 13, 'hour_7': 9, 'hour_8': 6, 'hour_9': 4, 'hour_10': 3, 'hour_11': 2, 'hour_12': 1, 'hour_13': 5, 'hour_14': 7, 'hour_15': 8, 'hour_16': 18, 'hour_17': 22, 'hour_18': 24, 'hour_19': 23, 'hour_20': 21, 'hour_21': 20, 'hour_22': 9, 'hour_23': 17}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 357.7706676, 'hour_8': 274.9041336, 'hour_9': 102.063114, 'hour_10': 0.0, 'hour_11': 0.0, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 0.0, 'hour_18': 0.0, 'hour_19': 92.86432560000003, 'hour_20': 224.3145204, 'hour_21': 343.3864848, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 894.6032803043\\n- EUR/PPFD rankings by hour: {'hour_0': 11, 'hour_1': 9, 'hour_2': 10, 'hour_3': 13, 'hour_4': 20, 'hour_5': 18, 'hour_6': 14, 'hour_7': 8, 'hour_8': 6, 'hour_9': 3, 'hour_10': 1, 'hour_11': 1, 'hour_12': 4, 'hour_13': 5, 'hour_14': 7, 'hour_15': 16, 'hour_16': 21, 'hour_17': 23, 'hour_18': 24, 'hour_19': 22, 'hour_20': 19, 'hour_21': 17, 'hour_22': 19, 'hour_23': 12}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 358.428894, 'hour_8': 284.147598, 'hour_9': 219.4656852, 'hour_10': 12.90024239999997, 'hour_11': 0.0, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 0.0, 'hour_18': 0.0, 'hour_19': 89.72807039999998, 'hour_20': 261.4834632, 'hour_21': 346.2263892, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 695.3280092842\\n- EUR/PPFD rankings by hour: {'hour_0': 9, 'hour_1': 6, 'hour_2': 7, 'hour_3': 12, 'hour_4': 17, 'hour_5': 21, 'hour_6': 20, 'hour_7': 14, 'hour_8': 10, 'hour_9': 5, 'hour_10': 3, 'hour_11': 1, 'hour_12': 2, 'hour_13': 4, 'hour_14': 8, 'hour_15': 13, 'hour_16': 18, 'hour_17': 23, 'hour_18': 24, 'hour_19': 22, 'hour_20': 19, 'hour_21': 16, 'hour_22': 14, 'hour_23': 11}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 359.3105004, 'hour_8': 284.2339716, 'hour_9': 100.6349712, 'hour_10': 0.0, 'hour_11': 0.0, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 0.0, 'hour_18': 0.0, 'hour_19': 44.7706116, 'hour_20': 233.3167344, 'hour_21': 350.8384416, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 2667.6153247128\\n- EUR/PPFD rankings by hour: {'hour_0': 7, 'hour_1': 8, 'hour_2': 6, 'hour_3': 13, 'hour_4': 19, 'hour_5': 22, 'hour_6': 20, 'hour_7': 17, 'hour_8': 14, 'hour_9': 5, 'hour_10': 3, 'hour_11': 2, 'hour_12': 1, 'hour_13': 4, 'hour_14': 11, 'hour_15': 16, 'hour_16': 21, 'hour_17': 24, 'hour_18': 23, 'hour_19': 18, 'hour_20': 15, 'hour_21': 9, 'hour_22': 13, 'hour_23': 10}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 359.96277, 'hour_8': 342.0119532, 'hour_9': 268.220604, 'hour_10': 223.77543, 'hour_11': 206.843226, 'hour_12': 154.5663492, 'hour_13': 166.6824804, 'hour_14': 135.123354, 'hour_15': 144.244704, 'hour_16': 100.0586508, 'hour_17': 131.4256704, 'hour_18': 176.6243796, 'hour_19': 255.7723812, 'hour_20': 320.9665788, 'hour_21': 359.1124368, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 1964.3876217311\\n- EUR/PPFD rankings by hour: {'hour_0': 6, 'hour_1': 14, 'hour_2': 10, 'hour_3': 9, 'hour_4': 20, 'hour_5': 23, 'hour_6': 24, 'hour_7': 22, 'hour_8': 17, 'hour_9': 16, 'hour_10': 12, 'hour_11': 8, 'hour_12': 3, 'hour_13': 4, 'hour_14': 1, 'hour_15': 5, 'hour_16': 18, 'hour_17': 21, 'hour_18': 19, 'hour_19': 15, 'hour_20': 13, 'hour_21': 7, 'hour_22': 16, 'hour_23': 11}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 345.66645, 'hour_9': 307.7648208, 'hour_10': 214.713648, 'hour_11': 139.67286, 'hour_12': 90.81518640000002, 'hour_13': 19.23529919999999, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 17.41102920000003, 'hour_17': 50.10492599999998, 'hour_18': 142.6601952, 'hour_19': 261.511758, 'hour_20': 332.6225472, 'hour_21': 359.985108, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 1430.6837387683\\n- EUR/PPFD rankings by hour: {'hour_0': 10, 'hour_1': 8, 'hour_2': 9, 'hour_3': 12, 'hour_4': 20, 'hour_5': 23, 'hour_6': 21, 'hour_7': 17, 'hour_8': 7, 'hour_9': 5, 'hour_10': 3, 'hour_11': 1, 'hour_12': 2, 'hour_13': 4, 'hour_14': 6, 'hour_15': 13, 'hour_16': 19, 'hour_17': 24, 'hour_18': 22, 'hour_19': 18, 'hour_20': 15, 'hour_21': 14, 'hour_22': 7, 'hour_23': 11}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 347.7766464, 'hour_9': 246.3993564, 'hour_10': 100.2641604, 'hour_11': 0.0, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 0.0, 'hour_18': 102.5202984, 'hour_19': 244.4097852, 'hour_20': 347.0901252, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 1661.0141142325\\n- EUR/PPFD rankings by hour: {'hour_0': 12, 'hour_1': 11, 'hour_2': 14, 'hour_3': 15, 'hour_4': 17, 'hour_5': 18, 'hour_6': 9, 'hour_7': 8, 'hour_8': 6, 'hour_9': 5, 'hour_10': 4, 'hour_11': 2, 'hour_12': 1, 'hour_13': 3, 'hour_14': 7, 'hour_15': 20, 'hour_16': 23, 'hour_17': 24, 'hour_18': 22, 'hour_19': 21, 'hour_20': 19, 'hour_21': 16, 'hour_22': 20, 'hour_23': 13}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 350.28297, 'hour_9': 261.0069192, 'hour_10': 141.0176076, 'hour_11': 46.27768200000003, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 33.44226719999995, 'hour_18': 157.9423656, 'hour_19': 276.1252776, 'hour_20': 352.695474, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 2001.9176781551\\n- EUR/PPFD rankings by hour: {'hour_0': 9, 'hour_1': 11, 'hour_2': 7, 'hour_3': 14, 'hour_4': 19, 'hour_5': 24, 'hour_6': 23, 'hour_7': 18, 'hour_8': 16, 'hour_9': 13, 'hour_10': 6, 'hour_11': 2, 'hour_12': 1, 'hour_13': 5, 'hour_14': 10, 'hour_15': 17, 'hour_16': 21, 'hour_17': 22, 'hour_18': 20, 'hour_19': 15, 'hour_20': 8, 'hour_21': 4, 'hour_22': 9, 'hour_23': 12}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 353.2851972, 'hour_9': 286.7432736, 'hour_10': 158.6690952, 'hour_11': 47.8458096, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 11.2502088, 'hour_16': 49.38266400000003, 'hour_17': 152.748036, 'hour_18': 232.1864316, 'hour_19': 311.3389008, 'hour_20': 356.2442376, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 1845.8612121100\\n- EUR/PPFD rankings by hour: {'hour_0': 8, 'hour_1': 6, 'hour_2': 7, 'hour_3': 10, 'hour_4': 13, 'hour_5': 15, 'hour_6': 16, 'hour_7': 14, 'hour_8': 11, 'hour_9': 9, 'hour_10': 4, 'hour_11': 1, 'hour_12': 1, 'hour_13': 3, 'hour_14': 11, 'hour_15': 17, 'hour_16': 20, 'hour_17': 24, 'hour_18': 23, 'hour_19': 21, 'hour_20': 19, 'hour_21': 18, 'hour_22': 11, 'hour_23': 5}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 356.35146, 'hour_9': 291.2942688, 'hour_10': 168.5067504, 'hour_11': 59.46156960000002, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 82.27909199999999, 'hour_18': 191.5372284, 'hour_19': 296.2860672, 'hour_20': 357.9210768, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 4131.8098496675\\n- EUR/PPFD rankings by hour: {'hour_0': 4, 'hour_1': 2, 'hour_2': 1, 'hour_3': 3, 'hour_4': 8, 'hour_5': 14, 'hour_6': 19, 'hour_7': 18, 'hour_8': 15, 'hour_9': 12, 'hour_10': 9, 'hour_11': 7, 'hour_12': 10, 'hour_13': 16, 'hour_14': 20, 'hour_15': 21, 'hour_16': 24, 'hour_17': 23, 'hour_18': 22, 'hour_19': 17, 'hour_20': 13, 'hour_21': 11, 'hour_22': 6, 'hour_23': 5}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 360.0, 'hour_9': 357.371562, 'hour_10': 331.772214, 'hour_11': 302.6672892, 'hour_12': 272.1714516, 'hour_13': 259.151376, 'hour_14': 267.282408, 'hour_15': 259.5966468, 'hour_16': 293.09769, 'hour_17': 320.6061924, 'hour_18': 346.0715124, 'hour_19': 359.7959796, 'hour_20': 360.0, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 4459.3179540737\\n- EUR/PPFD rankings by hour: {'hour_0': 9, 'hour_1': 9, 'hour_2': 7, 'hour_3': 5, 'hour_4': 12, 'hour_5': 19, 'hour_6': 20, 'hour_7': 24, 'hour_8': 21, 'hour_9': 23, 'hour_10': 22, 'hour_11': 18, 'hour_12': 17, 'hour_13': 15, 'hour_14': 16, 'hour_15': 14, 'hour_16': 13, 'hour_17': 8, 'hour_18': 6, 'hour_19': 2, 'hour_20': 3, 'hour_21': 4, 'hour_22': 1, 'hour_23': 11}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 360.0, 'hour_9': 356.7133356, 'hour_10': 339.70965, 'hour_11': 317.0261556, 'hour_12': 303.6844128, 'hour_13': 305.8586448, 'hour_14': 313.9435116, 'hour_15': 333.2063136, 'hour_16': 348.0178968, 'hour_17': 358.9322436, 'hour_18': 360.0, 'hour_19': 360.0, 'hour_20': 360.0, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 4181.5834210863\\n- EUR/PPFD rankings by hour: {'hour_0': 5, 'hour_1': 4, 'hour_2': 1, 'hour_3': 2, 'hour_4': 6, 'hour_5': 7, 'hour_6': 8, 'hour_7': 12, 'hour_8': 17, 'hour_9': 19, 'hour_10': 22, 'hour_11': 23, 'hour_12': 21, 'hour_13': 18, 'hour_14': 24, 'hour_15': 16, 'hour_16': 20, 'hour_17': 15, 'hour_18': 14, 'hour_19': 13, 'hour_20': 11, 'hour_21': 10, 'hour_22': 3, 'hour_23': 9}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 360.0, 'hour_9': 358.6031304, 'hour_10': 333.79008, 'hour_11': 303.358278, 'hour_12': 266.634606, 'hour_13': 233.1395196, 'hour_14': 250.930992, 'hour_15': 273.1989996, 'hour_16': 322.1504928, 'hour_17': 357.5517552, 'hour_18': 360.0, 'hour_19': 360.0, 'hour_20': 360.0, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 4422.5063898245\\n- EUR/PPFD rankings by hour: {'hour_0': 4, 'hour_1': 2, 'hour_2': 1, 'hour_3': 3, 'hour_4': 5, 'hour_5': 7, 'hour_6': 11, 'hour_7': 20, 'hour_8': 21, 'hour_9': 23, 'hour_10': 18, 'hour_11': 22, 'hour_12': 15, 'hour_13': 16, 'hour_14': 13, 'hour_15': 14, 'hour_16': 19, 'hour_17': 17, 'hour_18': 24, 'hour_19': 12, 'hour_20': 10, 'hour_21': 9, 'hour_22': 8, 'hour_23': 6}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 360.0, 'hour_9': 359.0111712, 'hour_10': 344.8161168, 'hour_11': 324.6746868, 'hour_12': 306.7119564, 'hour_13': 298.2369192, 'hour_14': 296.790906, 'hour_15': 312.874266, 'hour_16': 338.5510524, 'hour_17': 358.6135548, 'hour_18': 360.0, 'hour_19': 360.0, 'hour_20': 360.0, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 4382.6970635771\\n- EUR/PPFD rankings by hour: {'hour_0': 4, 'hour_1': 2, 'hour_2': 1, 'hour_3': 3, 'hour_4': 6, 'hour_5': 9, 'hour_6': 11, 'hour_7': 19, 'hour_8': 20, 'hour_9': 17, 'hour_10': 15, 'hour_11': 13, 'hour_12': 14, 'hour_13': 16, 'hour_14': 22, 'hour_15': 23, 'hour_16': 24, 'hour_17': 21, 'hour_18': 18, 'hour_19': 12, 'hour_20': 10, 'hour_21': 8, 'hour_22': 7, 'hour_23': 5}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 360.0, 'hour_9': 359.1705156, 'hour_10': 341.1973608, 'hour_11': 319.0499784, 'hour_12': 292.3069248, 'hour_13': 282.7790232, 'hour_14': 293.5995504, 'hour_15': 312.1460472, 'hour_16': 341.3984028, 'hour_17': 358.823532, 'hour_18': 360.0, 'hour_19': 360.0, 'hour_20': 360.0, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 4317.0634994703\\n- EUR/PPFD rankings by hour: {'hour_0': 4, 'hour_1': 3, 'hour_2': 1, 'hour_3': 2, 'hour_4': 5, 'hour_5': 6, 'hour_6': 12, 'hour_7': 16, 'hour_8': 15, 'hour_9': 13, 'hour_10': 9, 'hour_11': 10, 'hour_12': 8, 'hour_13': 11, 'hour_14': 17, 'hour_15': 20, 'hour_16': 23, 'hour_17': 24, 'hour_18': 22, 'hour_19': 21, 'hour_20': 18, 'hour_21': 19, 'hour_22': 14, 'hour_23': 7}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 360.0, 'hour_9': 359.6515272, 'hour_10': 341.2777776, 'hour_11': 308.6717436, 'hour_12': 288.116316, 'hour_13': 268.4007972, 'hour_14': 276.6316056, 'hour_15': 304.6955796, 'hour_16': 329.8764624, 'hour_17': 357.5160144, 'hour_18': 360.0, 'hour_19': 360.0, 'hour_20': 360.0, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 4515.2285236022\\n- EUR/PPFD rankings by hour: {'hour_0': 8, 'hour_1': 7, 'hour_2': 6, 'hour_3': 2, 'hour_4': 1, 'hour_5': 3, 'hour_6': 4, 'hour_7': 5, 'hour_8': 9, 'hour_9': 11, 'hour_10': 13, 'hour_11': 18, 'hour_12': 19, 'hour_13': 16, 'hour_14': 17, 'hour_15': 12, 'hour_16': 21, 'hour_17': 23, 'hour_18': 23, 'hour_19': 22, 'hour_20': 20, 'hour_21': 15, 'hour_22': 14, 'hour_23': 10}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 360.0, 'hour_9': 359.7200304, 'hour_10': 349.5815568, 'hour_11': 332.7833808, 'hour_12': 322.6776696, 'hour_13': 312.3932544, 'hour_14': 320.8533996, 'hour_15': 330.5406456, 'hour_16': 345.941952, 'hour_17': 358.5108, 'hour_18': 360.0, 'hour_19': 360.0, 'hour_20': 360.0, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 3870.3210124766\\n- EUR/PPFD rankings by hour: {'hour_0': 5, 'hour_1': 4, 'hour_2': 2, 'hour_3': 3, 'hour_4': 6, 'hour_5': 13, 'hour_6': 20, 'hour_7': 24, 'hour_8': 21, 'hour_9': 16, 'hour_10': 12, 'hour_11': 8, 'hour_12': 7, 'hour_13': 10, 'hour_14': 15, 'hour_15': 18, 'hour_16': 22, 'hour_17': 23, 'hour_18': 19, 'hour_19': 17, 'hour_20': 14, 'hour_21': 11, 'hour_22': 9, 'hour_23': 1}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 360.0, 'hour_9': 357.9791556, 'hour_10': 319.2793152, 'hour_11': 265.3002828, 'hour_12': 222.8193636, 'hour_13': 194.17758, 'hour_14': 195.4180836, 'hour_15': 217.9586148, 'hour_16': 276.1342128, 'hour_17': 339.0380208, 'hour_18': 359.9910648, 'hour_19': 360.0, 'hour_20': 360.0, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 4092.2075223856\\n- EUR/PPFD rankings by hour: {'hour_0': 6, 'hour_1': 14, 'hour_2': 16, 'hour_3': 2, 'hour_4': 3, 'hour_5': 4, 'hour_6': 5, 'hour_7': 10, 'hour_8': 12, 'hour_9': 9, 'hour_10': 13, 'hour_11': 7, 'hour_12': 8, 'hour_13': 11, 'hour_14': 15, 'hour_15': 18, 'hour_16': 22, 'hour_17': 24, 'hour_18': 23, 'hour_19': 21, 'hour_20': 20, 'hour_21': 19, 'hour_22': 17, 'hour_23': 1}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 360.0, 'hour_9': 358.5093108, 'hour_10': 340.3112868, 'hour_11': 311.1080748, 'hour_12': 264.1193472, 'hour_13': 239.1767364, 'hour_14': 235.0620768, 'hour_15': 241.8215556, 'hour_16': 284.6673288, 'hour_17': 335.606904, 'hour_18': 359.5994052, 'hour_19': 360.0, 'hour_20': 360.0, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 3591.4263917610\\n- EUR/PPFD rankings by hour: {'hour_0': 5, 'hour_1': 3, 'hour_2': 2, 'hour_3': 1, 'hour_4': 4, 'hour_5': 6, 'hour_6': 13, 'hour_7': 16, 'hour_8': 15, 'hour_9': 12, 'hour_10': 10, 'hour_11': 8, 'hour_12': 9, 'hour_13': 11, 'hour_14': 18, 'hour_15': 21, 'hour_16': 23, 'hour_17': 24, 'hour_18': 22, 'hour_19': 20, 'hour_20': 19, 'hour_21': 17, 'hour_22': 14, 'hour_23': 7}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 360.0, 'hour_9': 354.050646, 'hour_10': 285.0515424, 'hour_11': 195.4434, 'hour_12': 148.3340472, 'hour_13': 174.0033876, 'hour_14': 196.776234, 'hour_15': 201.2453232, 'hour_16': 239.8096464, 'hour_17': 315.4863228, 'hour_18': 359.0007468, 'hour_19': 360.0, 'hour_20': 360.0, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 3648.6638395510\\n- EUR/PPFD rankings by hour: {'hour_0': 3, 'hour_1': 14, 'hour_2': 12, 'hour_3': 11, 'hour_4': 13, 'hour_5': 15, 'hour_6': 20, 'hour_7': 24, 'hour_8': 23, 'hour_9': 18, 'hour_10': 8, 'hour_11': 4, 'hour_12': 5, 'hour_13': 7, 'hour_14': 10, 'hour_15': 17, 'hour_16': 21, 'hour_17': 22, 'hour_18': 19, 'hour_19': 16, 'hour_20': 9, 'hour_21': 3, 'hour_22': 6, 'hour_23': 12}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 360.0, 'hour_9': 349.4073204, 'hour_10': 308.3188032, 'hour_11': 248.1298068, 'hour_12': 177.975084, 'hour_13': 149.3690412, 'hour_14': 178.2446292, 'hour_15': 209.8767264, 'hour_16': 250.461894, 'hour_17': 301.117032, 'hour_18': 353.5383612, 'hour_19': 360.0, 'hour_20': 360.0, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 3337.8318100855\\n- EUR/PPFD rankings by hour: {'hour_0': 15, 'hour_1': 17, 'hour_2': 12, 'hour_3': 7, 'hour_4': 7, 'hour_5': 7, 'hour_6': 16, 'hour_7': 18, 'hour_8': 14, 'hour_9': 7, 'hour_10': 4, 'hour_11': 3, 'hour_12': 2, 'hour_13': 6, 'hour_14': 13, 'hour_15': 19, 'hour_16': 23, 'hour_17': 24, 'hour_18': 15, 'hour_19': 22, 'hour_20': 20, 'hour_21': 21, 'hour_22': 11, 'hour_23': 14}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 360.0, 'hour_9': 336.1832244, 'hour_10': 266.8564968, 'hour_11': 196.8626076, 'hour_12': 134.676594, 'hour_13': 131.3288724, 'hour_14': 134.9803908, 'hour_15': 159.1694664, 'hour_16': 214.7538564, 'hour_17': 290.178858, 'hour_18': 350.6165508, 'hour_19': 360.0, 'hour_20': 360.0, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 3162.3041332635\\n- EUR/PPFD rankings by hour: {'hour_0': 1, 'hour_1': 3, 'hour_2': 1, 'hour_3': 2, 'hour_4': 6, 'hour_5': 12, 'hour_6': 20, 'hour_7': 22, 'hour_8': 19, 'hour_9': 16, 'hour_10': 13, 'hour_11': 9, 'hour_12': 8, 'hour_13': 10, 'hour_14': 15, 'hour_15': 18, 'hour_16': 23, 'hour_17': 24, 'hour_18': 21, 'hour_19': 17, 'hour_20': 14, 'hour_21': 11, 'hour_22': 7, 'hour_23': 5}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 359.9597916, 'hour_9': 331.0186788, 'hour_10': 247.7396364, 'hour_11': 156.9877884, 'hour_12': 73.66109159999996, 'hour_13': 55.49583000000001, 'hour_14': 115.9484148, 'hour_15': 179.3540832, 'hour_16': 236.1670632, 'hour_17': 296.7253812, 'hour_18': 347.021622, 'hour_19': 360.0, 'hour_20': 360.0, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 3172.2668892337\\n- EUR/PPFD rankings by hour: {'hour_0': 4, 'hour_1': 8, 'hour_2': 5, 'hour_3': 4, 'hour_4': 6, 'hour_5': 14, 'hour_6': 19, 'hour_7': 21, 'hour_8': 17, 'hour_9': 9, 'hour_10': 7, 'hour_11': 2, 'hour_12': 1, 'hour_13': 3, 'hour_14': 11, 'hour_15': 18, 'hour_16': 22, 'hour_17': 24, 'hour_18': 23, 'hour_19': 20, 'hour_20': 12, 'hour_21': 15, 'hour_22': 10, 'hour_23': 5}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 359.88831, 'hour_9': 325.7975436, 'hour_10': 240.1834356, 'hour_11': 157.8321648, 'hour_12': 82.26866760000001, 'hour_13': 94.08993720000001, 'hour_14': 116.970006, 'hour_15': 161.5775028, 'hour_16': 227.4269484, 'hour_17': 296.4722172, 'hour_18': 347.535396, 'hour_19': 360.0, 'hour_20': 360.0, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 4020.9432885743\\n- EUR/PPFD rankings by hour: {'hour_0': 2, 'hour_1': 4, 'hour_2': 3, 'hour_3': 1, 'hour_4': 2, 'hour_5': 5, 'hour_6': 11, 'hour_7': 18, 'hour_8': 15, 'hour_9': 6, 'hour_10': 9, 'hour_11': 7, 'hour_12': 8, 'hour_13': 10, 'hour_14': 14, 'hour_15': 16, 'hour_16': 21, 'hour_17': 23, 'hour_18': 24, 'hour_19': 22, 'hour_20': 20, 'hour_21': 19, 'hour_22': 17, 'hour_23': 1}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 358.4333616, 'hour_9': 337.2986352, 'hour_10': 314.3694228, 'hour_11': 280.9562424, 'hour_12': 246.307026, 'hour_13': 208.0330968, 'hour_14': 244.6823088, 'hour_15': 286.8370932, 'hour_16': 310.8757596, 'hour_17': 326.8087104, 'hour_18': 344.3068104, 'hour_19': 359.8093824, 'hour_20': 360.0, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 4722.2260000000\\n- EUR/PPFD rankings by hour: {'hour_0': 14, 'hour_1': 6, 'hour_2': 5, 'hour_3': 9, 'hour_4': 10, 'hour_5': 12, 'hour_6': 21, 'hour_7': 24, 'hour_8': 18, 'hour_9': 14, 'hour_10': 8, 'hour_11': 3, 'hour_12': 1, 'hour_13': 2, 'hour_14': 4, 'hour_15': 15, 'hour_16': 20, 'hour_17': 22, 'hour_18': 23, 'hour_19': 19, 'hour_20': 17, 'hour_21': 16, 'hour_22': 99, 'hour_23': 1}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 360.0, 'hour_9': 360.0, 'hour_10': 360.0, 'hour_11': 360.0, 'hour_12': 360.0, 'hour_13': 360.0, 'hour_14': 360.0, 'hour_15': 360.0, 'hour_16': 360.0, 'hour_17': 360.0, 'hour_18': 360.0, 'hour_19': 360.0, 'hour_20': 360.0, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 2137.9152065530\\n- EUR/PPFD rankings by hour: {'hour_0': 8, 'hour_1': 6, 'hour_2': 3, 'hour_3': 10, 'hour_4': 9, 'hour_5': 11, 'hour_6': 14, 'hour_7': 15, 'hour_8': 8, 'hour_9': 6, 'hour_10': 4, 'hour_11': 3, 'hour_12': 2, 'hour_13': 1, 'hour_14': 5, 'hour_15': 7, 'hour_16': 21, 'hour_17': 23, 'hour_18': 24, 'hour_19': 22, 'hour_20': 19, 'hour_21': 20, 'hour_22': 18, 'hour_23': 16}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 360.0, 'hour_9': 350.5554936, 'hour_10': 283.2138696, 'hour_11': 185.867844, 'hour_12': 87.86508119999996, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 29.28739920000004, 'hour_18': 153.7800516, 'hour_19': 287.2868316, 'hour_20': 357.8347032, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 1686.6424747351\\n- EUR/PPFD rankings by hour: {'hour_0': 11, 'hour_1': 13, 'hour_2': 12, 'hour_3': 6, 'hour_4': 14, 'hour_5': 21, 'hour_6': 22, 'hour_7': 19, 'hour_8': 12, 'hour_9': 5, 'hour_10': 3, 'hour_11': 1, 'hour_12': 2, 'hour_13': 4, 'hour_14': 7, 'hour_15': 17, 'hour_16': 20, 'hour_17': 24, 'hour_18': 23, 'hour_19': 18, 'hour_20': 16, 'hour_21': 15, 'hour_22': 8, 'hour_23': 14}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 360.0, 'hour_9': 324.9784836, 'hour_10': 198.0301404, 'hour_11': 50.56657799999999, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 0.0, 'hour_18': 105.369138, 'hour_19': 254.095542, 'hour_20': 351.3790212, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 1817.3981097395\\n- EUR/PPFD rankings by hour: {'hour_0': 9, 'hour_1': 6, 'hour_2': 4, 'hour_3': 4, 'hour_4': 11, 'hour_5': 17, 'hour_6': 21, 'hour_7': 20, 'hour_8': 16, 'hour_9': 10, 'hour_10': 6, 'hour_11': 5, 'hour_12': 1, 'hour_13': 3, 'hour_14': 8, 'hour_15': 14, 'hour_16': 19, 'hour_17': 24, 'hour_18': 23, 'hour_19': 22, 'hour_20': 18, 'hour_21': 15, 'hour_22': 13, 'hour_23': 10}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 359.9955324, 'hour_9': 326.0104992, 'hour_10': 211.0412808, 'hour_11': 84.05719680000004, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 41.30375400000003, 'hour_18': 138.9982524, 'hour_19': 264.09552, 'hour_20': 349.672398, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 1942.3309680858\\n- EUR/PPFD rankings by hour: {'hour_0': 7, 'hour_1': 3, 'hour_2': 1, 'hour_3': 12, 'hour_4': 14, 'hour_5': 16, 'hour_6': 18, 'hour_7': 17, 'hour_8': 11, 'hour_9': 6, 'hour_10': 5, 'hour_11': 3, 'hour_12': 1, 'hour_13': 2, 'hour_14': 4, 'hour_15': 9, 'hour_16': 21, 'hour_17': 23, 'hour_18': 24, 'hour_19': 22, 'hour_20': 20, 'hour_21': 19, 'hour_22': 15, 'hour_23': 13}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 359.8242744, 'hour_9': 314.6449248, 'hour_10': 204.2281908, 'hour_11': 81.6595848, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 14.82726719999999, 'hour_17': 100.6275252, 'hour_18': 195.8931384, 'hour_19': 279.0530448, 'hour_20': 349.3492416, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 1587.2033463839\\n- EUR/PPFD rankings by hour: {'hour_0': 8, 'hour_1': 7, 'hour_2': 6, 'hour_3': 9, 'hour_4': 11, 'hour_5': 10, 'hour_6': 12, 'hour_7': 8, 'hour_8': 7, 'hour_9': 5, 'hour_10': 4, 'hour_11': 1, 'hour_12': 2, 'hour_13': 3, 'hour_14': 6, 'hour_15': 13, 'hour_16': 22, 'hour_17': 23, 'hour_18': 24, 'hour_19': 21, 'hour_20': 19, 'hour_21': 20, 'hour_22': 18, 'hour_23': 10}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 356.708868, 'hour_9': 285.368742, 'hour_10': 165.9438372, 'hour_11': 27.85627799999997, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 18.32539800000001, 'hour_18': 117.6878004, 'hour_19': 237.282474, 'hour_20': 335.8064568, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 1853.2618448305\\n- EUR/PPFD rankings by hour: {'hour_0': 14, 'hour_1': 15, 'hour_2': 17, 'hour_3': 10, 'hour_4': 9, 'hour_5': 12, 'hour_6': 15, 'hour_7': 8, 'hour_8': 6, 'hour_9': 5, 'hour_10': 2, 'hour_11': 4, 'hour_12': 1, 'hour_13': 3, 'hour_14': 7, 'hour_15': 11, 'hour_16': 19, 'hour_17': 23, 'hour_18': 24, 'hour_19': 22, 'hour_20': 21, 'hour_21': 20, 'hour_22': 18, 'hour_23': 16}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 360.0, 'hour_8': 356.6478108, 'hour_9': 294.1669356, 'hour_10': 190.3637388, 'hour_11': 80.8896684, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 9.119163599999979, 'hour_17': 102.8672819999999, 'hour_18': 170.5573788, 'hour_19': 266.8937268, 'hour_20': 339.5324352, 'hour_21': 360.0, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 930.4811154065\\n- EUR/PPFD rankings by hour: {'hour_0': 9, 'hour_1': 8, 'hour_2': 11, 'hour_3': 13, 'hour_4': 19, 'hour_5': 24, 'hour_6': 21, 'hour_7': 13, 'hour_8': 7, 'hour_9': 5, 'hour_10': 2, 'hour_11': 1, 'hour_12': 3, 'hour_13': 4, 'hour_14': 6, 'hour_15': 8, 'hour_16': 17, 'hour_17': 20, 'hour_18': 24, 'hour_19': 22, 'hour_20': 18, 'hour_21': 16, 'hour_22': 10, 'hour_23': 12}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 359.9687268, 'hour_8': 314.5600404, 'hour_9': 171.2379432, 'hour_10': 5.259157200000004, 'hour_11': 0.0, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 0.0, 'hour_18': 0.0, 'hour_19': 125.0146644, 'hour_20': 275.502792, 'hour_21': 356.7148248, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "conversations": [
+      {
+        "from": "user",
+        "value": "Optimize LED lighting schedule:\\n- Total supplemental PPFD-hours needed: 847.3039692649\\n- EUR/PPFD rankings by hour: {'hour_0': 14, 'hour_1': 9, 'hour_2': 11, 'hour_3': 10, 'hour_4': 13, 'hour_5': 12, 'hour_6': 21, 'hour_7': 16, 'hour_8': 7, 'hour_9': 6, 'hour_10': 4, 'hour_11': 2, 'hour_12': 1, 'hour_13': 3, 'hour_14': 5, 'hour_15': 14, 'hour_16': 22, 'hour_17': 24, 'hour_18': 23, 'hour_19': 20, 'hour_20': 19, 'hour_21': 18, 'hour_22': 17, 'hour_23': 15}\\n- Max PPFD capacity by hour: {'hour_0': 360.0, 'hour_1': 360.0, 'hour_2': 360.0, 'hour_3': 360.0, 'hour_4': 360.0, 'hour_5': 360.0, 'hour_6': 360.0, 'hour_7': 359.4058092, 'hour_8': 300.4588056, 'hour_9': 149.9989728, 'hour_10': 0.0, 'hour_11': 0.0, 'hour_12': 0.0, 'hour_13': 0.0, 'hour_14': 0.0, 'hour_15': 0.0, 'hour_16': 0.0, 'hour_17': 0.0, 'hour_18': 0.0, 'hour_19': 101.1442776, 'hour_20': 260.3695416, 'hour_21': 353.7036624, 'hour_22': 360.0, 'hour_23': 360.0}\\nAllocate PPFD per hour to minimize cost."
+      },
+      {
+        "from": "assistant",
+        "value": ""
+      }
+    ]
+  }
+]
