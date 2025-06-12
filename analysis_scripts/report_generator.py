@@ -9,11 +9,15 @@ from datetime import datetime
 from pathlib import Path
 import markdown
 
+# Get the script's directory to build robust paths
+SCRIPT_DIR = Path(__file__).parent.resolve()
+PROJECT_ROOT = SCRIPT_DIR.parent
+
 # Ensure output directories exist
 RESULTS_DIRS = {
-    'analysis': '../results/analysis',
-    'reports': '../results/analysis_reports',
-    'figures': '../results/figures'
+    'analysis': PROJECT_ROOT / 'results/analysis',
+    'reports': PROJECT_ROOT / 'results/analysis_reports',
+    'figures': PROJECT_ROOT / 'results/figures'
 }
 
 def ensure_directories():
@@ -114,7 +118,9 @@ def generate_comprehensive_readme(all_metrics, stats_results, visualizations, ti
 **Last Updated**: {timestamp}  
 **Analysis Status**: {num_models} models analyzed  
 **Statistical Analysis**: {'✅ Complete' if stats_results else '⚠️ Limited'}
-
+"""
+    
+    readme_content += """
 ## 🎯 Executive Summary
 
 This analysis evaluates Large Language Model performance on complex LED optimization tasks, revealing critical insights about the relationship between model scale and optimization capability.
@@ -159,7 +165,8 @@ This analysis evaluates Large Language Model performance on complex LED optimiza
         ("**API Success**", [f"{m['basic_performance']['api_success_rate']:.1f}%" for m in ranked_models]),
         ("**JSON Validity**", [f"{m['basic_performance']['json_success_rate']:.1f}%" for m in ranked_models]),
         ("**Hourly Success**", [f"{m['ground_truth_analysis']['mean_hourly_match_rate']:.1f}%" if m['ground_truth_analysis'] else "0.0%" for m in ranked_models]),
-        ("**Daily MAE**", [f"{m['ground_truth_analysis']['mean_daily_mae']:.0f} PPFD" if m['ground_truth_analysis'] else "N/A" for m in ranked_models])
+        ("**Daily MAE**", [f"{m['ground_truth_analysis']['mean_daily_mae']:.0f} PPFD" if m['ground_truth_analysis'] else "N/A" for m in ranked_models]),
+        ("**Success-Weighted MAE**", [f"{m['ground_truth_analysis']['mean_success_weighted_mae']:.0f} PPFD" if m.get('ground_truth_analysis') else "N/A" for m in ranked_models])
     ]
     
     for metric_name, values in metrics_rows:
@@ -197,7 +204,7 @@ This analysis evaluates Large Language Model performance on complex LED optimiza
         readme_content += format_model_analysis_section(metrics)
     
     # Add methodology and conclusions
-    readme_content += f"""
+    methodology_and_conclusion = f"""
 ## 🔬 Methodology
 
 ### Test Dataset
@@ -210,7 +217,14 @@ This analysis evaluates Large Language Model performance on complex LED optimiza
 - **API Success Rate**: Valid responses from model endpoint
 - **JSON Validity Rate**: Percentage of parseable JSON responses  
 - **Hourly Success Rate**: Exact matches with optimal hourly allocations
-- **Daily MAE**: Mean absolute error in daily PPFD totals
+- **Daily MAE**: Mean absolute error in daily PPFD totals (calculated only on successful runs)
+- **Success-Weighted MAE**: The primary performance metric, calculated with the following formula:
+  \\[ \\text{{Success-Weighted MAE}} = \\frac{{1}}{{N}} \\sum_{{s=1}}^{{N}} \\left( I_s \\cdot \\text{{MAE}}_s + (1 - I_s) \\cdot P \\right) \\]
+  Where:
+    - \\( N \\): Total test scenarios (72).
+    - \\( P \\): Penalty for a failed scenario (10,000 PPFD).
+    - \\( \\text{{MAE}}_s \\): The standard daily absolute error for a successful scenario \\(s\\).
+    - \\( I_s \\): An indicator function that is 1 if scenario \\(s\\) was a success (valid API, JSON, and 24-hour allocation) and 0 if it was a failure. This metric heavily penalizes reliability failures while accurately measuring the error of valid, suboptimal responses.
 
 ### Performance Grading Scale
 - **A+ (Exceptional)**: >95% hourly success rate
@@ -291,6 +305,7 @@ python run_analysis.py --monitor
 **Models Analyzed**: {num_models} models  
 **Total Test Cases**: 72 scenarios per model  
 """
+    readme_content += methodology_and_conclusion
     
     # Save README
     readme_path = "../README.md"

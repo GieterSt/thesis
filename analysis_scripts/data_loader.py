@@ -8,10 +8,14 @@ import os
 import numpy as np
 from pathlib import Path
 
+# Get the script's directory to build robust paths
+SCRIPT_DIR = Path(__file__).parent.resolve()
+PROJECT_ROOT = SCRIPT_DIR.parent
+
 # Ground truth data paths
 GROUND_TRUTH_PATHS = {
-    'json': '../data/input-output pairs json/test_ground_truth.json',
-    'excel': '../data/ground_truth/test_set_ground_truth_complete.xlsx'
+    'json': PROJECT_ROOT / 'data/input-output pairs json/test_ground_truth.json',
+    'excel': PROJECT_ROOT / 'data/ground_truth/test_set_ground_truth_complete.xlsx'
 }
 
 def load_ground_truth():

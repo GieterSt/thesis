@@ -11,9 +11,13 @@ from pathlib import Path
 import os
 import glob
 
+# Get the script's directory to build robust paths
+SCRIPT_DIR = Path(__file__).parent.resolve()
+PROJECT_ROOT = SCRIPT_DIR.parent
+
 # Ensure output directories exist
 RESULTS_DIRS = {
-    'figures': '../results/figures'
+    'figures': PROJECT_ROOT / 'results/figures'
 }
 
 def ensure_directories():
@@ -209,7 +213,7 @@ def create_log_scaling_law_plot(df, stats_results, timestamp):
             'log_linear' not in stats_results['regression_analysis']['hourly_success_rate']):
             print("⚠️  No log-linear regression data available")
             return None
-            
+        
         log_reg_data = stats_results['regression_analysis']['hourly_success_rate']['log_linear']
         
         # Create figure with wider layout to accommodate legend table

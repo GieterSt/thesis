@@ -167,47 +167,70 @@ def analyze_single_model(filepath):
         print(f"❌ Error analyzing {filepath}: {e}")
         return None
 
-def process_ground_truth_comparison(metrics, ground_truth):
+def process_ground_truth_comparison(metrics, ground_truth, hourly_allocations_list):
     """Add ground truth comparison to existing metrics"""
-    if not metrics or not ground_truth or not metrics['hourly_allocations']:
+    if not metrics or not ground_truth:
         return metrics
     
     model_name = metrics['model_name']
-    hourly_allocations = metrics['hourly_allocations']
-    
+    total_scenarios_tested = metrics['absolute_counts']['total_scenarios_tested']
+
     print(f"\n🎯 Ground Truth Comparison: {model_name}")
     
+    # Process each scenario to determine its MAE (or penalty)
+    all_maes = []
     ground_truth_comparisons = []
     
-    for i, model_allocations in enumerate(hourly_allocations):
-        if i < len(ground_truth):
+    # We iterate up to the total number of scenarios tested
+    for i in range(total_scenarios_tested):
+        # Check if a valid, complete allocation exists for this scenario index
+        if i < len(hourly_allocations_list) and isinstance(hourly_allocations_list[i], dict) and len(hourly_allocations_list[i]) == 24:
+            # This is a successful, complete response
+            model_allocations = hourly_allocations_list[i]
             comparison = calculate_ground_truth_metrics(model_allocations, ground_truth, i)
             if comparison:
+                all_maes.append(comparison['daily_absolute_error'])
                 ground_truth_comparisons.append(comparison)
+        else:
+            # This is a failure (API error, JSON error, or incomplete allocation)
+            all_maes.append(10000.0)
+            # We still need a placeholder in the comparisons list for stats, but with failure indicators
+            failure_comp = {
+                'exact_24h_match': False, 'hourly_matches': 0, 'hourly_match_rate': 0,
+                'mean_absolute_error': 10000.0, 'daily_absolute_error': 10000.0,
+                'daily_relative_error': float('inf'), 'total_model_ppfd': 0,
+                'total_optimal_ppfd': ground_truth[i]['optimal_allocations'] if i in ground_truth else 0,
+                'scenario_complexity': ground_truth[i]['scenario_complexity'] if i in ground_truth else {}
+            }
+            ground_truth_comparisons.append(failure_comp)
     
     if ground_truth_comparisons:
-        # Calculate aggregate metrics
+        # Calculate aggregate metrics from the full list of comparisons
         exact_matches = sum(1 for comp in ground_truth_comparisons if comp['exact_24h_match'])
         total_hourly_matches = sum(comp['hourly_matches'] for comp in ground_truth_comparisons)
         
-        # Calculate success rates based on TOTAL SCENARIOS TESTED, not just valid responses
-        total_scenarios_tested = metrics['absolute_counts']['total_scenarios_tested']
+        # Calculate success rates based on TOTAL SCENARIOS TESTED
         total_possible_hourly_matches = total_scenarios_tested * 24
         
-        # True success rates (out of all scenarios tested)
         true_hourly_match_rate = (total_hourly_matches / total_possible_hourly_matches * 100) if total_possible_hourly_matches > 0 else 0
         true_exact_match_rate = (exact_matches / total_scenarios_tested * 100) if total_scenarios_tested > 0 else 0
         
-        mean_daily_mae = np.mean([comp['daily_absolute_error'] for comp in ground_truth_comparisons])
+        # Mean Daily MAE should only be calculated over successful runs
+        successful_maes = [comp['daily_absolute_error'] for comp in ground_truth_comparisons if comp['daily_absolute_error'] < 10000.0]
+        mean_daily_mae = np.mean(successful_maes) if successful_maes else float('inf')
+
+        # The new Success-Weighted MAE is the mean of all MAEs (including penalties)
+        mean_success_weighted_mae = np.mean(all_maes) if all_maes else 0
         
         ground_truth_analysis = {
             'total_scenarios_tested': total_scenarios_tested,
-            'scenarios_with_valid_responses': len(ground_truth_comparisons),
+            'scenarios_with_valid_responses': len(successful_maes),
             'exact_24h_matches': exact_matches,
-            'exact_24h_match_rate': true_exact_match_rate,  # Based on ALL scenarios
+            'exact_24h_match_rate': true_exact_match_rate,
             'total_hourly_matches': total_hourly_matches,
-            'mean_hourly_match_rate': true_hourly_match_rate,  # Based on ALL scenarios  
+            'mean_hourly_match_rate': true_hourly_match_rate,
             'mean_daily_mae': mean_daily_mae,
+            'mean_success_weighted_mae': mean_success_weighted_mae,
             'ground_truth_comparisons': ground_truth_comparisons
         }
         

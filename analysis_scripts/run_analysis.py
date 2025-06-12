@@ -10,6 +10,11 @@ import glob
 from datetime import datetime
 from pathlib import Path
 
+# Get the directory of the current script to build robust paths
+SCRIPT_DIR = Path(__file__).parent.resolve()
+PROJECT_ROOT = SCRIPT_DIR.parent
+sys.path.append(str(SCRIPT_DIR))
+
 # Import our modular components
 from data_loader import load_ground_truth
 from model_analyzer import analyze_single_model, process_ground_truth_comparison
@@ -19,42 +24,27 @@ from report_generator import generate_comprehensive_readme, generate_html_from_r
 
 def ensure_all_directories():
     """Ensure all required directories exist"""
-    # Create all required output directories
+    # Create all required output directories relative to the project root
     required_dirs = [
-        '../results/model_outputs',
-        '../results/analysis',
-        '../results/methodology_logs',
-        '../results/comparisons',
-        '../results/figures',
-        '../results/analysis_reports'
+        PROJECT_ROOT / 'results/model_outputs',
+        PROJECT_ROOT / 'results/analysis',
+        PROJECT_ROOT / 'results/methodology_logs',
+        PROJECT_ROOT / 'results/comparisons',
+        PROJECT_ROOT / 'results/figures',
+        PROJECT_ROOT / 'results/analysis_reports'
     ]
     
     for dir_path in required_dirs:
-        Path(dir_path).mkdir(parents=True, exist_ok=True)
+        dir_path.mkdir(parents=True, exist_ok=True)
 
 def find_model_output_files():
     """Find all model output JSON files"""
-    output_patterns = [
-        '../results/model_outputs/*.json',
-        '../results/model_outputs/**/*.json',
-        '*.json'  # Fallback for files in current directory
-    ]
+    output_dir = PROJECT_ROOT / 'results/model_outputs'
     
-    all_files = []
-    for pattern in output_patterns:
-        files = glob.glob(pattern, recursive=True)
-        all_files.extend(files)
+    # Use glob to find all json files recursively within the model_outputs directory
+    files = glob.glob(str(output_dir / '**/*.json'), recursive=True)
     
-    # Filter to only include files that look like model results
-    model_files = []
-    for file_path in all_files:
-        filename = os.path.basename(file_path)
-        # Include files that start with 'results_' or contain model names
-        if (filename.startswith('results_') or 
-            any(model in filename.lower() for model in ['claude', 'deepseek', 'llama', 'mistral', 'gpt'])):
-            model_files.append(file_path)
-    
-    return list(set(model_files))  # Remove duplicates
+    return list(set(files))  # Remove duplicates
 
 def run_comprehensive_analysis():
     """Run complete analysis pipeline"""
@@ -104,7 +94,7 @@ def run_comprehensive_analysis():
         if metrics:
             # Add ground truth comparison if available
             if ground_truth:
-                metrics = process_ground_truth_comparison(metrics, ground_truth)
+                metrics = process_ground_truth_comparison(metrics, ground_truth, metrics['hourly_allocations'])
             
             all_metrics.append(metrics)
             print(f"✅ Analysis complete for {metrics['model_name']}")
@@ -160,29 +150,22 @@ def run_comprehensive_analysis():
     # Final Summary
     print("\n" + "="*80)
     
-# Auto-cleanup: Archive old reports, keep only latest
-try:
-    import sys
-    sys.path.append('..')
-    from cleanup_analysis_reports import cleanup_analysis_reports
-    cleanup_analysis_reports()
-# Auto-cleanup: Archive old JSON analysis files
-try:
-    import sys
-    sys.path.append('..')
-    from cleanup_analysis_json import cleanup_analysis_json
-    cleanup_analysis_json()
-except ImportError:
-    print("⚠️  JSON cleanup script not found - skipping archive cleanup")
-except Exception as e:
-    print(f"⚠️  JSON cleanup failed: {e}")
+    # Auto-cleanup: Archive old reports and analysis files
+    try:
+        from cleanup_analysis_reports import cleanup_analysis_reports
+        from cleanup_analysis_json import cleanup_analysis_json
+        
+        print("\n🧹 Running cleanup and archiving old files...")
+        cleanup_analysis_reports()
+        cleanup_analysis_json()
+        print("✅ Cleanup complete.")
+        
+    except ImportError:
+        print("⚠️  Cleanup scripts not found - skipping archive cleanup.")
+    except Exception as e:
+        print(f"⚠️  Cleanup failed: {e}")
 
-except ImportError:
-    print("⚠️  Cleanup script not found - skipping archive cleanup")
-except Exception as e:
-    print(f"⚠️  Cleanup failed: {e}")
-
-print("🎉 ANALYSIS COMPLETE!")
+    print("🎉 ANALYSIS COMPLETE!")
     print("="*80)
     
     print(f"📊 Models Analyzed: {len(all_metrics)}")
