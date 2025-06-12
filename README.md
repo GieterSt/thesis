@@ -1,237 +1,64 @@
-# 🔬 LED Optimization LLM Analysis Results
+# LLM-Powered Greenhouse LED Optimization - Thesis Project
 
-**Last Updated**: 20250610_131642  
-**Analysis Status**: 5 models analyzed  
-**Statistical Analysis**: ✅ Complete
+## 📋 Overview
 
-## 🎯 Executive Summary
+This repository contains the complete implementation and results for the Master's thesis research on LED lighting optimization using Large Language Models. The core of the repository is a modular, automated analysis pipeline designed to evaluate the performance of various LLMs on a complex, real-world optimization task.
 
-This analysis evaluates Large Language Model performance on complex LED optimization tasks, revealing critical insights about the relationship between model scale and optimization capability.
+## 🎯 Research Question
 
-### Key Findings
+How effectively can different Large Language Models optimize LED lighting schedules for plant growth, and what factors (such as model scale) determine their performance?
 
-🔍 **Scale Matters Dramatically**: Clear evidence of performance scaling with model parameters  
-📊 **Two-Stage Failure Mode**: Models fail at both JSON generation AND optimization reasoning  
-⚡ **Performance Threshold**: ~200B parameters appear necessary for production deployment  
-💰 **Cost-Performance Trade-off**: Larger models achieve better cost-per-success despite higher pricing  
-
-## 📈 Performance Summary
-
-| **Metric** | **deepseek_deepseek-r1-0528_free_v2_prompt** | **anthropic_claude-3.7-sonnet_v2_prompt** | **meta-llama_llama-3.3-70b-instruct_free_v1_prompt** | **deepseek_deepseek-r1-distill-qwen-7b_v0** | **mistralai_mistral-7b-instruct_free_v0_improved** |
-|---|---|---|---|---|---|
-| **Rank** | 1 | 2 | 3 | 4 | 5 |
-| **Parameters** | 671B | 200B | 70B | 7B | 7B |
-| **Grade** | **C | **D | **F | **F | **F |
-| **API Success** | 93.1% | 100.0% | 75.0% | 93.2% | 100.0% |
-| **JSON Validity** | 93.1% | 100.0% | 75.0% | 93.2% | 100.0% |
-| **Hourly Success** | 68.9% | 48.3% | 29.5% | 0.7% | 0.3% |
-| **Daily MAE** | 343 PPFD | 1159 PPFD | 1219 PPFD | 1124 PPFD | 747 PPFD |
-
-## 📊 Statistical Insights
-
-### Key Statistical Findings
-- Strong correlation between model size and performance (r=0.889, p=0.044)
-- Overall model performance is below acceptable thresholds
-
-### Limitations
-- Small sample size (n=5) limits statistical power
-
-## 📊 Generated Visualizations
-
-- **Figure 1**: figure_1_scaling_law_hourly_20250610_131642.png
-- **Figure 2**: figure_1-1_log_scaling_law_20250610_131642.png
-
-## 🔍 Detailed Model Analysis
-
-### deepseek_deepseek-r1-0528_free_v2_prompt (671B)
-
-**Performance Grade**: 🥉 **C (Acceptable)**
-
-**Basic Performance:**
-- API Success Rate: 93.1%
-- JSON Validity Rate: 93.1%
-- Total Responses: 72
-
-**Ground Truth Analysis:**
-- Hourly Success Rate: 68.9%
-- Exact 24h Matches: 26/72 (36.1%)
-- Mean Daily MAE: 343.23 PPFD
-
-**Model Specifications:**
-- Parameters: 671B
-- Type: Reasoning
-
----
-
-### anthropic_claude-3.7-sonnet_v2_prompt (200B)
-
-**Performance Grade**: 📊 **D (Poor)**
-
-**Basic Performance:**
-- API Success Rate: 100.0%
-- JSON Validity Rate: 100.0%
-- Total Responses: 72
-
-**Ground Truth Analysis:**
-- Hourly Success Rate: 48.3%
-- Exact 24h Matches: 0/72 (0.0%)
-- Mean Daily MAE: 1158.71 PPFD
-
-**Model Specifications:**
-- Parameters: 200B
-- Type: Multi-modal
-
----
-
-### meta-llama_llama-3.3-70b-instruct_free_v1_prompt (70B)
-
-**Performance Grade**: ❌ **F (Failed)**
-
-**Basic Performance:**
-- API Success Rate: 75.0%
-- JSON Validity Rate: 75.0%
-- Total Responses: 72
-
-**Ground Truth Analysis:**
-- Hourly Success Rate: 29.5%
-- Exact 24h Matches: 0/72 (0.0%)
-- Mean Daily MAE: 1219.31 PPFD
-
-**Model Specifications:**
-- Parameters: 70B
-- Type: Instruction
-
----
-
-### deepseek_deepseek-r1-distill-qwen-7b_v0 (7B)
-
-**Performance Grade**: ❌ **F (Failed)**
-
-**Basic Performance:**
-- API Success Rate: 93.2%
-- JSON Validity Rate: 93.2%
-- Total Responses: 73
-
-**Ground Truth Analysis:**
-- Hourly Success Rate: 0.7%
-- Exact 24h Matches: 0/73 (0.0%)
-- Mean Daily MAE: 1124.31 PPFD
-
-**Model Specifications:**
-- Parameters: 7B
-- Type: Distilled
-
----
-
-### mistralai_mistral-7b-instruct_free_v0_improved (7B)
-
-**Performance Grade**: ❌ **F (Failed)**
-
-**Basic Performance:**
-- API Success Rate: 100.0%
-- JSON Validity Rate: 100.0%
-- Total Responses: 73
-
-**Ground Truth Analysis:**
-- Hourly Success Rate: 0.3%
-- Exact 24h Matches: 0/73 (0.0%)
-- Mean Daily MAE: 746.54 PPFD
-
-**Model Specifications:**
-- Parameters: 7B
-- Type: Instruction
-
----
-
-## 🔬 Methodology
-
-### Test Dataset
-- **72 optimization scenarios** spanning full calendar year
-- **Constant DLI requirement**: 17 mol/m²/day across all tests
-- **Variable conditions**: Seasonal light availability and electricity pricing
-- **Ground truth**: Optimal solutions from greedy algorithm
-
-### Evaluation Metrics
-- **API Success Rate**: Valid responses from model endpoint
-- **JSON Validity Rate**: Percentage of parseable JSON responses  
-- **Hourly Success Rate**: Exact matches with optimal hourly allocations
-- **Daily MAE**: Mean absolute error in daily PPFD totals
-
-### Performance Grading Scale
-- **A+ (Exceptional)**: >95% hourly success rate
-- **A (Excellent)**: >85% hourly success rate
-- **B (Good)**: >75% hourly success rate
-- **C (Acceptable)**: >60% hourly success rate
-- **D (Poor)**: >40% hourly success rate
-- **F (Failed)**: ≤40% hourly success rate
-
-## 🚨 Critical Findings
-
-### The Parameter Threshold Effect
-Analysis reveals a critical threshold around **200B parameters** where models transition from complete failure to acceptable performance. Models below this threshold exhibit:
-
-1. **JSON Generation Failure**: 7B models achieve only 1.4-37% JSON validity
-2. **Optimization Reasoning Failure**: Even valid JSON responses contain incorrect solutions
-3. **Two-Stage Failure Mode**: Both formatting AND reasoning capabilities require massive scale
-
-### Production Deployment Implications
-- **Minimum Viable Scale**: ~200B parameters for production deployment
-- **Cost-Effectiveness**: Large models achieve better cost-per-success ratios
-- **Reliability Requirements**: Mission-critical applications need >85% success rates
-
-## 🔮 Future Research Directions
-
-### Immediate Priorities
-1. **Scale Gap Analysis**: Test models between 70B-200B parameters
-2. **Statistical Validation**: Achieve n≥5 models for robust correlation analysis
-3. **Fine-tuning Experiments**: Can domain-specific training overcome scale limitations?
-
-### Extended Research
-1. **Task Generalization**: Validate findings across other optimization domains
-2. **Architecture Studies**: Compare MoE vs Dense architectures at equivalent scale
-3. **Real-world Deployment**: Production validation in greenhouse systems
-
-## 📋 Repository Structure
+## 🗂️ Repository Structure
 
 ```
-├── analysis_scripts/           # Modular analysis components
-│   ├── data_loader.py         # Ground truth and data loading
-│   ├── model_analyzer.py      # Individual model analysis  
-│   ├── statistical_analyzer.py # Comprehensive statistics
-│   ├── visualization_generator.py # Thesis-ready figures
-│   ├── report_generator.py    # README and HTML generation
-│   └── run_analysis.py        # Main orchestrator
-├── results/
-│   ├── model_outputs/         # Raw LLM responses
-│   ├── analysis/              # Comprehensive analysis files
-│   ├── figures/               # Generated visualizations
-│   └── analysis_reports/      # Performance summaries
-└── data/
-    ├── test_sets/             # Test scenarios
-    └── ground_truth/          # Optimal solutions
+├── analysis_scripts/           # Core analysis modules
+│   ├── run_analysis.py        # Main orchestrator to run the entire pipeline
+│   ├── data_loader.py         # Loads ground truth data
+│   ├── model_analyzer.py      # Analyzes a single model's performance
+│   ├── statistical_analyzer.py # Performs statistical tests (correlation, regression)
+│   ├── visualization_generator.py # Creates thesis-ready figures
+│   └── report_generator.py    # Generates final HTML and Markdown reports
+├── data/                       # All input data
+│   ├── test_sets/             # The 72 test case scenarios
+│   └── ground_truth/          # Optimal solutions from the greedy algorithm
+├── results/                    # All generated outputs
+│   ├── model_outputs/         # Raw JSON responses from the LLMs
+│   ├── analysis/              # Processed analysis data
+│   ├── figures/               # Final, publication-ready figures
+│   └── analysis_reports/      # Generated HTML and Markdown summary reports
+├── archive/                    # Legacy scripts and old versions
+└── requirements.txt            # Required Python packages
 ```
 
 ## 🚀 Quick Start
 
-### Run Complete Analysis
+### 1. Install Dependencies
+Ensure you have Python 3.9+ installed. Then, set up the necessary packages:
 ```bash
-cd analysis_scripts
-python run_analysis.py
+pip install -r requirements.txt
 ```
 
-### Generate Only Visualizations  
+### 2. Run the Full Analysis Pipeline
+To execute the entire analysis from start to finish, run the main orchestrator script from the root directory:
 ```bash
-python visualization_generator.py
+python analysis_scripts/run_analysis.py
 ```
+This single command will:
+1. Load all data.
+2. Analyze every model output file.
+3. Perform statistical analysis.
+4. Generate all thesis figures (e.g., the log-scaling law plot).
+5. Create a timestamped, comprehensive HTML report in `results/analysis_reports/`.
 
-### Monitor for New Results
-```bash
-python run_analysis.py --monitor
-```
+### 3. View the Final Report
+The final, human-readable report is the best place to view the results. Find the latest `analysis_report_*.html` file in the `results/analysis_reports/` directory and open it in your web browser.
 
----
+## 🔬 Methodology & Findings
 
-**Analysis System**: Modular architecture for reproducible LLM evaluation  
-**Generated**: 20250610_131642  
-**Models Analyzed**: 5 models  
-**Total Test Cases**: 72 scenarios per model  
+Detailed information on the methodology, key findings, and statistical results are contained within the final generated HTML report. The system is designed to be fully reproducible, with all data, scripts, and outputs version-controlled.
+
+This codebase demonstrates:
+- A systematic LLM evaluation methodology.
+- An automated and modular analysis pipeline.
+- Statistical rigor in evaluating model performance.
+- Discovery and validation of scaling laws in a practical optimization task.

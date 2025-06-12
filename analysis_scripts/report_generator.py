@@ -312,17 +312,23 @@ python run_analysis.py --monitor
         return None
 
 def generate_html_from_readme(readme_content, timestamp):
-    """Generate HTML report from README content"""
-    if not readme_content:
-        print("❌ No README content available for HTML generation")
-        return None
+    """Generate HTML report from Markdown content and save it"""
     
-    try:
-        # Convert markdown to HTML
-        html_content = markdown.markdown(readme_content, extensions=['tables', 'fenced_code'])
-        
-        # Add CSS styling
-        styled_html = f"""
+    # Define output paths within the results directory
+    report_dir = Path(RESULTS_DIRS['reports'])
+    readme_path = report_dir / f"README_{timestamp}.md"
+    html_path = report_dir / f"analysis_report_{timestamp}.html"
+
+    print(f"📄 Saving analysis README to: {readme_path}")
+    with open(readme_path, 'w', encoding='utf-8') as f:
+        f.write(readme_content)
+
+    print(f"📄 Saving HTML report to: {html_path}")
+    # Convert markdown to HTML
+    html_content = markdown.markdown(readme_content, extensions=['tables', 'fenced_code'])
+    
+    # Add CSS styling
+    styled_html = f"""
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -422,16 +428,13 @@ def generate_html_from_readme(readme_content, timestamp):
     </div>
 </body>
 </html>
-        """
-        
-        # Save HTML file
-        html_path = f"{RESULTS_DIRS['reports']}/analysis_report_{timestamp}.html"
-        with open(html_path, 'w', encoding='utf-8') as f:
-            f.write(styled_html)
-        
-        print(f"✅ HTML report generated: {html_path}")
-        return html_path
-        
-    except Exception as e:
-        print(f"❌ Error generating HTML report: {e}")
-        return None 
+    """
+    
+    # Save HTML file
+    with open(html_path, 'w', encoding='utf-8') as f:
+        f.write(styled_html)
+    
+    print(f"✅ Reports saved successfully")
+    
+    # Return the path to the HTML file for reference
+    return str(html_path)
