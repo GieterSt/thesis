@@ -11,7 +11,7 @@ from pathlib import Path
 # Ground truth data paths
 GROUND_TRUTH_PATHS = {
     'json': '../data/input-output pairs json/test_ground_truth.json',
-    'excel': '/Users/guidosteenbergen/Library/CloudStorage/OneDrive-Personal/Guido/Opleiding/Master BIM/Thesis/Data preparation/data/ground_truth/test_set_ground_truth_complete.xlsx'
+    'excel': '../data/ground_truth/test_set_ground_truth_complete.xlsx'
 }
 
 def load_ground_truth():
