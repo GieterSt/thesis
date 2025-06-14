@@ -19,7 +19,7 @@ from datetime import datetime
 import re
 
 # OpenRouter API key
-OPENROUTER_API_KEY = "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"
+OPENROUTER_API_KEY = ""
 
 class Claude37SonnetTester:
     def __init__(self):

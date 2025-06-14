@@ -8,7 +8,7 @@ import time
 from datetime import datetime
 
 # Configuration
-OPENROUTER_API_KEY = "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"
+OPENROUTER_API_KEY = ""
 OPENROUTER_MODEL_NAME = "deepseek/deepseek-r1-0528:free"
 INPUT_FILE = "data/test_sets/test_dataset_v2_prompts_clean.json"
 OUTPUT_FILE = "results/model_outputs/deepseek_deepseek-r1-0528_free_results_v2_prompt.json"
