@@ -34,34 +34,6 @@ def format_parameter_count(params):
     else:
         return f"{params}B"
 
-def assign_performance_grade(metrics):
-    """Assign performance grade based on hourly success rate criteria"""
-    if not metrics['ground_truth_analysis']:
-        json_success = metrics['basic_performance']['json_success_rate']
-        if json_success > 85:
-            return "🥈 **B (Good)**"
-        elif json_success > 60:
-            return "🥉 **C (Acceptable)**"
-        elif json_success > 40:
-            return "📊 **D (Poor)**"
-        else:
-            return "❌ **F (Failed)**"
-    
-    hourly_success = metrics['ground_truth_analysis']['mean_hourly_match_rate']
-    
-    if hourly_success > 95:
-        return "🏆 **A+ (Exceptional)**"
-    elif hourly_success > 85:
-        return "🥇 **A (Excellent)**"
-    elif hourly_success > 75:
-        return "🥈 **B (Good)**"
-    elif hourly_success > 60:
-        return "🥉 **C (Acceptable)**"
-    elif hourly_success > 40:
-        return "📊 **D (Poor)**"
-    else:
-        return "❌ **F (Failed)**"
-
 def format_model_analysis_section(metrics):
     """Format individual model analysis section for README"""
     model_name = metrics['model_name']
@@ -70,8 +42,6 @@ def format_model_analysis_section(metrics):
     
     section = f"""
 ### {model_name} ({format_parameter_count(params)})
-
-**Performance Grade**: {assign_performance_grade(metrics)}
 
 **Basic Performance:**
 - API Success Rate: {basic['api_success_rate']:.1f}%
@@ -161,7 +131,6 @@ This analysis evaluates Large Language Model performance on complex LED optimiza
     metrics_rows = [
         ("**Rank**", [str(i+1) for i in range(len(ranked_models))]),
         ("**Parameters**", [format_parameter_count(m['model_parameters']['parameters']) for m in ranked_models]),
-        ("**Grade**", [assign_performance_grade(m).split()[1] for m in ranked_models]),
         ("**API Success**", [f"{m['basic_performance']['api_success_rate']:.1f}%" for m in ranked_models]),
         ("**JSON Validity**", [f"{m['basic_performance']['json_success_rate']:.1f}%" for m in ranked_models]),
         ("**Hourly Success**", [f"{m['ground_truth_analysis']['mean_hourly_match_rate']:.1f}%" if m['ground_truth_analysis'] else "0.0%" for m in ranked_models]),

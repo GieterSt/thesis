@@ -4,10 +4,6 @@
 **Dataset**: LED Optimization LLM Performance (n=5 models)  
 **Analysis Software**: Python (scipy, numpy, pandas)
 
-## A.1 Overview
-
-This appendix presents the comprehensive statistical analysis supporting the parameter-performance scaling relationship reported in Chapter 4. All statistical computations were performed on the complete dataset of 5 large language models tested across 72-73 optimization scenarios each.
-
 ## A.2 Model Performance Data
 
 ### Table A.1: Complete Model Performance Dataset
@@ -30,29 +26,29 @@ This appendix presents the comprehensive statistical analysis supporting the par
 
 ### Table A.2: Parameter-Performance Correlation Statistics
 
-| **Correlation Type** | **Coefficient** | **p-value** | **95% CI** | **Interpretation** |
-|---------------------|----------------|-------------|------------|-------------------|
-| **Pearson (r)** | 0.889 | 0.044 | - | Significant large correlation |
-| **Spearman (rs)** | 0.975 | 0.005 | [0.85, 1.0] | Significant very large correlation |
+| **Correlation Type** | **Coefficient** | **p-value** | **95% CI** |
+|---------------------|----------------|-------------|------------|
+| **Pearson (r)** | 0.889 | 0.044 | - |
+| **Spearman (rs)** | 0.975 | 0.005 | [0.85, 1.0] |
 
 ### A.3.1 Correlation by Performance Metric
 
-| **Metric** | **Pearson r** | **Spearman rs** | **p-value** | **Significance** |
-|------------|---------------|----------------|-------------|------------------|
-| Parameters vs Hourly Success | 0.889 | 0.975 | 0.005 | ✓ Significant |
-| Parameters vs API Success | 0.083 | -0.289 | 0.637 | ✗ Not significant |
-| Parameters vs JSON Success | 0.083 | -0.289 | 0.637 | ✗ Not significant |
+| **Metric** | **Pearson r** | **Spearman rs** | **p-value** |
+|------------|---------------|----------------|-------------|
+| Parameters vs Hourly Success | 0.889 | 0.975 | 0.005 |
+| Parameters vs API Success | 0.083 | -0.289 | 0.637 |
+| Parameters vs JSON Success | 0.083 | -0.289 | 0.637 |
 
 ## A.4 Linear Regression Analysis
 
 ### Table A.3: Regression Model Summary
 
-| **Component** | **Value** | **Standard Error** | **Interpretation** |
-|---------------|-----------|-------------------|-------------------|
-| **Intercept (β₀)** | 11.36 | - | Base performance level |
-| **Coefficient (β₁)** | 0.095 | - | Performance gain per billion parameters |
-| **R-squared** | 0.790 | - | 79.0% of variance explained |
-| **RMSE** | 12.29 | - | Model prediction error |
+| **Component** | **Value** | **Standard Error** |
+|---------------|-----------|-------------------|
+| **Intercept (β₀)** | 11.36 | - |
+| **Coefficient (β₁)** | 0.095 | - |
+| **R-squared** | 0.790 | - |
+| **RMSE** | 12.29 | - |
 
 ### A.4.1 Regression Equation
 ```
@@ -90,48 +86,3 @@ Hourly Success Rate (%) = 11.36 + 0.095 × Parameters (billions)
 | **Hourly Success (%)** | 5 | 29.5 | 29.9 | 0.3 | 0.7 | 29.5 | 48.3 | 68.9 |
 | **API Success (%)** | 5 | 92.2 | 10.2 | 75.0 | 93.1 | 93.2 | 100.0 | 100.0 |
 | **JSON Success (%)** | 5 | 92.2 | 10.2 | 75.0 | 93.1 | 93.2 | 100.0 | 100.0 |
-
-## A.7 Statistical Assumptions and Limitations
-
-### A.7.1 Assumptions
-- **Linearity**: Supported by scatterplot analysis and residual plots
-- **Independence**: Each model represents independent architecture/training
-- **Normality**: Limited by small sample size (n=5)
-- **Homoscedasticity**: Residuals show consistent variance
-
-### A.7.2 Limitations
-- **Small sample size**: n=5 limits statistical power and generalizability
-- **Non-normal distribution**: Shapiro-Wilk test not applicable due to sample size
-- **Outlier sensitivity**: Large models may disproportionately influence results
-- **Temporal effects**: All models tested in same time period (June 2025)
-
-## A.8 Effect Size Interpretation
-
-### Table A.6: Correlation Strength Classification
-
-| **Correlation Range** | **Strength** | **Our Result** | **Classification** |
-|----------------------|--------------|----------------|-------------------|
-| 0.90 - 1.00 | Very Large | rs = 0.975 | ✓ Very Large |
-| 0.70 - 0.89 | Large | r = 0.889 | ✓ Large |
-| 0.50 - 0.69 | Medium | - | - |
-| 0.30 - 0.49 | Small | - | - |
-| 0.10 - 0.29 | Trivial | - | - |
-
-
-### A.9.1 Data Collection
-- **Test scenarios**: 72-73 optimization scenarios per model
-- **Evaluation period**: June 2025
-- **Ground truth**: Greedy algorithm optimal solutions
-- **Consistency**: Identical test conditions across all models
-
-### A.9.2 Statistical Software
-- **Python version**: 3.13.x
-- **Libraries**: scipy.stats, numpy, pandas, sklearn
-- **Bootstrap method**: stratified resampling with replacement
-- **Confidence intervals**: BCa method (bias-corrected and accelerated)
-
----
-
-**Generated**: June 8, 2025  
-**Analysis version**: modular_v1.0  
-**Total computation time**: < 5 seconds 
